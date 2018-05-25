@@ -13,10 +13,12 @@ namespace MixedMediaInventoryTracker
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
+            // webapi config
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+
+            //mvc config
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
