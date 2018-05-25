@@ -25,5 +25,14 @@ namespace MixedMediaInventoryTracker.Controllers
             }
             return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Could not create Media item at this time, try again later");
         }
+
+        [HttpGet, Route("")]
+        public HttpResponseMessage GetMedia()
+        {
+            var mediaRepository = new MediaRepository();
+            var allMedia = mediaRepository.GetAllMedia();
+
+            return Request.CreateResponse(HttpStatusCode.OK, allMedia);
+        }
     }
 }

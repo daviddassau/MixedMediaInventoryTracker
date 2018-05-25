@@ -44,5 +44,17 @@ namespace MixedMediaInventoryTracker
                 return createCustomer == 1;
             }
         }
+
+        public IEnumerable<MediaDto> GetAllMedia()
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var allMedia = db.Query<MediaDto>("SELECT * FROM media");
+
+                return allMedia;
+            }
+        }
     }
 }
