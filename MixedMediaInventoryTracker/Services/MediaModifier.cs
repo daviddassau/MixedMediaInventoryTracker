@@ -40,8 +40,9 @@ namespace MixedMediaInventoryTracker.Services
                                                     media.DateAdded,
                                                     media.IsLentOut,
                                                     media.IsSold,
-                                                    media.Notes
-                                                 });
+                                                    media.Notes,
+                                                    id
+                                                });
 
                 return editMediaItem == 1;
             }
