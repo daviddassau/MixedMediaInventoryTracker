@@ -7,5 +7,9 @@ namespace MixedMediaInventoryTracker.Services
 {
     public class LentMediaRepository
     {
+        internal object GetAllLentMedia()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
