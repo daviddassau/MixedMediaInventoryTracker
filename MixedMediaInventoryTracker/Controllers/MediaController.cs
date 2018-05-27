@@ -14,7 +14,7 @@ namespace MixedMediaInventoryTracker.Controllers
     public class MediaController : ApiController
     {
         [HttpPost, Route("")]
-        public HttpResponseMessage CreateMedia(MediaModel media)
+        public HttpResponseMessage CreateMedia(MediaDto media)
         {
             var mediaRepository = new MediaRepository();
             var result = mediaRepository.Create(media);

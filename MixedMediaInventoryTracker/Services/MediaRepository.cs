@@ -16,7 +16,7 @@ namespace MixedMediaInventoryTracker
             return new SqlConnection(ConfigurationManager.ConnectionStrings["MixedMediaInventoryTracker"].ConnectionString);
         }
 
-        public bool Create(MediaModel media)
+        public bool Create(MediaDto media)
         {
             using (var db = CreateConnection())
             {
