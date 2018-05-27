@@ -24,7 +24,8 @@ namespace MixedMediaInventoryTracker.Controllers
         [HttpPost, Route("")]
         public HttpResponseMessage LendMediaItem()
         {
-
+            var lentMediaRepository = new LentMediaRepository();
+            var lendMedia = lentMediaRepository.LendMedia();
         }
     }
 }

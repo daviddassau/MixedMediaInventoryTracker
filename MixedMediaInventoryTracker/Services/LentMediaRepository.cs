@@ -27,5 +27,15 @@ namespace MixedMediaInventoryTracker.Services
                 return allLentMedia;
             }
         }
+
+        public bool LendMedia(MediaDto media)
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+
+            }
+        }
     }
 }
