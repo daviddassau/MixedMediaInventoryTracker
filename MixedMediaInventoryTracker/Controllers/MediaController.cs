@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Http;
 using MixedMediaInventoryTracker.Models;
 using System.Net;
+using MixedMediaInventoryTracker.Services;
 
 namespace MixedMediaInventoryTracker.Controllers
 {
@@ -34,10 +35,13 @@ namespace MixedMediaInventoryTracker.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, allMedia);
         }
 
-        [HttpPost, Route("")]
-        public HttpResponseMessage EditMedia()
+        [HttpPut, Route("")]
+        public HttpResponseMessage EditMedia(int id, MediaDto media)
         {
+            var mediaModifier = new MediaModifier();
+            var editMedia = mediaModifier.EditMediaItem(id, media);
 
+            return Request.CreateResponse(HttpStatusCode.OK, editMedia);
         }
     }
 }
