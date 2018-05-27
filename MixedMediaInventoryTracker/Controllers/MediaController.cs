@@ -43,5 +43,14 @@ namespace MixedMediaInventoryTracker.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, editMedia);
         }
+
+        [HttpDelete, Route("{id}")]
+        public HttpResponseMessage DeleteMedia(int id)
+        {
+            var mediaModifier = new MediaModifier();
+            var deleteMediaItem = mediaModifier.DeleteMediaItem(id);
+
+            return Request.CreateResponse(HttpStatusCode.OK, deleteMediaItem);
+        }
     }
 }
