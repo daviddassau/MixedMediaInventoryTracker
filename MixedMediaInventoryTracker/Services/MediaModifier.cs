@@ -47,5 +47,18 @@ namespace MixedMediaInventoryTracker.Services
                 return editMediaItem == 1;
             }
         }
+
+        public bool DeleteMediaItem(int id)
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var deleteMediaItem = db.Execute(@"DELETE FROM Media
+                                                    WHERE Id = @id", new { id });
+
+                return deleteMediaItem == 1;
+            }
+        }
     }
 }
