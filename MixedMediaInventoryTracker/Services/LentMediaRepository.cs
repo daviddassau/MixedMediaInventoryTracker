@@ -28,13 +28,26 @@ namespace MixedMediaInventoryTracker.Services
             }
         }
 
-        public bool LendMedia(MediaDto media)
+        public bool LendMedia(LentMediaDto lentMedia)
         {
             using (var db = CreateConnection())
             {
                 db.Open();
 
+                var lendMediaItem = db.Execute(@"INSERT INTO [dbo].[LentMedia]
+                                                       ([MediaId]
+                                                       ,[LendeeName]
+                                                       ,[MediaConditionId]
+                                                       ,[DateLent]
+                                                       ,[Notes])
+                                                 VALUES
+                                                       (@MediaId
+                                                       ,@LendeeName
+                                                       ,@MediaConditionId
+                                                       ,@DateLent
+                                                       ,@Notes)", lentMedia);
 
+                return lendMediaItem == 1;
             }
         }
     }

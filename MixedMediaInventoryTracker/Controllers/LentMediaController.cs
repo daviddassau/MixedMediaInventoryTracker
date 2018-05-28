@@ -1,4 +1,5 @@
-﻿using MixedMediaInventoryTracker.Services;
+﻿using MixedMediaInventoryTracker.Models;
+using MixedMediaInventoryTracker.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,16 @@ namespace MixedMediaInventoryTracker.Controllers
         }
 
         [HttpPost, Route("")]
-        public HttpResponseMessage LendMediaItem()
+        public HttpResponseMessage LendMediaItem(LentMediaDto lentMedia)
         {
             var lentMediaRepository = new LentMediaRepository();
-            var lendMedia = lentMediaRepository.LendMedia();
+            var lendMedia = lentMediaRepository.LendMedia(lentMedia);
+
+            if (lendMedia)
+            {
+                return Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Could not lend Media item at this time, try again later");
         }
     }
 }
