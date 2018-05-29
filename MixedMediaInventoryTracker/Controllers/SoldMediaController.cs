@@ -1,4 +1,5 @@
-﻿using MixedMediaInventoryTracker.Services;
+﻿using MixedMediaInventoryTracker.Models;
+using MixedMediaInventoryTracker.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,16 @@ namespace MixedMediaInventoryTracker.Controllers
         }
 
         [HttpPost, Route("")]
-        public HttpResponseMessage SellMediaItem()
+        public HttpResponseMessage SellMediaItem(SoldMediaDto soldMedia)
         {
             var soldMediaRepository = new SoldMediaRepository();
-            var sellMedia = soldMediaRepository.SellMedia();
+            var sellMedia = soldMediaRepository.SellMedia(soldMedia);
+
+            if (sellMedia)
+            {
+                return Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Could not sell Media item at this time, try again later");
         }
     }
 }

@@ -28,9 +28,27 @@ namespace MixedMediaInventoryTracker.Services
             }
         }
 
-        internal object SellMedia()
+        public bool SellMedia(SoldMediaDto soldMedia)
         {
-            throw new NotImplementedException();
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var sellMediaItem = db.Execute(@"INSERT INTO [dbo].[SoldMedia]
+                                                       ([MediaId]
+                                                       ,[Buyer]
+                                                       ,[Amount]
+                                                       ,[SoldDate]
+                                                       ,[Notes])
+                                                 VALUES
+                                                       (@MediaId
+                                                       ,@Buyer
+                                                       ,@Amount
+                                                       ,@SoldDate
+                                                       ,@Notes)", soldMedia);
+
+                return sellMediaItem == 1;
+            }
         }
     }
 }
