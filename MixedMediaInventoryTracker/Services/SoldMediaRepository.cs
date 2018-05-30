@@ -16,15 +16,38 @@ namespace MixedMediaInventoryTracker.Services
             return new SqlConnection(ConfigurationManager.ConnectionStrings["MixedMediaInventoryTracker"].ConnectionString);
         }
 
-        public IEnumerable<SoldMediaDto> GetAllSoldMedia()
+        public IEnumerable<SoldMediaModel> GetAllSoldMedia()
         {
             using (var db = CreateConnection())
             {
                 db.Open();
 
-                var allSoldMedia = db.Query<SoldMediaDto>("SELECT * FROM SoldMedia");
+                var allSoldMedia = db.Query<SoldMediaModel>("SELECT * FROM SoldMedia");
 
                 return allSoldMedia;
+            }
+        }
+
+        public bool SellMedia(SoldMediaDto soldMedia)
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var sellMediaItem = db.Execute(@"INSERT INTO [dbo].[SoldMedia]
+                                                       ([MediaId]
+                                                       ,[Buyer]
+                                                       ,[Amount]
+                                                       ,[SoldDate]
+                                                       ,[Notes])
+                                                 VALUES
+                                                       (@MediaId
+                                                       ,@Buyer
+                                                       ,@Amount
+                                                       ,@SoldDate
+                                                       ,@Notes)", soldMedia);
+
+                return sellMediaItem == 1;
             }
         }
     }
