@@ -172,6 +172,7 @@
     <Compile Include="Models\SoldMediaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LentMediaRepository.cs" />
+    <Compile Include="Services\MediaConditionRepository.cs" />
     <Compile Include="Services\MediaModifier.cs" />
     <Compile Include="Services\MediaRepository.cs" />
     <Compile Include="Services\MediaTypeRepository.cs" />
