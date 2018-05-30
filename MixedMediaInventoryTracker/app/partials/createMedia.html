@@ -6,7 +6,7 @@
     <div class="form-group">
         <label for="selectMediaType">Select The Type of Media</label>
         <select class="form-control" id="selectMediaType" ng-model="createMediaItem.mediaTypeId" required>
-            <option>1</option>
+            <option ng-repeat="type in types" value="{{type.Id}}">{{type.MediaType}}</option>
         </select>
     </div>
     <div class="form-group">

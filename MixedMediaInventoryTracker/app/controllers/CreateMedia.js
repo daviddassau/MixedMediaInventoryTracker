@@ -5,29 +5,23 @@
 
         $scope.createMediaItem = {};
 
+        var createNewMediaItem = function (mediaItem) {
+            return $http.post("api/media", JSON.stringify(mediaItem));
+        }
+
         $scope.submitForm = function () {
 
             var newMediaItem = {
                 "mediaTypeId": $scope.createMediaItem.mediaTypeId,
                 "mediaConditionId": $scope.createMediaItem.mediaConditionId,
                 "title": $scope.createMediaItem.title,
-
+                "datePurchased": $scope.createMediaItem.datePurchased,
+                "isLentOut": $scope.createMediaItem.isLentOut,
+                "notes": $scope.createMediaItem.notes
             };
 
-        };
-
-
-
-        $scope.submitForm = function () {
-
-            var newComputer = {
-                "computermanufacturer": $scope.addcomputer.computermanufacturer,
-                "computermake": $scope.addcomputer.computermake,
-                "purchasedate": $scope.addcomputer.purchasedate
-            };
-
-            createNewComputer(newComputer).then(function () {
-                $location.path("/computers");
+            createNewMediaItem(newMediaItem).then(function () {
+                $location.path("/viewMedia");
             }).catch(function (error) {
                 console.log(error);
             });

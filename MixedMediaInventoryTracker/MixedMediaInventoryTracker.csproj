@@ -157,6 +157,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LentMediaController.cs" />
     <Compile Include="Controllers\MediaController.cs" />
+    <Compile Include="Controllers\MediaTypeController.cs" />
     <Compile Include="Controllers\SoldMediaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
