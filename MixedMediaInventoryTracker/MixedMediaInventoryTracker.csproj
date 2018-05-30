@@ -172,6 +172,7 @@
     <Compile Include="Services\LentMediaRepository.cs" />
     <Compile Include="Services\MediaModifier.cs" />
     <Compile Include="Services\MediaRepository.cs" />
+    <Compile Include="Services\MediaTypeRepository.cs" />
     <Compile Include="Services\SoldMediaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
