@@ -15,20 +15,17 @@
         @Html.ActionLink("Mixed Media Inventory Tracker", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a ng-href="#!/viewMedia" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        My Media
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a ng-href="#!/viewLentMedia" class="dropdown-item">Lent Items</a>
-                        <a ng-href="#!/viewSoldMedia" class="dropdown-item">Sold Items</a>
-                    </div>
+                <li class="nav-item">
+                    <a ng-href="#!/viewMedia" class="nav-link">My Media <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Add New Media</a>
+                    <a ng-href="#!/viewLentMedia" class="nav-link">Lent Items</a>
+                </li>
+                <li class="nav-item">
+                    <a ng-href="#!/viewSoldMedia" class="nav-link">Sold Items</a>
+                </li>
+                <li class="nav-item">
+                    <a ng-href="#!/createMedia" class="nav-link">Add New Media</a>
                 </li>
             </ul>
         </div>
