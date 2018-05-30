@@ -10,7 +10,7 @@ namespace MixedMediaInventoryTracker.Models
         public int Id { get; set; }
         public int MediaId { get; set; }
         public string Buyer { get; set; }
-        public int? Amount { get; set; }
+        public float? Amount { get; set; }
         public DateTime SoldDate { get; set; }
         public string Notes { get; set; }
     }
