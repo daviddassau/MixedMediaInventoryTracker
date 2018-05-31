@@ -5,13 +5,22 @@
 
         $scope.newMediaItem = {};
         $scope.types = {};
+        $scope.conditions = {};
 
         $scope.selectMediaType = function (type) {
             $scope.newMediaItem.mediaType = type.mediaType;
         };
 
+        $scope.selectMediaCondition = function (condition) {
+            $scope.newMediaItem.mediaCondition = condition.mediaCondition;
+        };
+
         $http.get("/api/mediaType").then(function (results) {
             $scope.types = results.data;
+        });
+
+        $http.get("/api/mediaCondition").then(function (results) {
+            $scope.conditions = results.data;
         });
 
         var createNewMediaItem = function (newMediaItem) {

@@ -7,7 +7,7 @@ namespace MixedMediaInventoryTracker.Models
 {
     public class MediaTypeDto
     {
-        public int Id { get; set; }
+        public int MediaTypeId { get; set; }
         public string MediaType { get; set; }
     }
 }
