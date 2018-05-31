@@ -36,7 +36,7 @@ namespace MixedMediaInventoryTracker
                                                ,@MediaConditionId
                                                ,@Title
                                                ,@DatePurchased
-                                               ,@DateAdded
+                                               ,default
                                                ,@IsLentOut
                                                ,@IsSold
                                                ,@Notes)", media);
