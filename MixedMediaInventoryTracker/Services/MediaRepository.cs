@@ -22,7 +22,7 @@ namespace MixedMediaInventoryTracker
             {
                 db.Open();
 
-                var createCustomer = db.Execute(@"INSERT INTO [dbo].[Media]
+                var createMediaItem = db.Execute(@"INSERT INTO [dbo].[Media]
                                                ([MediaTypeId]
                                                ,[MediaConditionId]
                                                ,[Title]
@@ -36,12 +36,12 @@ namespace MixedMediaInventoryTracker
                                                ,@MediaConditionId
                                                ,@Title
                                                ,@DatePurchased
-                                               ,@DateAdded
+                                               ,default
                                                ,@IsLentOut
                                                ,@IsSold
                                                ,@Notes)", media);
 
-                return createCustomer == 1;
+                return createMediaItem == 1;
             }
         }
 
