@@ -44,7 +44,7 @@ namespace MixedMediaInventoryTracker
                 return createMediaItem == 1;
             }
         }
-
+        
         public IEnumerable<MediaDto> GetAllMedia()
         {
             using (var db = CreateConnection())
@@ -57,6 +57,19 @@ namespace MixedMediaInventoryTracker
                                                     JOIN MediaCondition c on c.Id = m.MediaConditionId");
 
                 return allMedia;
+            }
+        }
+
+        public MediaDto GetSingleItem(int id)
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var singleItem = db.QueryFirstOrDefault<MediaDto>(@"SELECT * FROM Media
+                                                                    WHERE Id = @id", new { id });
+
+                return singleItem;
             }
         }
     }

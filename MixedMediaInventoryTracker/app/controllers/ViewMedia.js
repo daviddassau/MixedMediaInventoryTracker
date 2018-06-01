@@ -1,5 +1,5 @@
-﻿app.controller("ViewMedia", ["$scope", "$http", "$location",
-    function ($scope, $http, $location) {
+﻿app.controller("ViewMedia", ["$scope", "$http", "$location", "$routeParams",
+    function ($scope, $http, $location, $routeParams) {
 
         $scope.message = "My Media";
 
@@ -7,9 +7,10 @@
             $scope.mediaItems = results.data;
         });
 
-        $scope.mediaItemDetails = function () {
-            $location.path();
-        }
+        $scope.editMediaItem = function (id) {
+            console.log(id);
+            //$location.path(`/viewMedia/edit/${id}`);
+        };
         
     }
 ]);
