@@ -25,5 +25,5 @@ app.config(["$routeProvider", function ($routeProvider) {
         {
             templateUrl: "/app/partials/createMedia.html",
             controller: "CreateMedia"
-        })
+        });
 }]);

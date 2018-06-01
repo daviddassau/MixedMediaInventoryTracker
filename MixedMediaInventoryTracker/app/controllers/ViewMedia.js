@@ -6,6 +6,10 @@
         $http.get("/api/media").then(function (results) {
             $scope.mediaItems = results.data;
         });
+
+        $scope.mediaItemDetails = function () {
+            $location.path();
+        }
         
     }
 ]);
