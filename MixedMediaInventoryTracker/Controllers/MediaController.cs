@@ -39,7 +39,9 @@ namespace MixedMediaInventoryTracker.Controllers
         public HttpResponseMessage GetSingleMediaItem(int id)
         {
             var mediaRepository = new MediaRepository();
-            var singleMediaItem = mediaRepository.GetSingleItem();
+            var singleMediaItem = mediaRepository.GetSingleItem(id);
+
+            return Request.CreateResponse(HttpStatusCode.OK, singleMediaItem);
         }
 
         [HttpPut, Route("{id}")]
