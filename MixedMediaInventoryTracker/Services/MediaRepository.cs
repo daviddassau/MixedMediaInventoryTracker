@@ -60,6 +60,18 @@ namespace MixedMediaInventoryTracker
             }
         }
 
+        public MediaSingle GetSingleItem(int id)
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var singleItem = db.QueryFirstOrDefault<MediaSingle>(@"SELECT * FROM Media WHERE Id = @Id", new { id });
+
+                return singleItem;
+            }
+        }
+
         //public MediaDto GetSingleItem(int id)
         //{
         //    using (var db = CreateConnection())
@@ -76,26 +88,26 @@ namespace MixedMediaInventoryTracker
         //    }
         //}
 
-        public MediaModel GetSingleItem(int id)
-        {
-            using (var db = CreateConnection())
-            {
-                db.Open();
+        //public MediaModel GetSingleItem(int id)
+        //{
+        //    using (var db = CreateConnection())
+        //    {
+        //        db.Open();
 
-                var query = @"SELECT * FROM Media WHERE Id = @id
-                              SELECT t.* FROM MediaType t
-                              SELECT c.* FROM MediaCondition c";
+        //        var query = @"SELECT * FROM Media WHERE Id = @id
+        //                      SELECT t.* FROM MediaType t
+        //                      SELECT c.* FROM MediaCondition c";
 
-                MediaModel media;
-                using (var multi = db.QueryMultiple(query, new { id }))
-                {
-                    media = multi.Read<MediaModel>().First();
-                    media.MediaTypes = multi.Read<MediaTypeModel>().ToList();
-                    media.MediaConditions = multi.Read<MediaConditionModel>().ToList();
-                }
+        //        MediaModel media;
+        //        using (var multi = db.QueryMultiple(query, new { id }))
+        //        {
+        //            media = multi.Read<MediaModel>().First();
+        //            media.MediaTypes = multi.Read<MediaTypeModel>().ToList();
+        //            media.MediaConditions = multi.Read<MediaConditionModel>().ToList();
+        //        }
 
-                return media;
-            }
-        }
+        //        return media;
+        //    }
+        //}
     }
 }

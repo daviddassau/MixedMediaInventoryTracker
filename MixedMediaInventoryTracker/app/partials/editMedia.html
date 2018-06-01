@@ -2,6 +2,26 @@
     <h1>{{message}}</h1>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Success!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{mediaItem.Title}} has been updated!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <form name="createMediaItem">
     <div class="form-group">
         <label for="selectMediaType">Select The Type of Media</label>
@@ -41,7 +61,7 @@
         <textarea class="form-control" id="itemNotes" rows="3" ng-model="mediaItem.Notes"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" ng-click="submitNewMediaItem(newMediaItem)">Submit</button>
+    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" ng-click="submitEditedMediaItem(mediaItem)">Submit</button>
     <button type="button" class="btn btn-primary" ng-click="viewMediaItems()">View My Media Items <i class="fas fa-arrow-right"></i></button>
 
 </form>
