@@ -1,3 +1,19 @@
 ﻿<div>
     <h1>{{message}}</h1>
 </div>
+
+<div class="row">
+    <div ng-repeat="mediaItem in mediaItems" class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{mediaItem.Title}}</h5>
+                <p class="card-text">
+                    <strong>Date added: </strong>{{mediaItem.DateAdded}}<br />
+                    <strong>Type: </strong>{{mediaItem.MediaType}}<br />
+                    <strong>Condition: </strong>{{mediaItem.MediaCondition}}
+                </p>
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+</div>
