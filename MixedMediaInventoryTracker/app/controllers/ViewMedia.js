@@ -8,8 +8,7 @@
         });
 
         $scope.editMediaItem = function (id) {
-            console.log(id);
-            //$location.path(`/viewMedia/edit/${id}`);
+            $location.path(`/viewMedia/edit/${id}`);
         };
         
     }
