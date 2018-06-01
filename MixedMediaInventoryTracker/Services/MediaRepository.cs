@@ -51,7 +51,7 @@ namespace MixedMediaInventoryTracker
             {
                 db.Open();
 
-                var allMedia = db.Query<MediaDto>(@"SELECT m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, t.MediaType, c.MediaCondition
+                var allMedia = db.Query<MediaDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, t.MediaType, c.MediaCondition
                                                     FROM Media m
                                                     JOIN MediaType t on t.Id = m.MediaTypeId
                                                     JOIN MediaCondition c on c.Id = m.MediaConditionId");
