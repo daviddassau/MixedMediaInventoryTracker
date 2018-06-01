@@ -6,6 +6,7 @@
         $scope.mediaItem = {};
 
         $http.get(`api/media/${$routeParams.id}`).then(function (result) {
+            result.data.DatePurchased = new Date(result.data.DatePurchased);
             $scope.mediaItem = result.data;
         });
 
