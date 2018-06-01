@@ -4,10 +4,15 @@
         $scope.message = "Edit Media";
 
         $scope.mediaItem = {};
+        $scope.mediaType = {};
 
         $http.get(`api/media/${$routeParams.id}`).then(function (result) {
             result.data.DatePurchased = new Date(result.data.DatePurchased);
             $scope.mediaItem = result.data;
+        });
+
+        $http.get("api/mediaType").then(function (result) {
+            $scope.mediaType = result.data;
         });
 
         $scope.submitEditedMediaItem = function () {
