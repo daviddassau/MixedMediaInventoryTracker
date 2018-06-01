@@ -5,6 +5,7 @@
 
         $scope.mediaItem = {};
         $scope.mediaType = {};
+        $scope.mediaCondition = {};
 
         $http.get(`api/media/${$routeParams.id}`).then(function (result) {
             result.data.DatePurchased = new Date(result.data.DatePurchased);
@@ -13,6 +14,10 @@
 
         $http.get("api/mediaType").then(function (result) {
             $scope.mediaType = result.data;
+        });
+
+        $http.get("api/mediaCondition").then(function (result) {
+            $scope.mediaCondition = result.data;
         });
 
         $scope.submitEditedMediaItem = function () {
