@@ -1,3 +1,47 @@
 ﻿<div>
     <h1>{{message}}</h1>
 </div>
+
+<form name="createMediaItem">
+    <div class="form-group">
+        <label for="selectMediaType">Select The Type of Media</label>
+        <select class="form-control" id="selectMediaType" ng-model="editMediaItem.MediaTypeId" required>
+            <option ng-repeat="type in types" value="{{type.Id}}">{{type.MediaType}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="selectMediaCondition">Select The Media's Condition</label>
+        <select class="form-control" id="selectMediaCondition" ng-model="editMediaItem.MediaConditionId" required>
+            <option ng-repeat="condition in conditions" value="{{condition.Id}}">{{condition.MediaCondition}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="title">Title of Media</label>
+        <input class="form-control" id="title" type="text" placeholder="" ng-model="editMediaItem.Title" required>
+    </div>
+    <div class="form-group">
+        <label for="datePurchased" class="control-label">Date Purchased</label>
+        <input type="date" id="datePurchased" class="form-control" placeholder="0000/00/00" ng-model="editMediaItem.DatePurchased">
+    </div>
+    <label>Is this item lent out?</label>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="lentOutRadios" id="lentOutRadio1" value="option1" ng-model="editMediaItem.IsLentOut" checked>
+        <label class="form-check-label" for="lentOutRadio1">
+            No
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="lentOutRadios" id="lentOutRadio2" value="option2" ng-model="editMediaItem.IsLentOut">
+        <label class="form-check-label" for="lentOutRadio2">
+            Yes
+        </label>
+    </div>
+    <div class="form-group mt-3">
+        <label for="itemNotes">Item Notes</label>
+        <textarea class="form-control" id="itemNotes" rows="3" ng-model="editMediaItem.notes"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" ng-click="submitNewMediaItem(newMediaItem)">Submit</button>
+    <button type="button" class="btn btn-primary" ng-click="viewMediaItems()">View My Media Items <i class="fas fa-arrow-right"></i></button>
+
+</form>
