@@ -7,9 +7,7 @@
 
         var getSingleMediaItem = function () {
             $http.get(`api/media/${$routeParams.id}`).then(function (result) {
-                console.log(result);
-                //result.data.MediaTypeId = new Date(result.data.MediaTypeId);
-                //result.data.MediaConditionId = new Date(result.data.MediaConditionId);
+                result.data.DatePurchased = new Date(result.data.DatePurchased);
                 $scope.editMediaItem = result.data;
             });
         };
