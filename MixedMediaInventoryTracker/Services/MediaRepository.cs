@@ -66,8 +66,11 @@ namespace MixedMediaInventoryTracker
             {
                 db.Open();
 
-                var singleItem = db.QueryFirstOrDefault<MediaDto>(@"SELECT * FROM Media
-                                                                    WHERE Id = @id", new { id });
+                var singleItem = db.QueryFirstOrDefault<MediaDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, t.MediaType, c.MediaCondition
+                                                                    FROM Media m
+                                                                    JOIN MediaType t on t.Id = m.MediaTypeId
+                                                                    JOIN MediaCondition c on c.Id = m.MediaConditionId
+                                                                    WHERE m.Id = @id", new { id });
 
                 return singleItem;
             }
