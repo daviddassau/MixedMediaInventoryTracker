@@ -20,5 +20,12 @@ namespace MixedMediaInventoryTracker.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, allMediaTypes);
         }
+
+        [HttpPut, Route("{id}")]
+        public HttpResponseMessage EditMediaType()
+        {
+            var mediaTypeModifier = new MediaTypeModifier();
+            var editMediaType = mediaTypeModifier.Edit();
+        }
     }
 }

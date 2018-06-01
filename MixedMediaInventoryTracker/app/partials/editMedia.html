@@ -44,16 +44,12 @@
         <input type="date" id="datePurchased" class="form-control" placeholder="0000/00/00" ng-model="mediaItem.DatePurchased">
     </div>
     <label>Is this item lent out?</label>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="lentOutRadios" id="lentOutRadio1" value="option1" ng-model="mediaItem.IsLentOut" checked>
-        <label class="form-check-label" for="lentOutRadio1">
-            No
+    <div class="radio">
+        <label class="radioLentOut">
+            <input type="radio" name="lentOutNo" id="lentOutNo" value="No" ng-model="mediaItem.IsLentOut" /> No
         </label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="lentOutRadios" id="lentOutRadio2" value="option2" ng-model="mediaItem.IsLentOut">
-        <label class="form-check-label" for="lentOutRadio2">
-            Yes
+        <label>
+            <input type="radio" name="lentOutYes" id="lentOutYes" value="Yes" ng-model="mediaItem.IsLentOut" /> Yes
         </label>
     </div>
     <div class="form-group mt-3">
