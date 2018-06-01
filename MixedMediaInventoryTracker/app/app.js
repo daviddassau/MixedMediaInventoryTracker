@@ -25,5 +25,10 @@ app.config(["$routeProvider", function ($routeProvider) {
         {
             templateUrl: "/app/partials/createMedia.html",
             controller: "CreateMedia"
+        })
+        .when("/viewMedia/edit/:id",
+        {
+            templateUrl: "/app/partials/editMedia.html",
+            controller: "EditMedia"
         });
 }]);
