@@ -11,8 +11,8 @@
     </div>
     <div class="form-group">
         <label for="selectMediaCondition">Select The Media's Condition</label>
-        <select class="form-control" id="selectMediaCondition" ng-model="editMediaItem.MediaConditionId" required>
-            <option ng-repeat="condition in conditions" value="{{condition.Id}}">{{condition.MediaCondition}}</option>
+        <select class="form-control" id="selectMediaCondition" ng-model="mediaItem.MediaConditions.Id" required>
+            <option ng-repeat="condition in mediaItem.MediaConditions">{{condition.MediaCondition}}</option>
         </select>
     </div>
     <div class="form-group">

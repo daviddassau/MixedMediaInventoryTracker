@@ -91,6 +91,7 @@ namespace MixedMediaInventoryTracker
                 {
                     media = multi.Read<MediaModel>().First();
                     media.MediaTypes = multi.Read<MediaTypeModel>().ToList();
+                    media.MediaConditions = multi.Read<MediaConditionModel>().ToList();
                 }
 
                 return media;
