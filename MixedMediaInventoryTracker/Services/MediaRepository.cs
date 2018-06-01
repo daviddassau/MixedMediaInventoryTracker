@@ -44,19 +44,32 @@ namespace MixedMediaInventoryTracker
                 return createMediaItem == 1;
             }
         }
-
+        
         public IEnumerable<MediaDto> GetAllMedia()
         {
             using (var db = CreateConnection())
             {
                 db.Open();
 
-                var allMedia = db.Query<MediaDto>(@"SELECT m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, t.MediaType, c.MediaCondition
+                var allMedia = db.Query<MediaDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, t.MediaType, c.MediaCondition
                                                     FROM Media m
                                                     JOIN MediaType t on t.Id = m.MediaTypeId
                                                     JOIN MediaCondition c on c.Id = m.MediaConditionId");
 
                 return allMedia;
+            }
+        }
+
+        public MediaDto GetSingleItem(int id)
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var singleItem = db.QueryFirstOrDefault<MediaDto>(@"SELECT * FROM Media
+                                                                    WHERE Id = @id", new { id });
+
+                return singleItem;
             }
         }
     }

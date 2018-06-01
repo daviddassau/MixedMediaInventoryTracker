@@ -35,6 +35,15 @@ namespace MixedMediaInventoryTracker.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, allMedia);
         }
 
+        [HttpGet, Route("{id}")]
+        public HttpResponseMessage GetSingleMediaItem(int id)
+        {
+            var mediaRepository = new MediaRepository();
+            var singleMediaItem = mediaRepository.GetSingleItem(id);
+
+            return Request.CreateResponse(HttpStatusCode.OK, singleMediaItem);
+        }
+
         [HttpPut, Route("{id}")]
         public HttpResponseMessage EditMedia(int id, MediaDto media)
         {
