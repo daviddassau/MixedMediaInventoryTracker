@@ -3,17 +3,21 @@
 
         $scope.message = "Edit Media";
 
-        $scope.editMediaItem = {};
+        $scope.mediaItem = {};
 
-        var getSingleMediaItem = function () {
-            $http.get(`api/media/${$routeParams.id}`).then(function (result) {
-                result.data.DatePurchased = new Date(result.data.DatePurchased);
-                $scope.editMediaItem = result.data;
-            });
-        };
+        $http.get(`api/media/${$routeParams.id}`).then(function (result) {
+            $scope.mediaItem = result.data;
+        });
 
-        console.log(getSingleMediaItem());
-        getSingleMediaItem();
+        //var getSingleMediaItem = function () {
+        //    $http.get(`api/media/${$routeParams.id}`).then(function (result) {
+        //        result.data.DatePurchased = new Date(result.data.DatePurchased);
+        //        $scope.editMediaItem = result.data;
+        //    });
+        //};
+
+        //console.log(getSingleMediaItem());
+        //getSingleMediaItem();
 
     }
 ]);
