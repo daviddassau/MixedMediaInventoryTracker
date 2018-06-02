@@ -23,9 +23,7 @@ namespace MixedMediaInventoryTracker.Services
                 db.Open();
 
                 var editMediaItem = db.Execute(@"UPDATE [dbo].[Media]
-                                                   SET MediaTypeId = @MediaTypeId,
-                                                       MediaConditionId = @MediaConditionId,
-                                                       Title = @Title,
+                                                   SET Title = @Title,
                                                        DatePurchased = @DatePurchased,
                                                        DateAdded = @DateAdded,
                                                        IsLentOut = @IsLentOut,
@@ -33,8 +31,6 @@ namespace MixedMediaInventoryTracker.Services
                                                        Notes = @Notes
                                                  WHERE id = @id", new
                                                  {
-                                                    media.MediaTypeId,
-                                                    media.MediaConditionId,
                                                     media.Title,
                                                     media.DatePurchased,
                                                     media.DateAdded,

@@ -1,4 +1,5 @@
-﻿using MixedMediaInventoryTracker.Services;
+﻿using MixedMediaInventoryTracker.Models;
+using MixedMediaInventoryTracker.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,12 @@ namespace MixedMediaInventoryTracker.Controllers
         }
 
         [HttpPut, Route("{id}")]
-        public HttpResponseMessage EditMediaType()
+        public HttpResponseMessage EditMediaType(int id, MediaTypeModel media)
         {
             var mediaTypeModifier = new MediaTypeModifier();
-            var editMediaType = mediaTypeModifier.Edit();
+            var editMediaType = mediaTypeModifier.Edit(id, media);
+
+            return Request.CreateResponse(HttpStatusCode.OK, editMediaType);
         }
     }
 }
