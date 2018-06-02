@@ -9,8 +9,8 @@
         });
 
         $scope.deleteMediaItem = function () {
-            $http.delete(`api/media/${$routeParams.id}`, $scope.mediaItem).then(function () {
-                $location.path("api/media");
+            $http.delete(`api/media/${$routeParams.id}`).then(function () {
+                $location.path("/viewMedia");
             }).catch(function (error) {
                 console.log("error in deleteMediaItem", error);
             });
