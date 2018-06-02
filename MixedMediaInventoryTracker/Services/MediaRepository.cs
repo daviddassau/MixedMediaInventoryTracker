@@ -60,17 +60,17 @@ namespace MixedMediaInventoryTracker
             }
         }
 
-        public MediaDto GetSingleItem(int id)
+        public MediaSingle GetSingleItem(int id)
         {
             using (var db = CreateConnection())
             {
                 db.Open();
 
-                var singleItem = db.QueryFirstOrDefault<MediaDto>(@"SELECT * FROM Media
-                                                                    WHERE Id = @id", new { id });
+                var singleItem = db.QueryFirstOrDefault<MediaSingle>(@"SELECT * FROM Media WHERE Id = @Id", new { id });
 
                 return singleItem;
             }
         }
+
     }
 }

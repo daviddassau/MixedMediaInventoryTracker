@@ -165,8 +165,10 @@
     </Compile>
     <Compile Include="Models\LentMediaDto.cs" />
     <Compile Include="Models\MediaConditionDto.cs" />
+    <Compile Include="Models\MediaConditionModel.cs" />
     <Compile Include="Models\MediaDto.cs" />
     <Compile Include="Models\MediaModel.cs" />
+    <Compile Include="Models\MediaSingle.cs" />
     <Compile Include="Models\MediaTypeDto.cs" />
     <Compile Include="Models\MediaTypeModel.cs" />
     <Compile Include="Models\SoldMediaDto.cs" />
@@ -176,6 +178,7 @@
     <Compile Include="Services\MediaConditionRepository.cs" />
     <Compile Include="Services\MediaModifier.cs" />
     <Compile Include="Services\MediaRepository.cs" />
+    <Compile Include="Services\MediaTypeModifier.cs" />
     <Compile Include="Services\MediaTypeRepository.cs" />
     <Compile Include="Services\SoldMediaRepository.cs" />
   </ItemGroup>

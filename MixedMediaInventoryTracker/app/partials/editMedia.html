@@ -1,3 +1,63 @@
 ﻿<div>
     <h1>{{message}}</h1>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Success!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{mediaItem.Title}} has been updated!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form name="createMediaItem">
+    <div class="form-group">
+        <label for="selectMediaType">Select The Type of Media</label>
+        <select class="form-control" id="selectMediaType" ng-model="mediaItem.MediaTypeId" required>
+            <option ng-repeat="type in mediaType" value="{{type.Id}}">{{type.MediaType}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="selectMediaCondition">Select The Media's Condition</label>
+        <select class="form-control" id="selectMediaCondition" ng-model="mediaItem.MediaConditionId" required>
+            <option ng-repeat="condition in mediaCondition" value="{{condition.Id}}" >{{condition.MediaCondition}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="title">Title of Media</label>
+        <input class="form-control" id="title" type="text" placeholder="" ng-model="mediaItem.Title" required>
+    </div>
+    <div class="form-group">
+        <label for="datePurchased" class="control-label">Date Purchased</label>
+        <input type="date" id="datePurchased" class="form-control" placeholder="0000/00/00" ng-model="mediaItem.DatePurchased">
+    </div>
+    <label>Is this item lent out?</label>
+    <div class="radio">
+        <label class="radioLentOut">
+            <input type="radio" name="lentOutNo" id="lentOutNo" value="No" ng-model="mediaItem.IsLentOut" /> No
+        </label>
+        <label>
+            <input type="radio" name="lentOutYes" id="lentOutYes" value="Yes" ng-model="mediaItem.IsLentOut" /> Yes
+        </label>
+    </div>
+    <div class="form-group mt-3">
+        <label for="itemNotes">Item Notes</label>
+        <textarea class="form-control" id="itemNotes" rows="3" ng-model="mediaItem.Notes"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" ng-click="submitEditedMediaItem(mediaItem)">Submit</button>
+    <button type="button" class="btn btn-primary" ng-click="viewMediaItems()">View My Media Items <i class="fas fa-arrow-right"></i></button>
+
+</form>
