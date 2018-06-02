@@ -72,42 +72,5 @@ namespace MixedMediaInventoryTracker
             }
         }
 
-        //public MediaDto GetSingleItem(int id)
-        //{
-        //    using (var db = CreateConnection())
-        //    {
-        //        db.Open();
-
-        //        var singleItem = db.QueryFirstOrDefault<MediaDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, t.MediaType, c.MediaCondition
-        //                                                            FROM Media m
-        //                                                            JOIN MediaType t on t.Id = m.MediaTypeId
-        //                                                            JOIN MediaCondition c on c.Id = m.MediaConditionId
-        //                                                            WHERE m.Id = @id", new { id });
-
-        //        return singleItem;
-        //    }
-        //}
-
-        //public MediaModel GetSingleItem(int id)
-        //{
-        //    using (var db = CreateConnection())
-        //    {
-        //        db.Open();
-
-        //        var query = @"SELECT * FROM Media WHERE Id = @id
-        //                      SELECT t.* FROM MediaType t
-        //                      SELECT c.* FROM MediaCondition c";
-
-        //        MediaModel media;
-        //        using (var multi = db.QueryMultiple(query, new { id }))
-        //        {
-        //            media = multi.Read<MediaModel>().First();
-        //            media.MediaTypes = multi.Read<MediaTypeModel>().ToList();
-        //            media.MediaConditions = multi.Read<MediaConditionModel>().ToList();
-        //        }
-
-        //        return media;
-        //    }
-        //}
     }
 }

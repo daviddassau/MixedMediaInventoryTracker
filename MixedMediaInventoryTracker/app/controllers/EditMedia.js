@@ -10,6 +10,8 @@
         $http.get(`api/media/${$routeParams.id}`).then(function (result) {
             result.data.DatePurchased = new Date(result.data.DatePurchased);
             $scope.mediaItem = result.data;
+            $scope.mediaItem.MediaConditionId = $scope.mediaItem.MediaConditionId.toString();
+            $scope.mediaItem.MediaTypeId = $scope.mediaItem.MediaTypeId.toString();
         });
 
         $http.get("api/mediaType").then(function (result) {
@@ -27,31 +29,6 @@
                 console.log("error in submitEditedMediaItem", error);
             });
         }
-
-
-
-        //var editMediaItem = function (mediaItem) {
-        //    return $http.put(`api/media/${id}`, mediaItem);
-        //};
-
-        //$scope.submitEditedMediaItem = function (mediaItem) {
-        //    editMediaItem(mediaItem).then(function () {
-        //        console.log(mediaItem);
-        //        $location.path("/viewMedia");
-        //    }).catch(function (error) {
-        //        console.log(error);
-        //    });
-        //}
-
-        //var getSingleMediaItem = function () {
-        //    $http.get(`api/media/${$routeParams.id}`).then(function (result) {
-        //        result.data.DatePurchased = new Date(result.data.DatePurchased);
-        //        $scope.editMediaItem = result.data;
-        //    });
-        //};
-
-        //console.log(getSingleMediaItem());
-        //getSingleMediaItem();
 
     }
 ]);
