@@ -4,10 +4,17 @@
         $scope.mediaItem = {};
 
         $http.get(`api/media/${$routeParams.id}`).then(function (result) {
+            console.log(result);
             $scope.mediaItem = result.data;
         });
 
-
+        $scope.deleteMediaItem = function () {
+            $http.delete(`api/media/${$routeParams.id}`, $scope.mediaItem).then(function () {
+                $location.path("api/media");
+            }).catch(function (error) {
+                console.log("error in deleteMediaItem", error);
+            });
+        }
 
     }
 ]);
