@@ -10,6 +10,10 @@
         $scope.editMediaItem = function (id) {
             $location.path(`/viewMedia/edit/${id}`);
         };
+
+        $scope.deleteMediaItem = function (id) {
+            $location.path(`/viewMedia/delete/${id}`);
+        };
         
     }
 ]);
