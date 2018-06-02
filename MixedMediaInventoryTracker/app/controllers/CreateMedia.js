@@ -36,9 +36,5 @@
             });
         }
 
-        $scope.viewMediaItems = function () {
-            $location.path("/viewMedia");
-        }
-
     }
 ]);
