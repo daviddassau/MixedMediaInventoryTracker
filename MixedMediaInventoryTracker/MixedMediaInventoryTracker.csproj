@@ -167,6 +167,7 @@
     <Compile Include="Models\MediaConditionDto.cs" />
     <Compile Include="Models\MediaConditionModel.cs" />
     <Compile Include="Models\MediaDto.cs" />
+    <Compile Include="Models\MediaItemToLendDto.cs" />
     <Compile Include="Models\MediaModel.cs" />
     <Compile Include="Models\MediaSingle.cs" />
     <Compile Include="Models\MediaTypeDto.cs" />

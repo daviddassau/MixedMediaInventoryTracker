@@ -50,10 +50,5 @@ namespace MixedMediaInventoryTracker.Services
                 return lendMediaItem == 1;
             }
         }
-
-        internal object MediaItemToLend(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
