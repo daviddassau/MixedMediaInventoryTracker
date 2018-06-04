@@ -21,6 +21,11 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/app/partials/markAsLent.html",
             controller: "MarkAsLent"
         })
+        .when("/lendMedia",
+        {
+            templateUrl: "/app/partials/lendMedia.html",
+            controller: "LendMedia"
+        })
         .when("/viewSoldMedia",
         {
             templateUrl: "/app/partials/viewSoldMedia.html",

@@ -7,5 +7,9 @@
             $scope.mediaItem = result.data;
         });
 
+        var markItemAsLent = function (mediaItem) {
+
+        }
+
     }
 ]);
