@@ -186,6 +186,7 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\controllers\CreateMedia.js" />
+    <Content Include="app\controllers\DeleteMedia.js" />
     <Content Include="app\controllers\EditMedia.js" />
     <Content Include="app\controllers\HomeController.js" />
     <Content Include="app\controllers\LendMedia.js" />
@@ -197,6 +198,7 @@
     <Content Include="app\controllers\ViewMedia.js" />
     <Content Include="app\controllers\ViewSoldMedia.js" />
     <Content Include="app\partials\createMedia.html" />
+    <Content Include="app\partials\deleteMedia.html" />
     <Content Include="app\partials\editMedia.html" />
     <Content Include="app\partials\index.html" />
     <Content Include="app\partials\lendMedia.html" />

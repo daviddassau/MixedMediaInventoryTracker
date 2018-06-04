@@ -14,3 +14,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.delete-item {
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+}

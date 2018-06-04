@@ -40,5 +40,10 @@ app.config(["$routeProvider", function ($routeProvider) {
         {
             templateUrl: "/app/partials/editMedia.html",
             controller: "EditMedia"
+        })
+        .when("/viewMedia/delete/:id",
+        {
+            templateUrl: "/app/partials/deleteMedia.html",
+            controller: "DeleteMedia"
         });
 }]);
