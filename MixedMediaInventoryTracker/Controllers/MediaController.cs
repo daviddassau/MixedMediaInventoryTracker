@@ -61,5 +61,14 @@ namespace MixedMediaInventoryTracker.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, deleteMediaItem);
         }
+
+        [HttpGet, Route("mediaItemToLend/{id}")]
+        public HttpResponseMessage GetMediaItemToLend(int id)
+        {
+            var mediaRepository = new MediaRepository();
+            var mediaItemToLend = mediaRepository.MediaItemToLend(id);
+
+            return Request.CreateResponse(HttpStatusCode.OK, mediaItemToLend);
+        }
     }
 }

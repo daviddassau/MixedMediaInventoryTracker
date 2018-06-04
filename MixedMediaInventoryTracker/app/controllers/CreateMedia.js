@@ -27,14 +27,14 @@
             return $http.post("api/media", newMediaItem);
         }
 
-        $scope.submitNewMediaItem = function (newMediaItem) {
-            createNewMediaItem(newMediaItem).then(function () {
-                console.log(newMediaItem);
-                //$location.path("/viewMedia");
-            }).catch(function (error) {
-                console.log(error);
-            });
-        }
+        //$scope.submitNewMediaItem = function (newMediaItem) {
+        //    createNewMediaItem(newMediaItem).then(function () {
+        //        console.log(newMediaItem);
+        //        //$location.path("/viewMedia");
+        //    }).catch(function (error) {
+        //        console.log(error);
+        //    });
+        //}
 
     }
 ]);
