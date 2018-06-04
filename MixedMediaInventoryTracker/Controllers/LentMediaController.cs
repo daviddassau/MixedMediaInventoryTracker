@@ -22,6 +22,13 @@ namespace MixedMediaInventoryTracker.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, allLentMedia);
         }
 
+        [HttpGet, Route("{id}")]
+        public HttpResponseMessage GetMediaItemToLend(int id)
+        {
+            var lentMediaRepository = new LentMediaRepository();
+            var mediaItemToLend = lentMediaRepository.MediaItemToLend(id);
+        }
+
         [HttpPost, Route("")]
         public HttpResponseMessage LendMediaItem(LentMediaDto lentMedia)
         {

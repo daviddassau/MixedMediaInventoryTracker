@@ -7,6 +7,7 @@
 
         $http.get(`api/media/${$routeParams.id}`).then(function (result) {
             $scope.mediaItem = result.data;
+            console.log(result.data);
         });
 
     }
