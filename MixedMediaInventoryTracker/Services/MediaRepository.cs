@@ -72,16 +72,15 @@ namespace MixedMediaInventoryTracker
             }
         }
 
-        public MediaItemToLendDto MediaItemToLend(int id)
+        public IEnumerable<MediaItemToLendDto> MediaItemToLend()
         {
             using (var db = CreateConnection())
             {
                 db.Open();
 
-                var itemToLend = db.QueryFirstOrDefault<MediaItemToLendDto>(@"SELECT m.Id, m.Title, c.MediaCondition
-                                                                              FROM Media m
-                                                                              JOIN MediaCondition c on c.Id = m.MediaConditionId
-                                                                              WHERE m.Id = @Id", new { id });
+                var itemToLend = db.Query<MediaItemToLendDto>(@"SELECT m.Id, m.Title, c.MediaCondition
+                                                                FROM Media m
+                                                                JOIN MediaCondition c on c.Id = m.MediaConditionId");
 
                 return itemToLend;
             }
