@@ -23,6 +23,8 @@ namespace MixedMediaInventoryTracker
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                       "~/Scripts/angular.js",
                       "~/Scripts/angular-route.js",
+                      "~/Scripts/moment.js",
+                      "~/Scripts/angular-moment.js",
                       "~/app/app.js")
                       .IncludeDirectory("~/app/controllers", "*.js", true));
 

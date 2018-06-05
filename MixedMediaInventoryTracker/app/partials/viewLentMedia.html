@@ -11,7 +11,7 @@
             <div class="card-body">
                 <strong>Lent to: </strong>{{item.LendeeName}}<br />
                 <strong>Condition: </strong>{{item.MediaCondition}}<br />
-                <strong>Date Lent: </strong>{{item.DateLent}}
+                <span><strong>Date Lent: </strong>{{item.DateLent | amDateFormat:'dddd, MMMM Do YYYY'}}</span>
             </div>
         </div>
     </div>

@@ -3,18 +3,18 @@
 </div>
 
 <div class="row">
-    <div ng-repeat="mediaItem in mediaItems" class="col-sm-4">
+    <div ng-repeat="mediaItem in mediaItems" class="col-sm-4 mb-4">
         <div class="card">
+            <div class="card-header lent-item-title text-center">
+                {{mediaItem.Title}}
+            </div>
             <div class="card-body">
-                <h5 class="card-title">{{mediaItem.Title}}</h5>
-                <p class="card-text">
-                    <strong>Date added: </strong>{{mediaItem.DateAdded}}<br />
-                    <strong>Type: </strong>{{mediaItem.MediaType}}<br />
-                    <strong>Condition: </strong>{{mediaItem.MediaCondition}}
-                </p>
-                <a href="#" class="btn btn-primary">View Details</a>
+                <strong>Date added: </strong>{{mediaItem.DateAdded | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
+                <strong>Type: </strong>{{mediaItem.MediaType}}<br />
+                <strong>Condition: </strong>{{mediaItem.MediaCondition}}
+                <!--<a href="#" class="btn btn-primary">View Details</a>
                 <a ng-click="editMediaItem(mediaItem.Id)" class="btn btn-success">Edit</a>
-                <a ng-click="lendMediaItem(mediaItem.Id)" class="btn btn-light">Lend Item</a>
+                <a ng-click="lendMediaItem(mediaItem.Id)" class="btn btn-light">Lend Item</a>-->
                 <p class="delete-item">
                     <small><a ng-click="deleteMediaItem(mediaItem.Id)">Delete Item</a></small>
                 </p>
