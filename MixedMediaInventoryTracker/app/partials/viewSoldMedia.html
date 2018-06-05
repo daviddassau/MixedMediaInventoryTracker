@@ -1,3 +1,19 @@
 ﻿<div>
     <h1>{{message}}</h1>
 </div>
+
+<div class="row">
+    <div ng-repeat="item in items" class="col-sm-4 mb-4">
+        <div class="card">
+            <div class="card-header lent-item-title text-center">
+                {{item.Title}}
+            </div>
+            <div class="card-body">
+                <strong>Condition: </strong>{{item.MediaCondition}}<br />
+                <strong>Buyer: </strong>{{item.Buyer}}<br />
+                <strong>Amount: </strong>${{item.Amount}}<br />
+                <strong>Sold Date: </strong>{{item.SoldDate | amDateFormat:'dddd, MMMM Do YYYY'}}
+            </div>
+        </div>
+    </div>
+</div>
