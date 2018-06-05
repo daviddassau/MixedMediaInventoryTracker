@@ -1,5 +1,5 @@
-﻿app.controller("LendMedia", ["$scope", "$http", "$location", "$routeParams",
-    function ($scope, $http, $location, $routeParams) {
+﻿app.controller("LendMedia", ["$scope", "$http", "$location", "$routeParams", "toastr",
+    function ($scope, $http, $location, $routeParams, toastr) {
 
         $scope.message = "Lend Media Item";
 
@@ -21,6 +21,7 @@
         $scope.submitLendMediaItem = function (lendMediaItem) {
             lendMediaItem.MediaId = lendMediaItem.Media.Id;
             lendItem(lendMediaItem).then(function () {
+                toastr.success('Success!', 'You added that item to your lent items list!');
                 $location.path("/viewLentMedia");
             }).catch(function (error) {
                 console.log("error in submitLendMediaItem", error);
