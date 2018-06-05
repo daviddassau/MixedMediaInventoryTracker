@@ -193,8 +193,6 @@
     <Content Include="app\controllers\LendMedia.js" />
     <Content Include="app\controllers\MarkAsLent.js" />
     <Content Include="app\controllers\MarkAsSold.js" />
-    <Content Include="app\controllers\Modal.js" />
-    <Content Include="app\controllers\ModalCreateMedia.js" />
     <Content Include="app\controllers\SellMedia.js" />
     <Content Include="app\controllers\ViewLentMedia.js" />
     <Content Include="app\controllers\ViewMedia.js" />
@@ -206,7 +204,6 @@
     <Content Include="app\partials\lendMedia.html" />
     <Content Include="app\partials\markAsLent.html" />
     <Content Include="app\partials\markAsSold.html" />
-    <Content Include="app\partials\modalCreateMedia.html" />
     <Content Include="app\partials\sellMedia.html" />
     <Content Include="app\partials\viewLentMedia.html" />
     <Content Include="app\partials\viewMedia.html" />
@@ -227,15 +224,10 @@
     <Content Include="Content\fontawesome-all.min.css" />
     <Content Include="Content\fontawesome.css" />
     <Content Include="Content\fontawesome.min.css" />
-    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
-    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
-    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
-    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
-    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />

@@ -1,4 +1,4 @@
-﻿var app = angular.module("MixedMediaInventoryTracker", ["ngRoute"]);
+﻿var app = angular.module("MixedMediaInventoryTracker", ["ngRoute","toastr"]);
 
 app.config(["$routeProvider", function ($routeProvider) {
     $routeProvider.when("/",

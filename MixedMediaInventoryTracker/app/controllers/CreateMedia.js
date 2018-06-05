@@ -1,5 +1,5 @@
-﻿app.controller("CreateMedia", ["$scope", "$http", "$location",
-    function ($scope, $http, $location) {
+﻿app.controller("CreateMedia", ["$scope", "$http", "$location", "toastr",
+    function ($scope, $http, $location, toastr) {
 
         $scope.message = "Add New Media Item";
 
@@ -27,14 +27,13 @@
             return $http.post("api/media", newMediaItem);
         }
 
-        //$scope.submitNewMediaItem = function (newMediaItem) {
-        //    createNewMediaItem(newMediaItem).then(function () {
-        //        console.log(newMediaItem);
-        //        //$location.path("/viewMedia");
-        //    }).catch(function (error) {
-        //        console.log(error);
-        //    });
-        //}
+        $scope.submitNewMediaItem = function (newMediaItem) {
+            createNewMediaItem(newMediaItem).then(function () {
+                toastr.success('Hello world!', 'Toastr fun!');
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
 
     }
 ]);
