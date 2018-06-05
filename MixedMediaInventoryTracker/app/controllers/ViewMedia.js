@@ -1,5 +1,5 @@
-﻿app.controller("ViewMedia", ["$scope", "$http", "$location", "$routeParams",
-    function ($scope, $http, $location, $routeParams) {
+﻿app.controller("ViewMedia", ["$scope", "$http", "$location", "$routeParams", "moment",
+    function ($scope, $http, $location, $routeParams, moment) {
 
         $scope.message = "My Media";
 
