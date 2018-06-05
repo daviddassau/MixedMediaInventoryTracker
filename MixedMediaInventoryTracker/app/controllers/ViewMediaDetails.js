@@ -6,14 +6,14 @@
         $scope.itemDetails = {};
 
         function getItemDetails() {
-            $http.get(`api/media/${$routeParams.id}`).then(function (result) {
+            $http.get(`api/media/mediaItemDetails/${$routeParams.id}`).then(function (result) {
                 $scope.itemDetails = result.data;
             }).catch(function (error) {
                 console.log("error in getItemDetails", error);
             });
         }
 
-        console.log(getItemDetails());
+        getItemDetails();
 
     }
 ]);
