@@ -13,5 +13,6 @@ namespace MixedMediaInventoryTracker.Models
         public float? Amount { get; set; }
         public DateTime SoldDate { get; set; }
         public string Notes { get; set; }
+        public int MediaConditionId { get; set; }
     }
 }

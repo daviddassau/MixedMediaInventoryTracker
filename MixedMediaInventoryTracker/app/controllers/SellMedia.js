@@ -14,18 +14,18 @@
             $scope.items = results.data;
         });
 
-        //var lendItem = function myfunction(lendMediaItem) {
-        //    return $http.post("api/lentmedia", lendMediaItem);
-        //}
+        var sellItem = function myfunction(sellMediaItem) {
+            return $http.post("api/soldmedia", sellMediaItem);
+        }
 
-        //$scope.submitLendMediaItem = function (lendMediaItem) {
-        //    lendMediaItem.MediaId = lendMediaItem.Media.Id;
-        //    lendItem(lendMediaItem).then(function () {
-        //        $location.path("/viewLentMedia");
-        //    }).catch(function (error) {
-        //        console.log("error in submitLendMediaItem", error);
-        //    });
-        //}
+        $scope.submitSoldMediaItem = function (sellMediaItem) {
+            sellMediaItem.MediaId = sellMediaItem.Media.Id;
+            sellItem(sellMediaItem).then(function () {
+                $location.path("/viewSoldMedia");
+            }).catch(function (error) {
+                console.log("error in submitSoldMediaItem", error);
+            });
+        }
 
     }
 ]);
