@@ -16,13 +16,13 @@ namespace MixedMediaInventoryTracker.Services
             return new SqlConnection(ConfigurationManager.ConnectionStrings["MixedMediaInventoryTracker"].ConnectionString);
         }
 
-        public IEnumerable<LentMediaDto> GetAllLentMedia()
+        public IEnumerable<LentMediaModel> GetAllLentMedia()
         {
             using (var db = CreateConnection())
             {
                 db.Open();
 
-                var allLentMedia = db.Query<LentMediaDto>(@"SELECT l.Id, l.LendeeName, l.DateLent, l.Notes, m.Title, c.MediaCondition
+                var allLentMedia = db.Query<LentMediaModel>(@"SELECT l.Id, l.LendeeName, l.DateLent, l.Notes, m.Title, c.MediaCondition
                                                             FROM LentMedia l
                                                             JOIN Media m on m.Id = l.MediaId
                                                             JOIN MediaCondition c on c.Id = m.MediaConditionId");
