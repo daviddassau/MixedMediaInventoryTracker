@@ -9,9 +9,10 @@
                 {{item.Title}}
             </div>
             <div class="card-body">
-                <strong>Lent to: </strong>{{item.LendeeName}}<br />
                 <strong>Condition: </strong>{{item.MediaCondition}}<br />
-                <span><strong>Date Lent: </strong>{{item.DateLent | amDateFormat:'dddd, MMMM Do YYYY'}}</span>
+                <strong>Buyer: </strong>{{item.Buyer}}<br />
+                <strong>Amount: </strong>${{item.Amount}}<br />
+                <strong>Sold Date: </strong>{{item.SoldDate | amDateFormat:'dddd, MMMM Do YYYY'}}
             </div>
         </div>
     </div>
