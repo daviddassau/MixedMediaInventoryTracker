@@ -3,5 +3,29 @@
 
         $scope.message = "Lend Media Item";
 
+        $scope.lendMediaItem = {};
+        $scope.items = {};
+
+        $scope.selectMediaItem = function (item) {
+            $scope.lendMediaItem.mediaId = item.mediaId;
+        };
+
+        $http.get("api/media/mediaItemToLend").then(function (results) {
+            $scope.items = results.data;
+        });
+
+        var lendItem = function myfunction(lendMediaItem) {
+            return $http.post("api/lentmedia", lendMediaItem);
+        }
+
+        $scope.submitLendMediaItem = function (lendMediaItem) {
+            lendMediaItem.MediaId = lendMediaItem.Media.Id;
+            lendItem(lendMediaItem).then(function () {
+                $location.path("/viewLentMedia");
+            }).catch(function (error) {
+                console.log("error in submitLendMediaItem", error);
+            });
+        }
+
     }
 ]);

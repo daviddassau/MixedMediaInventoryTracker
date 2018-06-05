@@ -13,6 +13,7 @@
 
         $scope.lendMediaItem = function (id) {
             $location.path(`/viewLentMedia/${id}`);
+        }
 
         $scope.deleteMediaItem = function (id) {
             $location.path(`/viewMedia/delete/${id}`);

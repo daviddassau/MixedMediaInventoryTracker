@@ -1,3 +1,28 @@
 ﻿<div>
     <h1>{{message}}</h1>
 </div>
+
+<form name="lendMedia">
+    <div class="form-group">
+        <label for="selectMediaItem">Select The Media Item You'd Like To Lend</label>
+        <select class="form-control" id="selectMediaItem" ng-model="lendMediaItem.Media" required>
+            <option ng-repeat="item in items" ng-value="{{item}}">{{item.Title}}</option>
+        </select>
+    </div>
+    <div>
+        <p>Condition: {{lendMediaItem.Media.MediaCondition}}</p>
+    </div>
+    <div class="form-group">
+        <label for="lendeeName">Lendee Name</label>
+        <input class="form-control" id="lendeeName" type="text" placeholder="Lendee Name" ng-model="lendMediaItem.LendeeName" required>
+    </div>
+    <div class="form-group">
+        <label for="dateLent" class="control-label">Date Lent</label>
+        <input type="date" id="dateLent" class="form-control" placeholder="0000/00/00" ng-model="lendMediaItem.DateLent">
+    </div>
+    <div class="form-group mt-3">
+        <label for="itemNotes">Item Notes</label>
+        <textarea class="form-control" id="itemNotes" rows="3" ng-model="lendMediaItem.Notes"></textarea>
+    </div>
+    <button type="button" class="btn btn-primary" ng-click="submitLendMediaItem(lendMediaItem)">Lend Item</button>
+</form>

@@ -25,6 +25,9 @@ namespace MixedMediaInventoryTracker.Controllers
         [HttpPost, Route("")]
         public HttpResponseMessage LendMediaItem(LentMediaDto lentMedia)
         {
+            var mediaRepository = new MediaRepository();
+            var getSingleItem = mediaRepository.GetSingleItem(lentMedia.MediaId);
+            lentMedia.MediaConditionId = getSingleItem.MediaConditionId;
             var lentMediaRepository = new LentMediaRepository();
             var lendMedia = lentMediaRepository.LendMedia(lentMedia);
 
