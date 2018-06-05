@@ -86,5 +86,19 @@ namespace MixedMediaInventoryTracker
             }
         }
 
+        public IEnumerable<MediaItemToSellDto> MediaItemToSell()
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var itemToSell = db.Query<MediaItemToSellDto>(@"SELECT m.Id, m.Title, c.MediaCondition
+                                                                FROM Media m
+                                                                JOIN MediaCondition c on c.Id = m.MediaConditionId");
+
+                return itemToSell;
+            }
+        }
+
     }
 }

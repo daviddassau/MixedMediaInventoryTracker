@@ -39,13 +39,15 @@ namespace MixedMediaInventoryTracker.Services
                                                        ,[Buyer]
                                                        ,[Amount]
                                                        ,[SoldDate]
-                                                       ,[Notes])
+                                                       ,[Notes]
+                                                       ,[MediaConditionId])
                                                  VALUES
                                                        (@MediaId
                                                        ,@Buyer
                                                        ,@Amount
                                                        ,@SoldDate
-                                                       ,@Notes)", soldMedia);
+                                                       ,@Notes
+                                                       ,@MediaConditionId)", soldMedia);
 
                 return sellMediaItem == 1;
             }

@@ -5,28 +5,28 @@
 <form name="lendMedia">
     <div class="form-group">
         <label for="selectMediaItem">Select The Media Item You've Sold</label>
-        <select class="form-control" id="selectMediaItem" ng-model="lendMediaItem.Media" required>
+        <select class="form-control" id="selectMediaItem" ng-model="sellMediaItem.Media" required>
             <option ng-repeat="item in items" ng-value="{{item}}">{{item.Title}}</option>
         </select>
     </div>
     <div>
-        <p>Condition: {{lendMediaItem.Media.MediaCondition}}</p>
+        <p>Condition: {{sellMediaItem.Media.MediaCondition}}</p>
     </div>
     <div class="form-group">
         <label for="buyer">Buyer</label>
-        <input class="form-control" id="buyer" type="text" placeholder="Buyer" ng-model="lendMediaItem.LendeeName" required>
+        <input class="form-control" id="buyer" type="text" placeholder="Buyer" ng-model="sellMediaItem.Buyer" required>
     </div>
     <div class="form-group">
         <label for="amount">Amount</label>
-        <input class="form-control" id="amount" type="text" placeholder="Amount" ng-model="lendMediaItem.LendeeName" required>
+        <input class="form-control" id="amount" type="text" placeholder="Amount" ng-model="sellMediaItem.Amount" required>
     </div>
     <div class="form-group">
         <label for="dateSold" class="control-label">Date Sold</label>
-        <input type="date" id="dateSold" class="form-control" placeholder="0000/00/00" ng-model="lendMediaItem.DateLent">
+        <input type="date" id="dateSold" class="form-control" placeholder="0000/00/00" ng-model="sellMediaItem.SoldDate">
     </div>
     <div class="form-group mt-3">
         <label for="itemNotes">Item Notes</label>
-        <textarea class="form-control" id="itemNotes" rows="3" ng-model="lendMediaItem.Notes"></textarea>
+        <textarea class="form-control" id="itemNotes" rows="3" ng-model="sellMediaItem.Notes"></textarea>
     </div>
-    <button type="button" class="btn btn-primary" ng-click="submitLendMediaItem(lendMediaItem)">Sell Item</button>
+    <button type="button" class="btn btn-primary" ng-click="submitSoldMediaItem(sellMediaItem)">Sell Item</button>
 </form>
