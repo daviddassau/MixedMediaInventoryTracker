@@ -3,16 +3,16 @@
 
         $scope.message = "Sell Media Item";
 
-        //$scope.lendMediaItem = {};
-        //$scope.items = {};
+        $scope.sellMediaItem = {};
+        $scope.items = {};
 
-        //$scope.selectMediaItem = function (item) {
-        //    $scope.lendMediaItem.mediaId = item.mediaId;
-        //};
+        $scope.selectMediaItem = function (item) {
+            $scope.sellMediaItem.mediaId = item.mediaId;
+        };
 
-        //$http.get("api/media/mediaItemToLend").then(function (results) {
-        //    $scope.items = results.data;
-        //});
+        $http.get("api/media/mediaItemToSell").then(function (results) {
+            $scope.items = results.data;
+        });
 
         //var lendItem = function myfunction(lendMediaItem) {
         //    return $http.post("api/lentmedia", lendMediaItem);
