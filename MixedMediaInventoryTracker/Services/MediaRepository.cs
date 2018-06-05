@@ -86,5 +86,10 @@ namespace MixedMediaInventoryTracker
             }
         }
 
+        public IEnumerable<MediaItemToSellDto> MediaItemToSell()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
