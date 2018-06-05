@@ -1,5 +1,5 @@
-﻿app.controller("SellMedia", ["$scope", "$http", "$location", "$routeParams",
-    function ($scope, $http, $location, $routeParams) {
+﻿app.controller("SellMedia", ["$scope", "$http", "$location", "$routeParams", "toastr",
+    function ($scope, $http, $location, $routeParams, toastr) {
 
         $scope.message = "Sell Media Item";
 
