@@ -4,7 +4,7 @@
         $scope.message = "Lent Media Items";
 
         $http.get("/api/lentmedia").then(function (results) {
-            $scope.lentMediaItems = results.data;
+            $scope.items = results.data;
         });
 
     }
