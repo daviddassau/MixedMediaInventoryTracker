@@ -70,5 +70,11 @@ namespace MixedMediaInventoryTracker.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, mediaItemToLend);
         }
+
+        [HttpGet, Route("mediaItemToSell")]
+        public HttpResponseMessage GetMediaItemToSell()
+        {
+
+        }
     }
 }
