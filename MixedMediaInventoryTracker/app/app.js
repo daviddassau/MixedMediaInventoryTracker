@@ -13,8 +13,8 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         .when("/viewMedia/:id",
         {
-            templateUrl: "/app/partials/viewMedia.html",
-            controller: "ViewMedia"
+            templateUrl: "/app/partials/viewMediaDetails.html",
+            controller: "ViewMediaDetails"
         })
         .when("/viewLentMedia",
         {

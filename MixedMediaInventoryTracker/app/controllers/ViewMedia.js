@@ -8,7 +8,7 @@
         });
 
         $scope.viewMediaItemDetails = function (id) {
-            $location.path(`/view`);
+            $location.path(`/viewMedia/${id}`);
         }
 
         $scope.editMediaItem = function (id) {
