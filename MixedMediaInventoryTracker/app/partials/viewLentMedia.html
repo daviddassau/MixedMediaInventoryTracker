@@ -1,3 +1,18 @@
 ﻿<div>
     <h1>{{message}}</h1>
 </div>
+
+<div class="row">
+    <div ng-repeat="item in items" class="col-sm-4 mb-4">
+        <div class="card">
+            <div class="card-header lent-item-title text-center">
+                {{item.Title}}
+            </div>
+            <div class="card-body">
+                <strong>Lent to: </strong>{{item.LendeeName}}<br />
+                <strong>Condition: </strong>{{item.MediaCondition}}<br />
+                <strong>Date Lent: </strong>{{item.DateLent}}
+            </div>
+        </div>
+    </div>
+</div>

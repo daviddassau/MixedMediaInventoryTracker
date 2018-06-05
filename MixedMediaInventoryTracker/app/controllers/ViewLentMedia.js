@@ -3,6 +3,10 @@
 
         $scope.message = "Lent Media Items";
 
+        $http.get("/api/lentmedia").then(function (results) {
+            $scope.items = results.data;
+        });
+
     }
 ]);
 
