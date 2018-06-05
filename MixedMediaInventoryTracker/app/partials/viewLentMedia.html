@@ -1,3 +1,24 @@
 ﻿<div>
     <h1>{{message}}</h1>
 </div>
+
+<div class="row">
+    <div ng-repeat="mediaItem in lentMediaItems" class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{mediaItem.MediaId}}</h5>
+                <p class="card-text">
+                    <strong>Lent to: </strong>{{mediaItem.DateAdded}}<br />
+                    <strong>Condition: </strong>{{mediaItem.MediaType}}<br />
+                    <strong>Date Lent: </strong>{{mediaItem.MediaCondition}}
+                </p>
+                <a href="#" class="btn btn-primary">View Details</a>
+                <a ng-click="editMediaItem(mediaItem.Id)" class="btn btn-success">Edit</a>
+                <a ng-click="lendMediaItem(mediaItem.Id)" class="btn btn-light">Lend Item</a>
+                <p class="delete-item">
+                    <small><a ng-click="deleteMediaItem(mediaItem.Id)">Delete Item</a></small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

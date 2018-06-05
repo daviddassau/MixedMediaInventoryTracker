@@ -164,6 +164,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LentMediaDto.cs" />
+    <Compile Include="Models\LentMediaModel.cs" />
     <Compile Include="Models\MediaConditionDto.cs" />
     <Compile Include="Models\MediaConditionModel.cs" />
     <Compile Include="Models\MediaDto.cs" />
