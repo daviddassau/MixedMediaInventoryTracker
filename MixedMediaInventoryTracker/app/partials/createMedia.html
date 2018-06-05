@@ -41,7 +41,7 @@
         <textarea class="form-control" id="itemNotes" rows="3" ng-model="newMediaItem.Notes"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary" ng-click="launchCreateMediaModal('partials/modalCreateMedia.html','ModalCreateMedia')" ng-controller="Modal">Submit</button>
+    <button type="button" class="btn btn-success" ng-click="submitNewMediaItem(newMediaItem)">Create Item</button>
     <button type="button" class="btn btn-primary" ng-click="viewMediaItems()">View My Media Items <i class="fas fa-arrow-right"></i></button>
 
 </form>
