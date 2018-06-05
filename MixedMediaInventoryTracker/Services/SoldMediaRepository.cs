@@ -22,9 +22,9 @@ namespace MixedMediaInventoryTracker.Services
             {
                 db.Open();
 
-                var allSoldMedia = db.Query<SoldMediaModel>(@"SELECT l.Id, l.LendeeName, l.DateLent, l.Notes, m.Title, c.MediaCondition
-                                                              FROM LentMedia l
-                                                              JOIN Media m on m.Id = l.MediaId
+                var allSoldMedia = db.Query<SoldMediaModel>(@"SELECT s.Id, s.Buyer, s.Amount, s.SoldDate, s.Notes, m.Title, c.MediaCondition
+                                                              FROM SoldMedia s
+                                                              JOIN Media m on m.Id = s.MediaId
                                                               JOIN MediaCondition c on c.Id = m.MediaConditionId");
 
                 return allSoldMedia;
