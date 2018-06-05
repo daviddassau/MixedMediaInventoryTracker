@@ -29,7 +29,7 @@
 
         $scope.submitNewMediaItem = function (newMediaItem) {
             createNewMediaItem(newMediaItem).then(function () {
-                toastr.success('Success!', 'You added that item to your media library!');
+                toastr.success('Success!', 'You added that item to your lent items list!');
                 $location.path("/viewMedia");
             }).catch(function (error) {
                 console.log(error);

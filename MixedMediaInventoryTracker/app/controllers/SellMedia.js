@@ -21,6 +21,7 @@
         $scope.submitSoldMediaItem = function (sellMediaItem) {
             sellMediaItem.MediaId = sellMediaItem.Media.Id;
             sellItem(sellMediaItem).then(function () {
+                toastr.success('Success!', 'You sold that item.');
                 $location.path("/viewSoldMedia");
             }).catch(function (error) {
                 console.log("error in submitSoldMediaItem", error);
