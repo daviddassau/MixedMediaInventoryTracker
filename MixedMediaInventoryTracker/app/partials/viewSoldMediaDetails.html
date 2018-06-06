@@ -6,14 +6,14 @@
     <div class="col-sm-12 mb-4">
         <div class="card">
             <div class="card-header item-detail-title text-center">
-                {{itemDetails.Title}}
+                {{soldItemDetails.Title}}
             </div>
             <div class="card-body">
-                <strong>Buyer Name: </strong>{{itemDetails.Buyer}}<br />
-                <strong>Amount: </strong>${{itemDetails.Amount}}<br />
-                <strong>Condition: </strong>{{itemDetails.MediaCondition}}<br />
-                <strong>Date Sold: </strong>{{itemDetails.SoldDate | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
-                <strong>Notes: </strong>{{itemDetails.Notes}}
+                <strong>Buyer Name: </strong>{{soldItemDetails.Buyer}}<br />
+                <strong>Amount: </strong>${{soldItemDetails.Amount}}<br />
+                <strong>Condition: </strong>{{soldItemDetails.MediaCondition}}<br />
+                <strong>Date Sold: </strong>{{soldItemDetails.SoldDate | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
+                <strong>Notes: </strong>{{soldItemDetails.Notes}}
             </div>
         </div>
     </div>

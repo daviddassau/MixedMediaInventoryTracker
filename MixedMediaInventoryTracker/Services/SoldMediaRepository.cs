@@ -40,7 +40,8 @@ namespace MixedMediaInventoryTracker.Services
                 var singleSoldItemDetails = db.QueryFirstOrDefault<SoldMediaItemDetailsModel>(@"SELECT s.Id, s.Buyer, s.Amount, s.SoldDate, s.Notes, m.Title, c.MediaCondition
                                                                                                 FROM SoldMedia s
                                                                                                 JOIN Media m on m.Id = s.MediaId
-                                                                                                JOIN MediaCondition c on c.Id = m.MediaConditionId", new { id });
+                                                                                                JOIN MediaCondition c on c.Id = m.MediaConditionId
+                                                                                                WHERE s.Id = @Id", new { id });
 
                 return singleSoldItemDetails;
             }
