@@ -177,6 +177,7 @@
     <Compile Include="Models\MediaTypeDto.cs" />
     <Compile Include="Models\MediaTypeModel.cs" />
     <Compile Include="Models\SoldMediaDto.cs" />
+    <Compile Include="Models\SoldMediaItemDetailsModel.cs" />
     <Compile Include="Models\SoldMediaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LentMediaRepository.cs" />

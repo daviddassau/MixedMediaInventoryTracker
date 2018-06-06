@@ -31,6 +31,16 @@ namespace MixedMediaInventoryTracker.Services
             }
         }
 
+        public SoldMediaItemDetailsModel ItemDetails(int id)
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+
+            }
+        }
+
         public bool SellMedia(SoldMediaDto soldMedia)
         {
             using (var db = CreateConnection())
