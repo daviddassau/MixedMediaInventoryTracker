@@ -67,7 +67,19 @@ namespace MixedMediaInventoryTracker.Services
                                                        ,@Notes
                                                        ,@MediaConditionId)", soldMedia);
 
-                return sellMediaItem == 1;
+                var markItemAsSold = 0;
+
+                if (sellMediaItem == 1)
+                {
+                    markItemAsSold = db.Execute(@"UPDATE Media
+                                                  SET IsSold = 1
+                                                  WHERE Id = @id", new
+                                                  {
+                                                    id = soldMedia.MediaId
+                                                  });
+                }
+
+                return sellMediaItem == 1 && markItemAsSold == 1;
             }
         }
     }
