@@ -3,11 +3,11 @@
 
         $scope.message = "Sold Media Details";
 
-        $scope.soldItemDetails = {};
+        $scope.itemDetails = {};
 
         function getItemDetails() {
             $http.get(`api/soldmedia/soldMediaItemDetails/${$routeParams.id}`).then(function (result) {
-                $scope.soldItemDetails = result.data;
+                $scope.itemDetails = result.data;
             }).catch(function (error) {
                 console.log("error in getItemDetails", error);
             });
