@@ -197,6 +197,7 @@
     <Content Include="app\controllers\MarkAsSold.js" />
     <Content Include="app\controllers\SellMedia.js" />
     <Content Include="app\controllers\ViewLentMedia.js" />
+    <Content Include="app\controllers\ViewLentMediaDetails.js" />
     <Content Include="app\controllers\ViewMedia.js" />
     <Content Include="app\controllers\ViewMediaDetails.js" />
     <Content Include="app\controllers\ViewSoldMedia.js" />
@@ -209,6 +210,7 @@
     <Content Include="app\partials\markAsSold.html" />
     <Content Include="app\partials\sellMedia.html" />
     <Content Include="app\partials\viewLentMedia.html" />
+    <Content Include="app\partials\viewLentMediaDetails.html" />
     <Content Include="app\partials\viewMedia.html" />
     <Content Include="app\partials\viewMediaDetails.html" />
     <Content Include="app\partials\viewSoldMedia.html" />

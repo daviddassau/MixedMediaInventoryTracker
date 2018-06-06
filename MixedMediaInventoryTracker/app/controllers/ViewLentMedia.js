@@ -7,6 +7,13 @@
             $scope.items = results.data;
         });
 
+        $scope.viewLentItemDetails = function (id) {
+            $location.path(`/viewLentMedia/details/${id}`);
+        }
+
+        $scope.viewMediaItemDetails = function (id) {
+            $location.path(`/viewMedia/${id}`);
+        }
     }
 ]);
 

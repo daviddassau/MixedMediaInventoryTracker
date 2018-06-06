@@ -11,7 +11,10 @@
             <div class="card-body">
                 <strong>Lent to: </strong>{{item.LendeeName}}<br />
                 <strong>Condition: </strong>{{item.MediaCondition}}<br />
-                <span><strong>Date Lent: </strong>{{item.DateLent | amDateFormat:'dddd, MMMM Do YYYY'}}</span>
+                <strong>Date Lent: </strong>{{item.DateLent | amDateFormat:'dddd, MMMM Do YYYY'}}
+                <p class="mt-3">
+                    <button type="button" class="btn btn-outline-info btn-md btn-block" ng-click="viewLentItemDetails(item.Id)">View Details</button>
+                </p>
             </div>
         </div>
     </div>
