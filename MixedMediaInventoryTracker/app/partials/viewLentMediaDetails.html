@@ -9,12 +9,9 @@
                 {{itemDetails.Title}}
             </div>
             <div class="card-body">
-                <strong>Type: </strong>{{itemDetails.MediaType}}<br />
+                <strong>Lendee Name: </strong>{{itemDetails.LendeeName}}<br />
                 <strong>Condition: </strong>{{itemDetails.MediaCondition}}<br />
-                <strong>Date added: </strong>{{itemDetails.DateAdded | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
-                <strong>Date Purchased: </strong>{{itemDetails.DatePurchased | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
-                <strong>Lent Out: </strong>{{itemDetails.IsLentOut}}<br />
-                <strong>Sold: </strong>{{itemDetails.IsSold}}<br />
+                <strong>Date Lent: </strong>{{itemDetails.DateLent | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
                 <strong>Notes: </strong>{{itemDetails.Notes}}
             </div>
         </div>

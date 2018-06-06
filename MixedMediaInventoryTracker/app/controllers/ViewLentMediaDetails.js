@@ -5,15 +5,15 @@
 
         $scope.itemDetails = {};
 
-        //function getItemDetails() {
-        //    $http.get(`api/media/mediaItemDetails/${$routeParams.id}`).then(function (result) {
-        //        $scope.itemDetails = result.data;
-        //    }).catch(function (error) {
-        //        console.log("error in getItemDetails", error);
-        //    });
-        //}
+        function getItemDetails() {
+            $http.get(`api/lentmedia/lentMediaItemDetails/${$routeParams.id}`).then(function (result) {
+                $scope.itemDetails = result.data;
+            }).catch(function (error) {
+                console.log("error in getItemDetails", error);
+            });
+        }
 
-        //getItemDetails();
+        getItemDetails();
 
     }
 ]);
