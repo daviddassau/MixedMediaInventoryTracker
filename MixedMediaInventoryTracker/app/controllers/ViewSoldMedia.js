@@ -7,6 +7,10 @@
             $scope.items = results.data;
         });
 
+        $scope.viewSoldItemDetails = function (id) {
+            $location.path(`/viewSoldMedia/details/${id}`);
+        }
+
     }
 ]);
 
