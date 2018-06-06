@@ -64,5 +64,19 @@ namespace MixedMediaInventoryTracker.Services
                 return lendMediaItem == 1 && markItemAsLent == 1;
             }
         }
+
+        public LentMediaItemDetailsModel ItemDetails(int id)
+        {
+            using (var db = CreateConnection())
+            {
+                var singleLentItemDetails = db.QueryFirstOrDefault<LentMediaItemDetailsModel>(@"SELECT l.Id, l.LendeeName, l.DateLent, l.Notes, m.Title, c.MediaCondition
+                                                                                                FROM LentMedia l
+                                                                                                JOIN Media m on m.Id = l.MediaId
+                                                                                                JOIN MediaCondition c on c.Id = m.MediaConditionId
+                                                                                                WHERE l.Id = @Id", new { id });
+
+                return singleLentItemDetails;
+            }
+        }
     }
 }
