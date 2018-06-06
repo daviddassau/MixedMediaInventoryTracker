@@ -13,6 +13,9 @@
                 <strong>Buyer: </strong>{{item.Buyer}}<br />
                 <strong>Amount: </strong>${{item.Amount}}<br />
                 <strong>Sold Date: </strong>{{item.SoldDate | amDateFormat:'dddd, MMMM Do YYYY'}}
+                <p class="mt-3">
+                    <button type="button" class="btn btn-outline-info btn-md btn-block" ng-click="viewSoldItemDetails(item.Id)">View Details</button>
+                </p>
             </div>
         </div>
     </div>

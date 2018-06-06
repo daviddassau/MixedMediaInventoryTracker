@@ -17,11 +17,17 @@
         @Html.ActionLink("Mixed Media Inventory Tracker", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a ng-href="#!/viewMedia" class="nav-link">My Media <span class="sr-only">(current)</span></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Media
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" ng-href="#!/viewMedia">View My Media</a>
+                        <a class="dropdown-item" ng-href="#!/createMedia">Add New Media</a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" ng-href="#!/viewLentMedia" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Lent Media
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -30,16 +36,13 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" ng-href="#!/viewSoldMedia" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sold Media
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" ng-href="#!/viewSoldMedia">View Sold Media</a>
                         <a class="dropdown-item" ng-href="#!/sellMedia">Sell Media</a>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a ng-href="#!/createMedia" class="nav-link">Add New Media</a>
                 </li>
             </ul>
         </div>

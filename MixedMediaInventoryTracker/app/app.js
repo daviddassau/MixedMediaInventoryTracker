@@ -41,6 +41,11 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/app/partials/viewSoldMedia.html",
             controller: "ViewSoldMedia"
         })
+        .when("/viewSoldMedia/details/:id",
+        {
+            templateUrl: "/app/partials/viewSoldMediaDetails.html",
+            controller: "ViewSoldMediaDetails"
+        })
         .when("/sellMedia",
         {
             templateUrl: "/app/partials/sellMedia.html",

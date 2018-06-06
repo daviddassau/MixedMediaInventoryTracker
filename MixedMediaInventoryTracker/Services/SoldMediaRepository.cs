@@ -31,6 +31,21 @@ namespace MixedMediaInventoryTracker.Services
             }
         }
 
+        public SoldMediaItemDetailsModel ItemDetails(int id)
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var singleSoldItemDetails = db.QueryFirstOrDefault<SoldMediaItemDetailsModel>(@"SELECT s.Id, s.Buyer, s.Amount, s.SoldDate, s.Notes, m.Title, c.MediaCondition
+                                                                                                FROM SoldMedia s
+                                                                                                JOIN Media m on m.Id = s.MediaId
+                                                                                                JOIN MediaCondition c on c.Id = m.MediaConditionId", new { id });
+
+                return singleSoldItemDetails;
+            }
+        }
+
         public bool SellMedia(SoldMediaDto soldMedia)
         {
             using (var db = CreateConnection())

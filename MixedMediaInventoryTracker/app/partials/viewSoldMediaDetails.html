@@ -1,0 +1,20 @@
+﻿<div>
+    <h1>{{message}}</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 mb-4">
+        <div class="card">
+            <div class="card-header item-detail-title text-center">
+                {{itemDetails.Title}}
+            </div>
+            <div class="card-body">
+                <strong>Buyer Name: </strong>{{itemDetails.Buyer}}<br />
+                <strong>Amount: </strong>${{itemDetails.Amount}}<br />
+                <strong>Condition: </strong>{{itemDetails.MediaCondition}}<br />
+                <strong>Date Sold: </strong>{{itemDetails.SoldDate | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
+                <strong>Notes: </strong>{{itemDetails.Notes}}
+            </div>
+        </div>
+    </div>
+</div>
