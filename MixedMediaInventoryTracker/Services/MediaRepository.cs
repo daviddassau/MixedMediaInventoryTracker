@@ -44,7 +44,7 @@ namespace MixedMediaInventoryTracker
                 return createMediaItem == 1;
             }
         }
-        
+
         public IEnumerable<MediaDto> GetAllMedia()
         {
             using (var db = CreateConnection())
@@ -97,6 +97,22 @@ namespace MixedMediaInventoryTracker
                                                                 JOIN MediaCondition c on c.Id = m.MediaConditionId");
 
                 return itemToSell;
+            }
+        }
+
+        public MediaItemDetailsModel ItemDetails(int id)
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var singleItemDetails = db.QueryFirstOrDefault<MediaItemDetailsModel>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, c.MediaCondition, t.MediaType
+                                                                                        FROM Media m
+                                                                                        JOIN MediaCondition c on c.Id = m.MediaConditionId
+                                                                                        JOIN MediaType t on t.Id = m.MediaTypeId
+                                                                                        WHERE m.Id = @Id", new { id });
+
+                return singleItemDetails;
             }
         }
 

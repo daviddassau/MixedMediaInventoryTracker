@@ -9,12 +9,13 @@
                 {{mediaItem.Title}}
             </div>
             <div class="card-body">
-                <strong>Date added: </strong>{{mediaItem.DateAdded | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
                 <strong>Type: </strong>{{mediaItem.MediaType}}<br />
-                <strong>Condition: </strong>{{mediaItem.MediaCondition}}
-                <!--<a href="#" class="btn btn-primary">View Details</a>
-                <a ng-click="editMediaItem(mediaItem.Id)" class="btn btn-success">Edit</a>
-                <a ng-click="lendMediaItem(mediaItem.Id)" class="btn btn-light">Lend Item</a>-->
+                <strong>Condition: </strong>{{mediaItem.MediaCondition}}<br />
+                <strong>Date added: </strong>{{mediaItem.DateAdded | amDateFormat:'dddd, MMMM Do YYYY'}}
+                <p class="mt-3">
+                    <button type="button" class="btn btn-outline-info btn-md btn-block" ng-click="viewMediaItemDetails(mediaItem.Id)">View Details</button>
+                    <button type="button" class="btn btn-outline-warning btn-md btn-block" ng-click="editMediaItem(mediaItem.Id)">Edit</button>
+                </p>
                 <p class="delete-item">
                     <small><a ng-click="deleteMediaItem(mediaItem.Id)">Delete Item</a></small>
                 </p>

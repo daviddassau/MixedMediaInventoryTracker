@@ -7,6 +7,10 @@
             $scope.mediaItems = results.data;
         });
 
+        $scope.viewMediaItemDetails = function (id) {
+            $location.path(`/viewMedia/${id}`);
+        }
+
         $scope.editMediaItem = function (id) {
             $location.path(`/viewMedia/edit/${id}`);
         };
