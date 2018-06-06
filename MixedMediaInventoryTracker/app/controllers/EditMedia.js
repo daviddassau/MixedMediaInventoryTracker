@@ -1,5 +1,5 @@
-﻿app.controller("EditMedia", ["$scope", "$http", "$location", "$routeParams",
-    function ($scope, $http, $location, $routeParams) {
+﻿app.controller("EditMedia", ["$scope", "$http", "$location", "$routeParams", "toastr",
+    function ($scope, $http, $location, $routeParams, toastr) {
 
         $scope.message = "Edit Media";
 
@@ -24,7 +24,8 @@
 
         $scope.submitEditedMediaItem = function () {
             $http.put(`api/media/${$routeParams.id}`, $scope.mediaItem).then(function () {
-                console.log(mediaItem);
+                toastr.success('Success!', 'You revised that item!');
+                $location.path("/viewMedia");
             }).catch(function (error) {
                 console.log("error in submitEditedMediaItem", error);
             });
