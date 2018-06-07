@@ -95,7 +95,8 @@ namespace MixedMediaInventoryTracker
 
                 var itemToSell = db.Query<MediaItemToSellDto>(@"SELECT m.Id, m.Title, c.MediaCondition
                                                                 FROM Media m
-                                                                JOIN MediaCondition c on c.Id = m.MediaConditionId");
+                                                                JOIN MediaCondition c on c.Id = m.MediaConditionId
+                                                                WHERE m.IsSold = 0");
 
                 return itemToSell;
             }

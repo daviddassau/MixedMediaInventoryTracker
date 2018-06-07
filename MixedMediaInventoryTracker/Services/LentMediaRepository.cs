@@ -54,11 +54,12 @@ namespace MixedMediaInventoryTracker.Services
 
                 if (lendMediaItem == 1)
                 {
-                    markItemAsLent = db.Execute(@"UPDATE Media SET IsLentOut = 1 WHERE Id = @id",
-                                                              new
-                                                              {
-                                                                  id = lentMedia.MediaId
-                                                              }); 
+                    markItemAsLent = db.Execute(@"UPDATE Media 
+                                                  SET IsLentOut = 1 
+                                                  WHERE Id = @id", new
+                                                  {
+                                                    id = lentMedia.MediaId
+                                                  }); 
                 }
 
                 return lendMediaItem == 1 && markItemAsLent == 1;
