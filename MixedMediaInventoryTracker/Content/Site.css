@@ -29,3 +29,12 @@ textarea {
     font-weight: 500;
     font-size: 2.0rem;
 }
+
+/*Sidebar Nav*/
+body, html {
+    height: 100%;
+}
+
+.navbar-brand {
+    font-size: 1.15rem;
+}
