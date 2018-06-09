@@ -6,7 +6,7 @@
     <div class="form-group">
         <label for="selectMediaItem">Select The Media Item You'd Like To Lend</label>
         <select class="form-control" id="selectMediaItem" ng-model="lendMediaItem.Media" required>
-            <option ng-repeat="item in items" ng-value="{{item}}">{{item.Title}}</option>
+            <option ng-repeat="item in items | orderBy: 'Title'" ng-value="{{item}}">{{item.Title}}</option>
         </select>
     </div>
     <div>
