@@ -3,7 +3,7 @@
 </div>
 
 <div class="row">
-    <div ng-repeat="mediaItem in mediaItems" class="col-sm-4 mb-4">
+    <div ng-repeat="mediaItem in mediaItems | orderBy: 'Title'" class="col-sm-4 mb-4">
         <div class="card">
             <div class="card-header lent-item-title text-center">
                 {{mediaItem.Title}}
