@@ -10,51 +10,51 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body ng-app="MixedMediaInventoryTracker">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        @Html.ActionLink("Mixed Media Inventory Tracker", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        My Media
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" ng-href="#!/viewMedia">View My Media</a>
-                        <a class="dropdown-item" ng-href="#!/createMedia">Add New Media</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Lent Media
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" ng-href="#!/viewLentMedia">View Lent Media</a>
-                        <a class="dropdown-item" ng-href="#!/lendMedia">Lend Media</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Sold Media
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" ng-href="#!/viewSoldMedia">View Sold Media</a>
-                        <a class="dropdown-item" ng-href="#!/sellMedia">Sell Media</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
     
-    <div class="container body-content">
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <aside class="col-12 col-md-2 p-0 bg-dark">
+                <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+                    <div class="collapse navbar-collapse">
+                        <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                            <li class="nav-item">
+                                @Html.ActionLink("Mixed Media Inventory Tracker", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-0" ng-href="#!/viewMedia"><i class="far fa-user-circle fa-lg"></i> <span class="d-none d-md-inline">My Media</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-0" ng-href="#!/createMedia"><i class="fas fa-plus fa-lg"></i> <span class="d-none d-md-inline">Add New Media</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-0" ng-href="#!/viewLentMedia"><i class="fas fa-user-friends fa-md"></i> <span class="d-none d-md-inline">View Lent Media</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-0" ng-href="#!/lendMedia"><i class="far fa-share-square fa-md"></i> <span class="d-none d-md-inline">Lend Media</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-0" ng-href="#!/viewSoldMedia"><i class="far fa-money-bill-alt fa-md"></i> <span class="d-none d-md-inline">View Sold Media</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-0" ng-href="#!/sellMedia"><i class="fas fa-dollar-sign fa-lg"></i> <span class="d-none d-md-inline">Sell Media</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+            <main class="col bg-faded py-3 body-content">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    @*<div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Mixed Media Inventory Tracker</p>
         </footer>
-    </div>
+    </div>*@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
