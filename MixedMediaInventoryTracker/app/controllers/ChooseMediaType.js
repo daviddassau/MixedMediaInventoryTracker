@@ -8,7 +8,11 @@
         });
 
         $scope.chooseMediaType = function (id) {
-            $location.path(`/createMedia/${id}`);
+            if (id <= 3) {
+                $location.path(`/createMedia/music/${id}`);
+            } else
+                $location.path(`/createMedia/${id}`);
+            
         };
 
     }

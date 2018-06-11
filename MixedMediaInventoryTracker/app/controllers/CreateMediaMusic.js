@@ -1,4 +1,4 @@
-﻿app.controller("CreateMedia", ["$scope", "$http", "$location", "$routeParams", "toastr",
+﻿app.controller("CreateMediaMusic", ["$scope", "$http", "$location", "$routeParams", "toastr",
     function ($scope, $http, $location, $routeParams, toastr) {
 
         $scope.message = "Add New Media Item";

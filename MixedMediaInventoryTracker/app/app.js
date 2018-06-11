@@ -21,6 +21,11 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/app/partials/createMedia.html",
             controller: "CreateMedia"
         })
+        .when("/createMedia/music/:id",
+        {
+            templateUrl: "/app/partials/createMediaMusic.html",
+            controller: "CreateMediaMusic"
+        })
         .when("/viewMedia/:id",
         {
             templateUrl: "/app/partials/viewMediaDetails.html",
