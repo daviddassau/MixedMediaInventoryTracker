@@ -1,0 +1,5 @@
+- [ ] Can you visit all pages?
+- [ ] Can you see all of your media items, and are they in alphabetical order?
+- [ ] Can you search for a music item, and add it to your inventory?
+- [ ] Can you search for a music item, and add it to your inventory?
+- [ ] Can you search for a book item, and add it to your inventory?

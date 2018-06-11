@@ -1,0 +1,14 @@
+﻿<div>
+    <h1>{{message}}</h1>
+</div>
+
+<div class="row">
+    <div ng-repeat="mediaType in mediaTypes" class="col-sm-4 mb-4">
+        <div>
+            <div class="text-center">
+                <p><a ng-click="chooseMediaType(mediaType.Id)"><img ng-src="../..{{mediaType.Image}}" alt="Media Type Icons" width="150" height="150" /></a></p>
+                <h3><a ng-click="chooseMediaType(mediaType.Id)">{{mediaType.MediaType}}</a></h3>
+            </div>
+        </div>
+    </div>
+</div>

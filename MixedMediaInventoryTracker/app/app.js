@@ -11,6 +11,31 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/app/partials/viewMedia.html",
             controller: "ViewMedia"
         })
+        .when("/chooseMediaType",
+        {
+            templateUrl: "/app/partials/chooseMediaType.html",
+            controller: "ChooseMediaType"
+        })
+        .when("/createMedia/:id",
+        {
+            templateUrl: "/app/partials/createMedia.html",
+            controller: "CreateMedia"
+        })
+        .when("/createMedia/music/:id",
+        {
+            templateUrl: "/app/partials/createMediaMusic.html",
+            controller: "CreateMediaMusic"
+        })
+        .when("/createMedia/movies/:id",
+        {
+            templateUrl: "/app/partials/createMediaMovies.html",
+            controller: "CreateMediaMovies"
+        })
+        .when("/createMedia/books/:id",
+        {
+            templateUrl: "/app/partials/createMediaBooks.html",
+            controller: "CreateMediaBooks"
+        })
         .when("/viewMedia/:id",
         {
             templateUrl: "/app/partials/viewMediaDetails.html",
@@ -50,11 +75,6 @@ app.config(["$routeProvider", function ($routeProvider) {
         {
             templateUrl: "/app/partials/sellMedia.html",
             controller: "SellMedia"
-        })
-        .when("/createMedia",
-        {
-            templateUrl: "/app/partials/createMedia.html",
-            controller: "CreateMedia"
         })
         .when("/viewMedia/edit/:id",
         {

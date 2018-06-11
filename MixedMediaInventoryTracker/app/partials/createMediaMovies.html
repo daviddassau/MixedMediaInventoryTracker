@@ -10,21 +10,21 @@
 
         <form name="createMediaItem">
             <div class="form-group mt-3">
-                <label for="selectMediaCondition">Select The Media's Condition</label>
+                <label for="selectMediaCondition">Select The Movie's Condition</label>
                 <select class="form-control" id="selectMediaCondition" ng-model="newMediaItem.MediaConditionId" required>
                     <option ng-repeat="condition in conditions" value="{{condition.Id}}">{{condition.MediaCondition}}</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="title">Title of Media</label>
+                <label for="title">Title of Movie</label>
                 <input class="form-control" id="title" type="text" placeholder="" ng-model="newMediaItem.Title" required>
             </div>
             <div class="form-group">
-                <label for="datePurchased" class="control-label">Date Purchased</label>
+                <label for="datePurchased" class="control-label">Date Purchased (if applicable)</label>
                 <input type="date" id="datePurchased" class="form-control" placeholder="0000/00/00" ng-model="newMediaItem.DatePurchased">
             </div>
             <div class="form-group mt-3">
-                <label for="itemNotes">Item Notes</label>
+                <label for="itemNotes">Notes for Movie</label>
                 <textarea class="form-control" id="itemNotes" rows="3" ng-model="newMediaItem.Notes"></textarea>
             </div>
 

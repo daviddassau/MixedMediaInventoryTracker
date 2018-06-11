@@ -27,5 +27,18 @@ namespace MixedMediaInventoryTracker.Services
                 return allMediaTypes;
             }
         }
+
+        public MediaTypeDto SingleMediaType(int id)
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var singleMediaType = db.QueryFirstOrDefault<MediaTypeDto>(@"SELECT * FROM MediaType WHERE Id = @Id", new { id });
+
+                return singleMediaType;
+            }
+        }
+        
     }
 }
