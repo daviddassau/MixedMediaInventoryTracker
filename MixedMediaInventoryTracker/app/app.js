@@ -16,10 +16,10 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/app/partials/chooseMediaType.html",
             controller: "ChooseMediaType"
         })
-        .when("/chooseMediaType/:id",
+        .when("/createMedia/:id",
         {
-            templateUrl: "/app/partials/chooseMediaType.html",
-            controller: "ChooseMediaType"
+            templateUrl: "/app/partials/createMedia.html",
+            controller: "CreateMedia"
         })
         .when("/viewMedia/:id",
         {
@@ -60,11 +60,6 @@ app.config(["$routeProvider", function ($routeProvider) {
         {
             templateUrl: "/app/partials/sellMedia.html",
             controller: "SellMedia"
-        })
-        .when("/createMedia",
-        {
-            templateUrl: "/app/partials/createMedia.html",
-            controller: "CreateMedia"
         })
         .when("/viewMedia/edit/:id",
         {

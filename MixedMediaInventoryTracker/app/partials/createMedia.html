@@ -2,7 +2,21 @@
     <h1>{{message}}</h1>
 </div>
 
-<form name="createMediaItem">
+<div>
+
+</div>
+
+<form>
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+            <label for="validationDefault03">Enter the title of your media item</label>
+            <input type="text" class="form-control col-md-8" id="validationDefault03" placeholder="Example: 'Fight Club' or 'Dazed and Confused'" required>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Search</button>
+</form>
+
+<!--<form name="createMediaItem">
     <div class="form-group">
         <label for="selectMediaType">Select The Type of Media</label>
         <select class="form-control" id="selectMediaType" ng-model="newMediaItem.MediaTypeId" required>
@@ -31,4 +45,4 @@
     <button type="button" class="btn btn-success" ng-click="submitNewMediaItem(newMediaItem)">Create Item</button>
     <button type="button" class="btn btn-primary" ng-click="viewMediaItems()">View My Media Items <i class="fas fa-arrow-right"></i></button>
 
-</form>
+</form>-->
