@@ -10,8 +10,9 @@
         $scope.chooseMediaType = function (id) {
             if (id <= 3) {
                 $location.path(`/createMedia/music/${id}`);
-            } else
-                $location.path(`/createMedia/${id}`);
+            } else if (id > 3 && id < 9) {
+                $location.path(`/createMedia/movies/${id}`);
+            }
             
         };
 

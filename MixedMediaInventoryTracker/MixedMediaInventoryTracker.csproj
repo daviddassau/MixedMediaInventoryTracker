@@ -192,6 +192,7 @@
     <Content Include="app\app.js" />
     <Content Include="app\controllers\ChooseMediaType.js" />
     <Content Include="app\controllers\CreateMedia.js" />
+    <Content Include="app\controllers\CreateMediaMovies.js" />
     <Content Include="app\controllers\CreateMediaMusic.js" />
     <Content Include="app\controllers\DeleteMedia.js" />
     <Content Include="app\controllers\EditMedia.js" />
@@ -208,6 +209,7 @@
     <Content Include="app\controllers\ViewSoldMediaDetails.js" />
     <Content Include="app\partials\chooseMediaType.html" />
     <Content Include="app\partials\createMedia.html" />
+    <Content Include="app\partials\createMediaMovies.html" />
     <Content Include="app\partials\createMediaMusic.html" />
     <Content Include="app\partials\deleteMedia.html" />
     <Content Include="app\partials\editMedia.html" />
