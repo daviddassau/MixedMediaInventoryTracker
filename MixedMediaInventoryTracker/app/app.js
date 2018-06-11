@@ -31,6 +31,11 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/app/partials/createMediaMovies.html",
             controller: "CreateMediaMovies"
         })
+        .when("/createMedia/books/:id",
+        {
+            templateUrl: "/app/partials/createMediaBooks.html",
+            controller: "CreateMediaBooks"
+        })
         .when("/viewMedia/:id",
         {
             templateUrl: "/app/partials/viewMediaDetails.html",

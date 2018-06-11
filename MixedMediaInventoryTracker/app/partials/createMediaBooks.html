@@ -10,13 +10,13 @@
 
         <form name="createMediaItem">
             <div class="form-group mt-3">
-                <label for="selectMediaCondition">Select The Movie's Condition</label>
+                <label for="selectMediaCondition">Select The Book's Condition</label>
                 <select class="form-control" id="selectMediaCondition" ng-model="newMediaItem.MediaConditionId" required>
                     <option ng-repeat="condition in conditions" value="{{condition.Id}}">{{condition.MediaCondition}}</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="title">Title of Movie</label>
+                <label for="title">Title of Book</label>
                 <input class="form-control" id="title" type="text" placeholder="" ng-model="newMediaItem.Title" required>
             </div>
             <div class="form-group">
@@ -24,7 +24,7 @@
                 <input type="date" id="datePurchased" class="form-control" placeholder="0000/00/00" ng-model="newMediaItem.DatePurchased">
             </div>
             <div class="form-group mt-3">
-                <label for="itemNotes">Notes for Movie</label>
+                <label for="itemNotes">Notes for Book</label>
                 <textarea class="form-control" id="itemNotes" rows="3" ng-model="newMediaItem.Notes"></textarea>
             </div>
 
@@ -38,7 +38,7 @@
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <h4>Enter the title of your media item</h4>
-                    <input type="text" class="form-control col-md-12" id="validationDefault03" placeholder="Example: 'Fight Club' or 'Dazed and Confused'" required>
+                    <input type="text" class="form-control col-md-12" id="validationDefault03" placeholder="Example: 'Catcher In The Rye' or 'A Game of Thrones'" required>
                 </div>
             </div>
             <button class="btn btn-primary" type="submit">Search</button>

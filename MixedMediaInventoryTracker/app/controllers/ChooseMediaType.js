@@ -12,7 +12,8 @@
                 $location.path(`/createMedia/music/${id}`);
             } else if (id > 3 && id < 9) {
                 $location.path(`/createMedia/movies/${id}`);
-            }
+            } else
+                $location.path(`/createMedia/books/${id}`);
             
         };
 
