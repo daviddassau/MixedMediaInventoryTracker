@@ -9,5 +9,6 @@ namespace MixedMediaInventoryTracker.Models
     {
         public int Id { get; set; }
         public string MediaType { get; set; }
+        public string Image { get; set; }
     }
 }
