@@ -15,18 +15,19 @@
 
         getMediaType();
 
-        $scope.movies = {};
+        //$scope.movies = {};
 
-        $scope.enterPush = function (event) {
-            if (event.keyCode === 13) {
-                console.log("You're Gay");
-                //$http.get(`api/media/searchMovies/{event}`).then(function (results) {
-                //    $scope.movies = results.data;
-                //}).catch(function (error) {
-                //    console.log("error in enterPush", error);
-                //});
-            }
-        }
+        //$scope.enterPush = function (event) {
+        //    if (event.keyCode === 13) {
+        //        console.log(event);
+        //        $http.get(`api/media/searchMovies/{term}`).then(function (results) {
+        //            console.log("results", results);
+        //            //$scope.movies = results.data;
+        //        }).catch(function (error) {
+        //            console.log("error in enterPush", error);
+        //        });
+        //    }
+        //}
 
         $scope.newMediaItem = {};
         $scope.conditions = {};
