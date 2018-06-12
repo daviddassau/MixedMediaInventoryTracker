@@ -88,5 +88,14 @@ namespace MixedMediaInventoryTracker.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, mediaItemToSell);
         }
+
+        [HttpGet, Route("searchMovies/{term}")]
+        public HttpResponseMessage SearchForMovies(string term)
+        {
+            var mediaRepository = new MediaRepository();
+            var result = mediaRepository.SearchMediaItem(term);
+
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
     }
 }

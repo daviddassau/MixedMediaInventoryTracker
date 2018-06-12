@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using Dapper;
 using MixedMediaInventoryTracker.Models;
+using RestSharp;
 
 namespace MixedMediaInventoryTracker
 {
@@ -118,5 +119,35 @@ namespace MixedMediaInventoryTracker
             }
         }
 
+        public ApiResult SearchMediaItem(string term)
+        {
+            var client = new RestClient("https://itunes.apple.com");
+
+            var request = new RestRequest("search/", Method.GET);
+            request.AddParameter("term", term, ParameterType.QueryString); // adds to POST or URL querystring based on Method
+            request.AddParameter("entity", "movie", ParameterType.QueryString);
+            request.AddParameter("limit", 25, ParameterType.QueryString);
+
+            var response = client.Execute<ApiResult>(request);
+            foreach (var result in response.Data.results)
+            {
+                result.artworkUrl100 = ""; //do the thing that changes 100 to 500
+            }
+            return response.Data; // raw content as string
+
+        }
+
+    }
+
+    public class SearchResult
+    {
+        public string trackName { get; set; }
+        public string artworkUrl100 { get; set; }
+    }
+
+    public class ApiResult
+    {
+        public int resultCount { get; set; }
+        public List<SearchResult> results { get; set; }
     }
 }
