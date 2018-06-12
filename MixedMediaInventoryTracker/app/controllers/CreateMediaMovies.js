@@ -20,8 +20,8 @@
 
         $scope.getMovieFromItunes = function (itunesMedia) {
             $http.get(`api/media/searchMovies/${itunesMedia.trackName}`).then(function (results) {
-                //$scope.itunesMedia = results.data;
-                console.log("results from api", results.data.results);
+                $scope.itunesMedia = results.data.results;
+                //console.log("results from api", results.data.results);
             });
         }
 
