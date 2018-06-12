@@ -8,10 +8,11 @@
             <div class="form-row">
                 <div class="col-md-8 mb-3">
                     <h4>Enter the title of your media item</h4>
-                    <input ng-keypress="enterPush($event)" type="text" class="form-control col-md-12" id="validationDefault03" placeholder="Example: 'Fight Club' or 'Dazed and Confused'" required>
+                    <!--<input ng-keypress="enterPush($event)" type="text" class="form-control col-md-12" id="validationDefault03" placeholder="Example: 'Fight Club' or 'Dazed and Confused'" required>-->
+                    <input ng-model="itunesMedia.trackName" type="text" class="form-control col-md-12" id="validationDefault03" placeholder="Example: 'Fight Club' or 'Dazed and Confused'" required>
                 </div>
             </div>
-            <!--<button class="btn btn-primary" type="submit">Search</button>-->
+            <button ng-click="getMovieFromItunes(itunesMedia)" class="btn btn-primary" type="submit">Search</button>
         </form>
         <div>
             <div ng-repeat="movie in movies" class="col-md-6">

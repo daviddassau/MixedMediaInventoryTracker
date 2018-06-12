@@ -230,6 +230,8 @@
     <Content Include="app\partials\viewMediaDetails.html" />
     <Content Include="app\partials\viewSoldMedia.html" />
     <Content Include="app\partials\viewSoldMediaDetails.html" />
+    <Content Include="Content\angular-toastr.css" />
+    <Content Include="Content\angular-toastr.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -253,6 +255,10 @@
     <Content Include="Scripts\angular-moment.min.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-toastr.js" />
+    <Content Include="Scripts\angular-toastr.min.js" />
+    <Content Include="Scripts\angular-toastr.tpls.js" />
+    <Content Include="Scripts\angular-toastr.tpls.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
