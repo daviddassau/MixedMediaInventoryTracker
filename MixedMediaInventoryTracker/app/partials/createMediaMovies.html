@@ -8,23 +8,28 @@
             <div class="form-row">
                 <div class="col-md-8 mb-3">
                     <h4>Enter the title of your media item</h4>
-                    <!--<input ng-keypress="enterPush($event)" type="text" class="form-control col-md-12" id="validationDefault03" placeholder="Example: 'Fight Club' or 'Dazed and Confused'" required>-->
-                    <input ng-model="itunesMedia.trackName" type="text" class="form-control col-md-12" id="validationDefault03" placeholder="Example: 'Fight Club' or 'Dazed and Confused'" required>
+                    <!--<input ng-keypress="enterPush($event)" type="text" class="form-control col-md-12" placeholder="Example: 'Fight Club' or 'Dazed and Confused'" required>-->
+                    <input ng-model="itunesMedia.trackName" type="text" class="form-control col-md-12" placeholder="Example: 'Fight Club' or 'Dazed and Confused'">
                 </div>
             </div>
             <button ng-click="getMovieFromItunes(itunesMedia)" class="btn btn-primary" type="submit">Search</button>
         </form>
         <div class="row">
+            <div ng-repeat="movie in itunesMedia" class="col-md-6">
+                <h5>{{movie.trackName}}</h5>
+                <img ng-src="{{movie.artworkUrl100}}" alt="Movie Cover Art" />
+            </div>
+        </div>
+        <!--<div class="row">
             <div ng-repeat="movie in itunesMedia" class="col-sm-6 mt-3">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">{{movie.trackName}}</h5>
-                        <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>-->
+                        <img ng-src="{{movie.artworkUrl100}}" alt="Movie Cover Art" />
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 
     <div class="col-md-6">
