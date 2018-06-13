@@ -31,24 +31,7 @@
             $scope.newMediaItem.Title = movie.trackName;
         }
 
-        //$http.get(`api/media/searchMovies/{movie}`).then(function (results) {
-        //    //$scope.itunesMedia = results.data;
-        //    console.log("results from api", results.data.results);
-        //});
-
-
-        //$scope.movies = {};
-
-        //$scope.enterPush = function (event) {
-        //    if (event.keyCode === 13) {
-        //        $http.get(`api/media/searchMovies/`).then(function (results) {
-        //            console.log("results", results);
-        //            $scope.movies = results.data;
-        //        }).catch(function (error) {
-        //            console.log("error in enterPush", error);
-        //        });
-        //    }
-        //}
+        
 
         $scope.newMediaItem = {};
         $scope.conditions = {};

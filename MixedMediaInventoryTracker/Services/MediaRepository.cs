@@ -31,7 +31,8 @@ namespace MixedMediaInventoryTracker
                                                ,[DateAdded]
                                                ,[IsLentOut]
                                                ,[IsSold]
-                                               ,[Notes])
+                                               ,[Notes]
+                                               ,[CoverArt])
                                          VALUES
                                                (@MediaTypeId
                                                ,@MediaConditionId
@@ -40,7 +41,8 @@ namespace MixedMediaInventoryTracker
                                                ,default
                                                ,@IsLentOut
                                                ,@IsSold
-                                               ,@Notes)", media);
+                                               ,@Notes
+                                               ,@CoverArt)", media);
 
                 return createMediaItem == 1;
             }
