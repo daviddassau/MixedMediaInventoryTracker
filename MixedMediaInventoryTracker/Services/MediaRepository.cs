@@ -139,6 +139,11 @@ namespace MixedMediaInventoryTracker
 
         }
 
+        internal object SearchMediaItemMusic(string term)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 
     //public class SearchResultMovie
