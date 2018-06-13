@@ -1,5 +1,9 @@
-﻿body {
+﻿/*body {
     padding-bottom: 20px;
+}*/
+
+.davids-sidebar-height {
+    height: 1000px;
 }
 
 /* Set padding to keep content from hitting the edges */

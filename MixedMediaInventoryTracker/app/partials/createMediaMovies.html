@@ -3,7 +3,39 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
+        <form>
+            <div class="form-row">
+                <div class="col-md-8 mb-3">
+                    <h4>Enter the title of your media item</h4>
+                    <!--<input ng-keypress="enterPush($event)" type="text" class="form-control col-md-12" placeholder="Example: 'Fight Club' or 'Dazed and Confused'" required>-->
+                    <input ng-model="itunesMedia.trackName" type="text" class="form-control col-md-12" placeholder="Example: 'Fight Club' or 'Dazed and Confused'">
+                </div>
+            </div>
+            <button ng-click="getMovieFromItunes(itunesMedia)" class="btn btn-primary" type="submit">Search</button>
+        </form>
+        <div class="row">
+            <div ng-repeat="movie in itunesMedia" class="col-md-6">
+                <h5>{{movie.trackName}}</h5>
+                <p><img ng-src="{{movie.artworkUrl100}}" alt="Movie Cover Art" /></p>
+                <div>
+                    <button class="btn btn-secondary">Select</button>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row">
+            <div ng-repeat="movie in itunesMedia" class="col-sm-6 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{movie.trackName}}</h5>
+                        <img ng-src="{{movie.artworkUrl100}}" alt="Movie Cover Art" />
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div>
+
+    <div class="col-md-6">
         <div>
             <p>Media type you chose: <b>{{mediaType.MediaType}}</b></p>
         </div>
@@ -30,18 +62,6 @@
 
             <button type="button" class="btn btn-success" ng-click="submitNewMediaItem(newMediaItem)">Create Item</button>
 
-        </form>
-    </div>
-
-    <div class="col-md-8">
-        <form>
-            <div class="form-row">
-                <div class="col-md-6 mb-3">
-                    <h4>Enter the title of your media item</h4>
-                    <input type="text" class="form-control col-md-12" id="validationDefault03" placeholder="Example: 'Fight Club' or 'Dazed and Confused'" required>
-                </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Search</button>
         </form>
     </div>
 </div>

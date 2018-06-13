@@ -25,11 +25,13 @@ namespace MixedMediaInventoryTracker
                       "~/Scripts/angular-route.js",
                       "~/Scripts/moment.js",
                       "~/Scripts/angular-moment.js",
+                      "~/Scripts/angular-toastr.js",
                       "~/app/app.js")
                       .IncludeDirectory("~/app/controllers", "*.js", true));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/angular-toastr.css",
                       "~/Content/site.css"));
         }
     }
