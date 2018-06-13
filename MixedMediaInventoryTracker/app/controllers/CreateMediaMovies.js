@@ -16,37 +16,32 @@
         getMediaType();
 
 
+
+
+
         $scope.itunesMedia = {};
 
         $scope.getMovieFromItunes = function (itunesMedia) {
             $http.get(`api/media/searchMovies/${itunesMedia.trackName}`).then(function (results) {
-                $scope.itunesMedia = results.data.results;
+                $scope.itunesMedia.results = results.data.results;
                 console.log("results from api", results.data.results);
             }).catch(function (error) {
                 console.log("error in getMovieFromITunes", error);
             });
         }
 
-        //$http.get(`api/media/searchMovies/{movie}`).then(function (results) {
-        //    //$scope.itunesMedia = results.data;
-        //    console.log("results from api", results.data.results);
-        //});
+        $scope.selectMedia = function (movie) {
+            $scope.newMediaItem.Title = movie.trackName;
+            $scope.newMediaItem.artworkUrl100 = movie.artworkUrl100;
+        }
 
 
-        //$scope.movies = {};
 
-        //$scope.enterPush = function (event) {
-        //    if (event.keyCode === 13) {
-        //        $http.get(`api/media/searchMovies/`).then(function (results) {
-        //            console.log("results", results);
-        //            $scope.movies = results.data;
-        //        }).catch(function (error) {
-        //            console.log("error in enterPush", error);
-        //        });
-        //    }
-        //}
+        
 
-        $scope.newMediaItem = {};
+        $scope.newMediaItem = {
+            mediaTypeId: $routeParams.id
+        };
         $scope.conditions = {};
 
         $scope.selectMediaCondition = function (condition) {
