@@ -32,7 +32,7 @@ namespace MixedMediaInventoryTracker
                                                ,[IsLentOut]
                                                ,[IsSold]
                                                ,[Notes]
-                                               ,[CoverArt])
+                                               ,[artworkUrl100])
                                          VALUES
                                                (@MediaTypeId
                                                ,@MediaConditionId
@@ -42,7 +42,7 @@ namespace MixedMediaInventoryTracker
                                                ,@IsLentOut
                                                ,@IsSold
                                                ,@Notes
-                                               ,@CoverArt)", media);
+                                               ,@artworkUrl100)", media);
 
                 return createMediaItem == 1;
             }

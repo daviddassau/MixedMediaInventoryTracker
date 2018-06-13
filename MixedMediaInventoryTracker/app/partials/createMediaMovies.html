@@ -8,31 +8,20 @@
             <div class="form-row">
                 <div class="col-md-8 mb-3">
                     <h4>Enter the title of your media item</h4>
-                    <!--<input ng-keypress="enterPush($event)" type="text" class="form-control col-md-12" placeholder="Example: 'Fight Club' or 'Dazed and Confused'" required>-->
                     <input ng-model="itunesMedia.trackName" type="text" class="form-control col-md-12" placeholder="Example: 'Fight Club' or 'Dazed and Confused'">
                 </div>
             </div>
             <button ng-click="getMovieFromItunes(itunesMedia)" class="btn btn-primary" type="submit">Search</button>
         </form>
         <div class="row">
-            <div ng-repeat="movie in itunesMedia.results" class="col-md-6 mt-3">
-                <h5>{{movie.trackName}}</h5>
-                <p><img ng-src="{{movie.artworkUrl100}}" alt="Movie Cover Art" /></p>
+            <div ng-repeat="movie in itunesMedia.results" class="col-md-4 mt-3">
+                <!--<h5>{{movie.trackName}}</h5>-->
+                <p><img ng-src="{{movie.artworkUrl100}}" class="img-fluid" alt="Movie Cover Art" /></p>
                 <div>
                     <button class="btn btn-secondary" ng-click="selectMedia(movie)">Select</button>
                 </div>
             </div>
         </div>
-        <!--<div class="row">
-            <div ng-repeat="movie in itunesMedia" class="col-sm-6 mt-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{movie.trackName}}</h5>
-                        <img ng-src="{{movie.artworkUrl100}}" alt="Movie Cover Art" />
-                    </div>
-                </div>
-            </div>
-        </div>-->
     </div>
 
     <div class="col-md-6">
@@ -41,15 +30,15 @@
         </div>
 
         <form name="createMediaItem">
+            <div class="form-group">
+                <label for="title">Title of Movie</label>
+                <input class="form-control" id="title" type="text" placeholder="" ng-model="newMediaItem.Title" required>
+            </div>
             <div class="form-group mt-3">
                 <label for="selectMediaCondition">Select The Movie's Condition</label>
                 <select class="form-control" id="selectMediaCondition" ng-model="newMediaItem.MediaConditionId" required>
                     <option ng-repeat="condition in conditions" value="{{condition.Id}}">{{condition.MediaCondition}}</option>
                 </select>
-            </div>
-            <div class="form-group">
-                <label for="title">Title of Movie</label>
-                <input class="form-control" id="title" type="text" placeholder="" ng-model="newMediaItem.Title" required>
             </div>
             <div class="form-group">
                 <label for="datePurchased" class="control-label">Date Purchased (if applicable)</label>

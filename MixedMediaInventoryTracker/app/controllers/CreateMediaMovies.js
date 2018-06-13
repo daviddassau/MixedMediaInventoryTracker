@@ -16,6 +16,9 @@
         getMediaType();
 
 
+
+
+
         $scope.itunesMedia = {};
 
         $scope.getMovieFromItunes = function (itunesMedia) {
@@ -29,11 +32,16 @@
 
         $scope.selectMedia = function (movie) {
             $scope.newMediaItem.Title = movie.trackName;
+            $scope.newMediaItem.artworkUrl100 = movie.artworkUrl100;
         }
+
+
 
         
 
-        $scope.newMediaItem = {};
+        $scope.newMediaItem = {
+            mediaTypeId: $routeParams.id
+        };
         $scope.conditions = {};
 
         $scope.selectMediaCondition = function (condition) {
