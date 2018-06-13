@@ -17,7 +17,10 @@
         <div class="row">
             <div ng-repeat="movie in itunesMedia" class="col-md-6">
                 <h5>{{movie.trackName}}</h5>
-                <img ng-src="{{movie.artworkUrl100}}" alt="Movie Cover Art" />
+                <p><img ng-src="{{movie.artworkUrl100}}" alt="Movie Cover Art" /></p>
+                <div>
+                    <button class="btn btn-secondary">Select</button>
+                </div>
             </div>
         </div>
         <!--<div class="row">
