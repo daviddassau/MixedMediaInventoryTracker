@@ -129,10 +129,10 @@ namespace MixedMediaInventoryTracker
             request.AddParameter("limit", 25, ParameterType.QueryString);
 
             var response = client.Execute<ApiResult>(request);
-            //foreach (var result in response.Data.results)
-            //{
-            //    result.artworkUrl100 = ""; //do the thing that changes 100 to 500
-            //}
+            foreach (var result in response.Data.results)
+            {
+                result.artworkUrl100 = result.artworkUrl100.Replace("100x100bb", "500x500bb");
+            }
             return response.Data; // raw content as string
 
         }

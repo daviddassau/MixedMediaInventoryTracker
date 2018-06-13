@@ -20,11 +20,15 @@
 
         $scope.getMovieFromItunes = function (itunesMedia) {
             $http.get(`api/media/searchMovies/${itunesMedia.trackName}`).then(function (results) {
-                $scope.itunesMedia = results.data.results;
+                $scope.itunesMedia.results = results.data.results;
                 console.log("results from api", results.data.results);
             }).catch(function (error) {
                 console.log("error in getMovieFromITunes", error);
             });
+        }
+
+        $scope.selectMedia = function (movie) {
+            $scope.newMediaItem.Title = movie.trackName;
         }
 
         //$http.get(`api/media/searchMovies/{movie}`).then(function (results) {

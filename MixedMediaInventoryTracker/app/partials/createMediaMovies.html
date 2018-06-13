@@ -15,11 +15,11 @@
             <button ng-click="getMovieFromItunes(itunesMedia)" class="btn btn-primary" type="submit">Search</button>
         </form>
         <div class="row">
-            <div ng-repeat="movie in itunesMedia" class="col-md-6">
+            <div ng-repeat="movie in itunesMedia.results" class="col-md-6 mt-3">
                 <h5>{{movie.trackName}}</h5>
                 <p><img ng-src="{{movie.artworkUrl100}}" alt="Movie Cover Art" /></p>
                 <div>
-                    <button class="btn btn-secondary">Select</button>
+                    <button class="btn btn-secondary" ng-click="selectMedia(movie)">Select</button>
                 </div>
             </div>
         </div>
