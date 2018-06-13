@@ -139,22 +139,35 @@ namespace MixedMediaInventoryTracker
 
         }
 
-        internal object SearchMediaItemMusic(string term)
+        public ApiResult SearchMediaItemMusic(string term)
         {
-            throw new NotImplementedException();
+            var client = new RestClient("https://itunes.apple.com");
+
+            var request = new RestRequest("search/", Method.GET);
+            request.AddParameter("term", term, ParameterType.QueryString); // adds to POST or URL querystring based on Method
+            request.AddParameter("media", "music", ParameterType.QueryString);
+            request.AddParameter("limit", 25, ParameterType.QueryString);
+
+            var response = client.Execute<ApiResult>(request);
+            //foreach (var result in response.Data.results)
+            //{
+            //    result.artworkUrl100 = result.artworkUrl100.Replace("100x100bb", "500x500bb");
+            //}
+            return response.Data; // raw content as string
+
         }
 
     }
 
-    //public class SearchResultMovie
-    //{
-    //    public string trackName { get; set; }
-    //    public string artworkUrl100 { get; set; }
-    //}
+    public class Result
+    {
+        public string artistName { get; set; }
+        public string artworkUrl100 { get; set; }
+    }
 
-    //public class ApiResultMovie
-    //{
-    //    public int resultCount { get; set; }
-    //    public List<SearchResultMovie> results { get; set; }
-    //}
+    public class ApiResult
+    {
+        public int resultCount { get; set; }
+        public List<Result> results { get; set; }
+    }
 }
