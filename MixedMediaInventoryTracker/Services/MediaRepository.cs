@@ -121,7 +121,7 @@ namespace MixedMediaInventoryTracker
             }
         }
 
-        public ApiResult SearchMediaItem(string term)
+        public ApiResultMovie SearchMediaItemMovie(string term)
         {
             var client = new RestClient("https://itunes.apple.com");
 
@@ -130,7 +130,7 @@ namespace MixedMediaInventoryTracker
             request.AddParameter("entity", "movie", ParameterType.QueryString);
             request.AddParameter("limit", 25, ParameterType.QueryString);
 
-            var response = client.Execute<ApiResult>(request);
+            var response = client.Execute<ApiResultMovie>(request);
             foreach (var result in response.Data.results)
             {
                 result.artworkUrl100 = result.artworkUrl100.Replace("100x100bb", "500x500bb");
@@ -141,15 +141,15 @@ namespace MixedMediaInventoryTracker
 
     }
 
-    public class SearchResult
-    {
-        public string trackName { get; set; }
-        public string artworkUrl100 { get; set; }
-    }
+    //public class SearchResultMovie
+    //{
+    //    public string trackName { get; set; }
+    //    public string artworkUrl100 { get; set; }
+    //}
 
-    public class ApiResult
-    {
-        public int resultCount { get; set; }
-        public List<SearchResult> results { get; set; }
-    }
+    //public class ApiResultMovie
+    //{
+    //    public int resultCount { get; set; }
+    //    public List<SearchResultMovie> results { get; set; }
+    //}
 }
