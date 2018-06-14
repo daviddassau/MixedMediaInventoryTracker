@@ -15,6 +15,21 @@
 
         getMediaType();
 
+
+
+        $scope.itunesMedia = {};
+
+        $scope.getMusicFromItunes = function (itunesMedia) {
+            $http.get(`api/media/searchMusic/${itunesMedia.collectionName}`).then(function (results) {
+                $scope.itunesMedia.results = results.data.results;
+                console.log("results for music", results.data.results);
+            }).catch(function (error) {
+                console.log("error in getMusicFromItunes", error);
+            });
+        }
+
+
+
         $scope.newMediaItem = {};
         $scope.conditions = {};
 

@@ -146,7 +146,7 @@ namespace MixedMediaInventoryTracker
             var request = new RestRequest("search/", Method.GET);
             request.AddParameter("term", term, ParameterType.QueryString); // adds to POST or URL querystring based on Method
             request.AddParameter("media", "music", ParameterType.QueryString);
-            request.AddParameter("limit", 25, ParameterType.QueryString);
+            //request.AddParameter("limit", 25, ParameterType.QueryString);
 
             var response = client.Execute<ApiResult>(request);
             //foreach (var result in response.Data.results)
@@ -162,6 +162,7 @@ namespace MixedMediaInventoryTracker
     public class Result
     {
         public string artistName { get; set; }
+        public string collectionName { get; set; }
         public string artworkUrl100 { get; set; }
     }
 
