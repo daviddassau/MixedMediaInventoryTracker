@@ -5,8 +5,8 @@
         <form>
             <div class="form-row">
                 <div class="col-md-8 mb-3">
-                    <h4>Enter the Album Title</h4>
-                    <input ng-model="itunesMedia.collectionName" type="text" class="form-control col-md-12" placeholder="Example: 'Abbey Road' or 'Houses of The Holy'">
+                    <h4>Enter the Album Title or Artist</h4>
+                    <input ng-model="itunesMedia.collectionName" type="text" class="form-control col-md-12" placeholder="Example: 'Abbey Road' or 'Backstreet Boys'">
                 </div>
             </div>
             <button ng-click="getMusicFromItunes(itunesMedia)" class="btn btn-primary" type="submit">Search</button>
@@ -37,7 +37,7 @@
                 <input class="form-control" id="album" type="text" placeholder="" ng-model="newMediaItem.Title" required>
             </div>
             <div class="form-group mt-3">
-                <label for="selectMediaCondition">Select The Music Item's Condition</label>
+                <label for="selectMediaCondition">Select The Album's Condition</label>
                 <select class="form-control" id="selectMediaCondition" ng-model="newMediaItem.MediaConditionId" required>
                     <option ng-repeat="condition in conditions" value="{{condition.Id}}">{{condition.MediaCondition}}</option>
                 </select>
