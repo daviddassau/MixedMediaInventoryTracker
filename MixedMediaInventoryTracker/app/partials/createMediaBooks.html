@@ -1,14 +1,37 @@
-﻿<div>
-    <h1>{{message}}</h1>
-</div>
+﻿
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
+        
+        <form class="form-inline">
+            <h4>Enter the Book Title or Author</h4>
+            <input ng-model="itunesMedia.trackName" type="text" class="form-control mb-2 mr-sm-2 col-md-8" id="inlineFormInputName2" placeholder="Example: 'A Game of Thrones' or 'George R.R. Martin'">
+
+            <button ng-click="getBooksFromItunes(itunesMedia)" type="submit" class="btn btn-primary mb-2">Search</button>
+        </form>
+
+        <div class="card-columns">
+            <div ng-repeat="book in itunesMedia.results" class="card mt-3">
+                <a ng-click="selectMedia(book)"><img ng-src="{{book.artworkUrl100}}" class="card-img-top img-fluid" alt="Book Cover Art" /></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
         <div>
             <p>Media type you chose: <b>{{mediaType.MediaType}}</b></p>
         </div>
 
         <form name="createMediaItem">
+            <div class="form-group">
+                <label for="bookTitle">Book Title</label>
+                <input class="form-control" id="bookTitle" type="text" placeholder="" ng-model="newMediaItem.Title" required>
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input class="form-control" id="author" type="text" placeholder="" ng-model="newMediaItem.Artist" required>
+            </div>
             <div class="form-group mt-3">
                 <label for="selectMediaCondition">Select The Book's Condition</label>
                 <select class="form-control" id="selectMediaCondition" ng-model="newMediaItem.MediaConditionId" required>
@@ -16,8 +39,42 @@
                 </select>
             </div>
             <div class="form-group">
+                <label for="datePurchased" class="control-label">Date Purchased (if applicable)</label>
+                <input type="date" id="datePurchased" class="form-control" placeholder="0000/00/00" ng-model="newMediaItem.DatePurchased">
+            </div>
+            <div class="form-group mt-3">
+                <label for="itemNotes">Notes for Music Item</label>
+                <textarea class="form-control" id="itemNotes" rows="3" ng-model="newMediaItem.Notes"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-success" ng-click="submitNewMediaItem(newMediaItem)">Create Item</button>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!--<div class="row">
+    <div class="col-md-4">
+        <div>
+            <p>Media type you chose: <b>{{mediaType.MediaType}}</b></p>
+        </div>
+
+        <form name="createMediaItem">
+            <div class="form-group">
                 <label for="title">Title of Book</label>
                 <input class="form-control" id="title" type="text" placeholder="" ng-model="newMediaItem.Title" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="selectMediaCondition">Select The Book's Condition</label>
+                <select class="form-control" id="selectMediaCondition" ng-model="newMediaItem.MediaConditionId" required>
+                    <option ng-repeat="condition in conditions" value="{{condition.Id}}">{{condition.MediaCondition}}</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="datePurchased" class="control-label">Date Purchased (if applicable)</label>
@@ -44,5 +101,5 @@
             <button class="btn btn-primary" type="submit">Search</button>
         </form>
     </div>
-</div>
+</div>-->
 

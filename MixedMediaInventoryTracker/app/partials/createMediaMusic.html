@@ -1,76 +1,21 @@
-﻿<!--<div>
-    <h1>{{message}}</h1>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <div>
-            <p>Media type you chose: <b>{{mediaType.MediaType}}</b></p>
-        </div>
-
-        <form name="createMediaItem">
-            <div class="form-group mt-3">
-                <label for="selectMediaCondition">Select The Music Item's Condition</label>
-                <select class="form-control" id="selectMediaCondition" ng-model="newMediaItem.MediaConditionId" required>
-                    <option ng-repeat="condition in conditions" value="{{condition.Id}}">{{condition.MediaCondition}}</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="title">Title of Music Item</label>
-                <input class="form-control" id="title" type="text" placeholder="" ng-model="newMediaItem.Title" required>
-            </div>
-            <div class="form-group">
-                <label for="datePurchased" class="control-label">Date Purchased (if applicable)</label>
-                <input type="date" id="datePurchased" class="form-control" placeholder="0000/00/00" ng-model="newMediaItem.DatePurchased">
-            </div>
-            <div class="form-group mt-3">
-                <label for="itemNotes">Notes for Music Item</label>
-                <textarea class="form-control" id="itemNotes" rows="3" ng-model="newMediaItem.Notes"></textarea>
-            </div>
-
-            <button type="button" class="btn btn-success" ng-click="submitNewMediaItem(newMediaItem)">Create Item</button>
-
-        </form>
-    </div>
-
-    <div class="col-md-8">
-        <form>
-            <div class="form-row">
-                <div class="col-md-6 mb-3">
-                    <h4>Enter the title of your music item</h4>
-                    <input type="text" class="form-control col-md-12" id="validationDefault03" placeholder="Example: 'Backstreet Boys' or 'Millenium'" required>
-                </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Search</button>
-        </form>
-    </div>
-</div>-->
-
-
-
-
-
+﻿
 
 <div class="row">
     <div class="col-md-6">
-        <form>
-            <div class="form-row">
-                <div class="col-md-8 mb-3">
-                    <h4>Enter the Album Title</h4>
-                    <input ng-model="itunesMedia.collectionName" type="text" class="form-control col-md-12" placeholder="Example: 'Abbey Road' or 'Houses of The Holy'">
-                </div>
-            </div>
-            <button ng-click="getMusicFromItunes(itunesMedia)" class="btn btn-primary" type="submit">Search</button>
+        
+        <form class="form-inline">
+            <h4>Enter the Album Title or Artist</h4>
+            <input ng-model="itunesMedia.collectionName" type="text" class="form-control mb-2 mr-sm-2 col-md-8" id="inlineFormInputName2" placeholder="Example: 'Abbey Road' or 'Backstreet Boys'">
+
+            <button ng-click="getMusicFromItunes(itunesMedia)" type="submit" class="btn btn-primary mb-2">Search</button>
         </form>
-        <div class="row">
-            <div ng-repeat="music in itunesMedia.results" class="col-md-4 mt-2">
-                <p><img ng-src="{{music.artworkUrl100}}" class="img-fluid" alt="Music Album Cover Art" /></p>
-                <strong>{{music.collectionName}}</strong>
-                <div>
-                    <button class="btn btn-secondary mt-2" ng-click="selectMedia(music)">Select</button>
-                </div>
+
+        <div class="card-columns">
+            <div ng-repeat="music in itunesMedia.results" class="card mt-3">
+                <a ng-click="selectMedia(music)"><img ng-src="{{music.artworkUrl100}}" class="card-img-top img-fluid" alt="Book Cover Art" /></a>
             </div>
         </div>
+
     </div>
 
     <div class="col-md-6">
@@ -88,7 +33,7 @@
                 <input class="form-control" id="album" type="text" placeholder="" ng-model="newMediaItem.Title" required>
             </div>
             <div class="form-group mt-3">
-                <label for="selectMediaCondition">Select The Music Item's Condition</label>
+                <label for="selectMediaCondition">Select The Album's Condition</label>
                 <select class="form-control" id="selectMediaCondition" ng-model="newMediaItem.MediaConditionId" required>
                     <option ng-repeat="condition in conditions" value="{{condition.Id}}">{{condition.MediaCondition}}</option>
                 </select>
