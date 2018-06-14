@@ -63,11 +63,11 @@
             <button ng-click="getMusicFromItunes(itunesMedia)" class="btn btn-primary" type="submit">Search</button>
         </form>
         <div class="row">
-            <div ng-repeat="music in itunesMedia.results" class="col-md-4 mt-3">
-                <strong>{{music.collectionName}}</strong>
+            <div ng-repeat="music in itunesMedia.results" class="col-md-4 mt-2">
                 <p><img ng-src="{{music.artworkUrl100}}" class="img-fluid" alt="Music Album Cover Art" /></p>
+                <strong>{{music.collectionName}}</strong>
                 <div>
-                    <button class="btn btn-secondary" ng-click="selectMedia(music)">Select</button>
+                    <button class="btn btn-secondary mt-2" ng-click="selectMedia(music)">Select</button>
                 </div>
             </div>
         </div>
