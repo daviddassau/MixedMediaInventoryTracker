@@ -107,13 +107,13 @@ namespace MixedMediaInventoryTracker.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
-        [HttpGet, Route("searchBooks/{term}")]
-        public HttpResponseMessage SearchForBooks(string term)
-        {
-            var mediaRepository = new MediaRepository();
-            var result = mediaRepository.SearchMediaItemBooks(term);
+        //[HttpGet, Route("searchBooks/{term}")]
+        //public HttpResponseMessage SearchForBooks(string term)
+        //{
+        //    var mediaRepository = new MediaRepository();
+        //    var result = mediaRepository.SearchMediaItemBooks(term);
 
-            return Request.CreateResponse(HttpStatusCode.OK, result);
-        }
+        //    return Request.CreateResponse(HttpStatusCode.OK, result);
+        //}
     }
 }
