@@ -1,24 +1,20 @@
 ﻿
 <div class="row">
     <div class="col-md-6">
-        <form>
-            <div class="form-row">
-                <div class="col-md-8 mb-3">
-                    <h4>Enter the Movie Title</h4>
-                    <input ng-model="itunesMedia.trackName" type="text" class="form-control col-md-12" placeholder="Example: 'Fight Club' or 'Dazed and Confused'">
-                </div>
-            </div>
-            <button ng-click="getMovieFromItunes(itunesMedia)" class="btn btn-primary" type="submit">Search</button>
+        
+        <form class="form-inline">
+            <h4>Enter the Movie Title</h4>
+            <input ng-model="itunesMedia.trackName" type="text" class="form-control mb-2 mr-sm-2 col-md-8" id="inlineFormInputName2" placeholder="Example: 'Fight Club' or 'Dazed and Confused'">
+
+            <button ng-click="getMovieFromItunes(itunesMedia)" type="submit" class="btn btn-primary mb-2">Search</button>
         </form>
-        <div class="row">
-            <div ng-repeat="movie in itunesMedia.results" class="col-md-4 mt-3">
-                <!--<h5>{{movie.trackName}}</h5>-->
-                <p><img ng-src="{{movie.artworkUrl100}}" class="img-fluid" alt="Movie Cover Art" /></p>
-                <div>
-                    <button class="btn btn-secondary" ng-click="selectMedia(movie)">Select</button>
-                </div>
+
+        <div class="card-columns">
+            <div ng-repeat="movie in itunesMedia.results" class="card mt-3">
+                <a ng-click="selectMedia(movie)"><img ng-src="{{movie.artworkUrl100}}" class="card-img-top img-fluid" alt="Book Cover Art" /></a>
             </div>
         </div>
+
     </div>
 
     <div class="col-md-6">
