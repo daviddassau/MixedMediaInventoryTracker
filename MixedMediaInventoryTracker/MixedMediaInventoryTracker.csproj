@@ -166,6 +166,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ApiResultBooks.cs" />
     <Compile Include="Models\ApiResultMovie.cs" />
     <Compile Include="Models\ApiResultMusic.cs" />
     <Compile Include="Models\LentMediaDto.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Models\MediaSingle.cs" />
     <Compile Include="Models\MediaTypeDto.cs" />
     <Compile Include="Models\MediaTypeModel.cs" />
+    <Compile Include="Models\SearchResultBooks.cs" />
     <Compile Include="Models\SearchResultMovie.cs" />
     <Compile Include="Models\SearchResultMusic.cs" />
     <Compile Include="Models\SoldMediaDto.cs" />
