@@ -79,19 +79,19 @@
         </div>
 
         <form name="createMediaItem">
+            <div class="form-group">
+                <label for="artist">Artist</label>
+                <input class="form-control" id="artist" type="text" placeholder="" ng-model="newMediaItem.Artist" required>
+            </div>
+            <div class="form-group">
+                <label for="album">Album</label>
+                <input class="form-control" id="album" type="text" placeholder="" ng-model="newMediaItem.Album" required>
+            </div>
             <div class="form-group mt-3">
                 <label for="selectMediaCondition">Select The Music Item's Condition</label>
                 <select class="form-control" id="selectMediaCondition" ng-model="newMediaItem.MediaConditionId" required>
                     <option ng-repeat="condition in conditions" value="{{condition.Id}}">{{condition.MediaCondition}}</option>
                 </select>
-            </div>
-            <div class="form-group">
-                <label for="artist">Artist</label>
-                <input class="form-control" id="artist" type="text" placeholder="" ng-model="newMediaItem.Title" required>
-            </div>
-            <div class="form-group">
-                <label for="album">Album</label>
-                <input class="form-control" id="album" type="text" placeholder="" ng-model="newMediaItem.Title" required>
             </div>
             <div class="form-group">
                 <label for="datePurchased" class="control-label">Date Purchased (if applicable)</label>

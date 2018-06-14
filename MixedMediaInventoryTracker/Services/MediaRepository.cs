@@ -32,7 +32,9 @@ namespace MixedMediaInventoryTracker
                                                ,[IsLentOut]
                                                ,[IsSold]
                                                ,[Notes]
-                                               ,[artworkUrl100])
+                                               ,[artworkUrl100]
+                                               ,[Artist]
+                                               ,[Album])
                                          VALUES
                                                (@MediaTypeId
                                                ,@MediaConditionId
@@ -42,7 +44,9 @@ namespace MixedMediaInventoryTracker
                                                ,@IsLentOut
                                                ,@IsSold
                                                ,@Notes
-                                               ,@artworkUrl100)", media);
+                                               ,@artworkUrl100
+                                               ,@Artist
+                                               ,@Album)", media);
 
                 return createMediaItem == 1;
             }
@@ -146,7 +150,7 @@ namespace MixedMediaInventoryTracker
             var request = new RestRequest("search/", Method.GET);
             request.AddParameter("term", term, ParameterType.QueryString); // adds to POST or URL querystring based on Method
             request.AddParameter("entity", "album", ParameterType.QueryString);
-            request.AddParameter("limit", 25, ParameterType.QueryString);
+            request.AddParameter("limit", 6, ParameterType.QueryString);
 
             var response = client.Execute<ApiResult>(request);
             foreach (var result in response.Data.results)
