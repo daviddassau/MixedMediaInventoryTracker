@@ -28,9 +28,18 @@
             });
         }
 
+        $scope.selectMedia = function (book) {
+            $scope.newMediaItem.Artist = book.artistName;
+            $scope.newMediaItem.Title = book.trackName;
+            $scope.newMediaItem.artworkUrl100 = book.artworkUrl100;
+        }
 
 
-        $scope.newMediaItem = {};
+
+        $scope.newMediaItem = {
+            mediaTypeId: $routeParams.id
+        };
+
         $scope.conditions = {};
 
         $scope.selectMediaCondition = function (condition) {

@@ -12,8 +12,8 @@
             <button ng-click="getBooksFromItunes(itunesMedia)" class="btn btn-primary" type="submit">Search</button>
         </form>
         <div class="row">
-            <div ng-repeat="book in itunesMedia.results" class="col-md-4 mt-2">
-                <p><img ng-src="{{book.artworkUrl100}}" class="img-fluid" alt="Music Album Cover Art" /></p>
+            <div ng-repeat="book in itunesMedia.results" class="col-md-4 mt-3">
+                <p><img ng-src="{{book.artworkUrl100}}" class="img-fluid" alt="Book Cover Art" /></p>
                 <strong>{{book.artistName}}</strong>
                 <div>
                     <button class="btn btn-secondary mt-2" ng-click="selectMedia(book)">Select</button>
