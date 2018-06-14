@@ -32,7 +32,8 @@ namespace MixedMediaInventoryTracker
                                                ,[IsLentOut]
                                                ,[IsSold]
                                                ,[Notes]
-                                               ,[artworkUrl100])
+                                               ,[artworkUrl100]
+                                               ,[Artist])
                                          VALUES
                                                (@MediaTypeId
                                                ,@MediaConditionId
@@ -42,7 +43,8 @@ namespace MixedMediaInventoryTracker
                                                ,@IsLentOut
                                                ,@IsSold
                                                ,@Notes
-                                               ,@artworkUrl100)", media);
+                                               ,@artworkUrl100
+                                               ,@Artist)", media);
 
                 return createMediaItem == 1;
             }
@@ -121,7 +123,7 @@ namespace MixedMediaInventoryTracker
             }
         }
 
-        public ApiResult SearchMediaItem(string term)
+        public ApiResultMovie SearchMediaItemMovie(string term)
         {
             var client = new RestClient("https://itunes.apple.com");
 
@@ -129,6 +131,24 @@ namespace MixedMediaInventoryTracker
             request.AddParameter("term", term, ParameterType.QueryString); // adds to POST or URL querystring based on Method
             request.AddParameter("entity", "movie", ParameterType.QueryString);
             request.AddParameter("limit", 25, ParameterType.QueryString);
+
+            var response = client.Execute<ApiResultMovie>(request);
+            foreach (var result in response.Data.results)
+            {
+                result.artworkUrl100 = result.artworkUrl100.Replace("100x100bb", "500x500bb");
+            }
+            return response.Data; // raw content as string
+
+        }
+
+        public ApiResult SearchMediaItemMusic(string term)
+        {
+            var client = new RestClient("https://itunes.apple.com");
+
+            var request = new RestRequest("search/", Method.GET);
+            request.AddParameter("term", term, ParameterType.QueryString); // adds to POST or URL querystring based on Method
+            request.AddParameter("entity", "album", ParameterType.QueryString);
+            request.AddParameter("limit", 6, ParameterType.QueryString);
 
             var response = client.Execute<ApiResult>(request);
             foreach (var result in response.Data.results)
@@ -141,15 +161,16 @@ namespace MixedMediaInventoryTracker
 
     }
 
-    public class SearchResult
+    public class Result
     {
-        public string trackName { get; set; }
+        public string artistName { get; set; }
+        public string collectionName { get; set; }
         public string artworkUrl100 { get; set; }
     }
 
     public class ApiResult
     {
         public int resultCount { get; set; }
-        public List<SearchResult> results { get; set; }
+        public List<Result> results { get; set; }
     }
 }
