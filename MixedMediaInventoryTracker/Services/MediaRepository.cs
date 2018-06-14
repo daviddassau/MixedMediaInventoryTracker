@@ -33,8 +33,7 @@ namespace MixedMediaInventoryTracker
                                                ,[IsSold]
                                                ,[Notes]
                                                ,[artworkUrl100]
-                                               ,[Artist]
-                                               ,[Album])
+                                               ,[Artist])
                                          VALUES
                                                (@MediaTypeId
                                                ,@MediaConditionId
@@ -45,8 +44,7 @@ namespace MixedMediaInventoryTracker
                                                ,@IsSold
                                                ,@Notes
                                                ,@artworkUrl100
-                                               ,@Artist
-                                               ,@Album)", media);
+                                               ,@Artist)", media);
 
                 return createMediaItem == 1;
             }

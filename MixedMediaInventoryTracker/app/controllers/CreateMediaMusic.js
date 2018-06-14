@@ -30,7 +30,7 @@
 
         $scope.selectMedia = function (music) {
             $scope.newMediaItem.Artist = music.artistName;
-            $scope.newMediaItem.Album = music.collectionName;
+            $scope.newMediaItem.Title = music.collectionName;
             $scope.newMediaItem.artworkUrl100 = movie.artworkUrl100;
         }
 
