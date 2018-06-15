@@ -16,5 +16,7 @@ namespace MixedMediaInventoryTracker.Models
         public string Notes { get; set; }
         public string MediaCondition { get; set; }
         public string MediaType { get; set; }
+        public string artworkUrl100 { get; set; }
+        public string Artist { get; set; }
     }
 }

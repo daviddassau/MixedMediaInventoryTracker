@@ -113,7 +113,7 @@ namespace MixedMediaInventoryTracker
             {
                 db.Open();
 
-                var singleItemDetails = db.QueryFirstOrDefault<MediaItemDetailsModel>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, c.MediaCondition, t.MediaType
+                var singleItemDetails = db.QueryFirstOrDefault<MediaItemDetailsModel>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, m.artworkUrl100, c.MediaCondition, t.MediaType
                                                                                         FROM Media m
                                                                                         JOIN MediaCondition c on c.Id = m.MediaConditionId
                                                                                         JOIN MediaType t on t.Id = m.MediaTypeId

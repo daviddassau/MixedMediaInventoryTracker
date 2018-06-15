@@ -1,19 +1,25 @@
 ﻿
-<div class="row">
-    <div class="col-sm-12 mb-4">
-        <div class="card">
-            <div class="card-header item-detail-title text-center">
-                {{itemDetails.Title}}
-            </div>
-            <div class="card-body">
-                <strong>Type: </strong>{{itemDetails.MediaType}}<br />
-                <strong>Condition: </strong>{{itemDetails.MediaCondition}}<br />
-                <strong>Date added: </strong>{{itemDetails.DateAdded | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
-                <strong>Date Purchased: </strong>{{itemDetails.DatePurchased | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
-                <strong>Lent Out: </strong>{{itemDetails.IsLentOut}}<br />
-                <strong>Sold: </strong>{{itemDetails.IsSold}}<br />
-                <strong>Notes: </strong>{{itemDetails.Notes}}
+    <!-- 2 columns card -->
+    <div class="card">
+        <div class="card-header item-detail-title text-center">
+            <h3>{{itemDetails.Title}}</h3>
+        </div>
+        <div class="card-block card-body">
+            <div class="row">
+                <div class="col-lg-6 tags p-b-2">
+                    <strong>Type: </strong>{{itemDetails.MediaType}}<br />
+                    <strong>Condition: </strong>{{itemDetails.MediaCondition}}<br />
+                    <strong>Date added: </strong>{{itemDetails.DateAdded | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
+                    <strong>Date Purchased: </strong>{{itemDetails.DatePurchased | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
+                    <strong>Lent Out: </strong>{{itemDetails.IsLentOut}}<br />
+                    <strong>Sold: </strong>{{itemDetails.IsSold}}<br />
+                    <strong>Notes: </strong>{{itemDetails.Notes}}
+                </div>
+                <div class="col-lg-4 offset-lg-1">
+                    <img ng-src="{{itemDetails.artworkUrl100}}" class="img-fluid" alt="Book Cover Art" />
+                </div>
             </div>
         </div>
+        <!--/card-block-->
     </div>
-</div>
+    <!-- /2 columns card -->

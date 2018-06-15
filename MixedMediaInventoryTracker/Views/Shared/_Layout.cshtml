@@ -5,59 +5,156 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">    
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body ng-app="MixedMediaInventoryTracker">
-    
-    <div class="container-fluid h-100">
-        <div class="row h-100">
-            <aside class="col-12 col-md-2 p-0 bg-dark davids-sidebar-height">
-                <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
-                    <div class="collapse navbar-collapse">
-                        <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
-                            <li class="nav-item">
-                                @Html.ActionLink("Mixed Media Inventory Tracker", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" ng-href="#!/viewMedia"><i class="far fa-user-circle fa-lg"></i> <span class="d-none d-md-inline">My Media</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" ng-href="#!/chooseMediaType"><i class="fas fa-plus fa-lg"></i> <span class="d-none d-md-inline">Add New Media</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" ng-href="#!/viewLentMedia"><i class="fas fa-user-friends fa-md"></i> <span class="d-none d-md-inline">View Lent Media</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" ng-href="#!/lendMedia"><i class="far fa-share-square fa-md"></i> <span class="d-none d-md-inline">Lend Media</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" ng-href="#!/viewSoldMedia"><i class="far fa-money-bill-alt fa-md"></i> <span class="d-none d-md-inline">View Sold Media</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" ng-href="#!/sellMedia"><i class="fas fa-dollar-sign fa-lg"></i> <span class="d-none d-md-inline">Sell Media</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </aside>
-            <main class="col bg-faded py-3 body-content">
-                @RenderBody()
+
+
+
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Mixed Media Inventory Tracker</a>
+        @*@Html.ActionLink("Mixed Media Inventory Tracker", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Sign out</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li ng-class="{'active': $route.current.activetab == 'viewMedia'}" class="nav-item">
+                            <a class="nav-link" ng-href="#!/viewMedia">
+                                @*<span data-feather="home"></span>*@
+                                <i class="far fa-user-circle fa-lg"></i>
+                                My Media <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" ng-href="#!/chooseMediaType">
+                                @*<span data-feather="file"></span>*@
+                                <i class="fas fa-plus fa-lg"></i>
+                                Add New Media
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" ng-href="#!/viewLentMedia">
+                                @*<span data-feather="shopping-cart"></span>*@
+                                <i class="fas fa-user-friends fa-md"></i>
+                                View Lent Media
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" ng-href="#!/lendMedia">
+                                @*<span data-feather="users"></span>*@
+                                <i class="far fa-share-square fa-md"></i>
+                                Lend Media
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" ng-href="#!/viewSoldMedia">
+                                @*<span data-feather="bar-chart-2"></span>*@
+                                <i class="far fa-money-bill-alt fa-md"></i>
+                                View Sold Media
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" ng-href="#!/sellMedia">
+                                @*<span data-feather="layers"></span>*@
+                                <i class="fas fa-dollar-sign fa-lg"></i>
+                                Sell Media
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    @*<h1 class="h2">Dashboard</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group mr-2">
+                                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                                <button class="btn btn-sm btn-outline-secondary">Export</button>
+                            </div>
+                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                                <span data-feather="calendar"></span>
+                                This week
+                            </button>
+                        </div>*@
+                    @RenderBody()
+                </div>
+
+                <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+
             </main>
+
+            @*<main class="col bg-faded py-3 body-content">
+                    @RenderBody()
+                </main>*@
+
         </div>
     </div>
 
+
+
+    @*<div class="container-fluid h-100">
+            <div class="row h-100">
+                <aside class="col-12 col-md-2 p-0 bg-dark davids-sidebar-height">
+                    <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+                        <div class="collapse navbar-collapse">
+                            <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                                <li class="nav-item">
+                                    @Html.ActionLink("Mixed Media Inventory Tracker", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pl-0" ng-href="#!/viewMedia"><i class="far fa-user-circle fa-lg"></i> <span class="d-none d-md-inline">My Media</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pl-0" ng-href="#!/chooseMediaType"><i class="fas fa-plus fa-lg"></i> <span class="d-none d-md-inline">Add New Media</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pl-0" ng-href="#!/viewLentMedia"><i class="fas fa-user-friends fa-md"></i> <span class="d-none d-md-inline">View Lent Media</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pl-0" ng-href="#!/lendMedia"><i class="far fa-share-square fa-md"></i> <span class="d-none d-md-inline">Lend Media</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pl-0" ng-href="#!/viewSoldMedia"><i class="far fa-money-bill-alt fa-md"></i> <span class="d-none d-md-inline">View Sold Media</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pl-0" ng-href="#!/sellMedia"><i class="fas fa-dollar-sign fa-lg"></i> <span class="d-none d-md-inline">Sell Media</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </aside>
+                <main class="col bg-faded py-3 body-content">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>*@
+
     @*<div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mixed Media Inventory Tracker</p>
-        </footer>
-    </div>*@
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Mixed Media Inventory Tracker</p>
+            </footer>
+        </div>*@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/angular")
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
