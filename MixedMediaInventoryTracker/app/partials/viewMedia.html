@@ -1,13 +1,19 @@
 ﻿<div class="row">
-    <div ng-repeat="mediaItem in mediaItems | orderBy: 'Title'" class="col-sm-4 mb-4">
+    <div ng-repeat="mediaItem in mediaItems | orderBy: 'Title'" class="col-sm-3 mb-4">
         <div class="card">
             <div class="card-header lent-item-title text-center">
                 {{mediaItem.Title}}
             </div>
             <div class="card-body">
-                <strong>Type: </strong>{{mediaItem.MediaType}}<br />
-                <strong>Condition: </strong>{{mediaItem.MediaCondition}}<br />
-                <strong>Date added: </strong>{{mediaItem.DateAdded | amDateFormat:'dddd, MMMM Do YYYY'}}
+                <div class="row">
+                    <div class="col-sm-6">
+                        <strong>Type: </strong>{{mediaItem.MediaType}}<br />
+                        <strong>Condition: </strong>{{mediaItem.MediaCondition}}
+                    </div>
+                    <div class="col-sm-6">
+                        <strong>Type: </strong>{{mediaItem.MediaType}}
+                    </div>
+                </div>
                 <p class="mt-3">
                     <button type="button" class="btn btn-outline-info btn-md btn-block" ng-click="viewMediaItemDetails(mediaItem.Id)">View Details</button>
                     <button type="button" class="btn btn-outline-warning btn-md btn-block" ng-click="editMediaItem(mediaItem.Id)">Edit</button>
@@ -19,3 +25,33 @@
         </div>
     </div>
 </div>
+
+
+
+<!--<div class="table-responsive-xl">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Media Title</th>
+                <th scope="col">Type</th>
+                <th scope="col">Condition</th>
+                <th scope="col">Date Added</th>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="mediaItem in mediaItems | orderBy: 'Title'">
+                <th scope="row">{{mediaItem.Title}}</th>
+                <td>{{mediaItem.MediaType}}</td>
+                <td>{{mediaItem.MediaCondition}}</td>
+                <td>{{mediaItem.DateAdded | amDateFormat:'dddd, MMMM Do YYYY'}}</td>
+                <td><button type="button" class="btn btn-outline-info btn-sm btn-block" ng-click="viewMediaItemDetails(mediaItem.Id)">View Details</button></td>
+                <td><button type="button" class="btn btn-outline-warning btn-sm btn-block" ng-click="editMediaItem(mediaItem.Id)">Edit</button></td>
+                <td><button type="button" class="btn btn-outline-danger btn-sm btn-block" ng-click="deleteMediaItem(mediaItem.Id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>-->
+
