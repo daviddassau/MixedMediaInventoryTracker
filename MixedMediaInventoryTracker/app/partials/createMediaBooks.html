@@ -1,11 +1,11 @@
 ﻿
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
         
         <form class="form-inline">
             <h4>Enter the Book Title or Author</h4>
-            <input ng-model="itunesMedia.trackName" type="text" class="form-control mb-2 mr-sm-2 col-md-8" id="inlineFormInputName2" placeholder="Example: 'A Game of Thrones' or 'George R.R. Martin'">
+            <input ng-model="itunesMedia.trackName" type="text" class="form-control mb-2 mr-sm-2 col-md-10" id="inlineFormInputName2" placeholder="Example: 'A Game of Thrones' or 'George R.R. Martin'">
 
             <button ng-click="getBooksFromItunes(itunesMedia)" type="submit" class="btn btn-primary mb-2">Search</button>
         </form>
@@ -18,7 +18,7 @@
 
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div>
             <p>Media type you chose: <b>{{mediaType.MediaType}}</b></p>
         </div>

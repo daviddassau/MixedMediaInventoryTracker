@@ -1,4 +1,4 @@
-﻿<div class="row">
+﻿<!--<div class="row">
     <div ng-repeat="mediaItem in mediaItems | orderBy: 'Title'" class="col-sm-3 mb-4">
         <div class="card">
             <div class="card-header lent-item-title text-center">
@@ -21,6 +21,35 @@
                 <p class="delete-item">
                     <small><a ng-click="deleteMediaItem(mediaItem.Id)">Delete Item</a></small>
                 </p>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+
+<div class="row">
+    <div ng-repeat="mediaItem in mediaItems | orderBy: 'Title'" class="col-md-12 mb-3">
+        <div class="card">
+            <div class="card-header view-items-title">
+                {{mediaItem.Title}}
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        {{mediaItem.MediaType}}
+                    </div>
+                    <div class="col-md-3">
+                        {{mediaItem.MediaCondition}}
+                    </div>
+                    <div class="col-md-3">
+                        {{mediaItem.DateAdded | amDateFormat:'dddd, MMMM Do YYYY'}}
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-outline-info btn-sm" ng-click="viewMediaItemDetails(mediaItem.Id)">View Details</button>
+                        <button type="button" class="btn btn-outline-warning btn-sm" ng-click="editMediaItem(mediaItem.Id)">Edit</button>
+                        <button type="button" class="btn btn-outline-danger btn-sm" ng-click="deleteMediaItem(mediaItem.Id)">Delete</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
