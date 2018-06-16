@@ -5,6 +5,12 @@
 
         $http.get("/api/media").then(function (results) {
             $scope.mediaItems = results.data;
+
+            var mediaTypeData = $scope.mediaItems.map(function (item) {
+                return item.MediaType;
+            });
+            console.log(mediaTypeData);
+            $scope.data = mediaTypeData;
         });
 
         $scope.viewMediaItemDetails = function (id) {

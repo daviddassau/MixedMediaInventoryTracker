@@ -27,6 +27,7 @@ namespace MixedMediaInventoryTracker
                       "~/Scripts/angular-moment.js",
                       "~/Scripts/angular-toastr.tpls.js",
                       "~/Scripts/Chart.js",
+                      "~/Scripts/angular-chart.js",
                       "~/app/app.js")
                       .IncludeDirectory("~/app/controllers", "*.js", true));
 
