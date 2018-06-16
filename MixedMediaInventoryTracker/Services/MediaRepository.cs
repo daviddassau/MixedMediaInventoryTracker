@@ -137,7 +137,7 @@ namespace MixedMediaInventoryTracker
             var response = client.Execute<ApiResultMovie>(request);
             foreach (var result in response.Data.results)
             {
-                result.artworkUrl100 = result.artworkUrl100.Replace("100x100bb", "200x200bb");
+                result.artworkUrl100 = result.artworkUrl100.Replace("100x100bb", "350x350bb");
             }
             return response.Data; // raw content as string
 
@@ -155,7 +155,7 @@ namespace MixedMediaInventoryTracker
             var response = client.Execute<ApiResultMusic>(request);
             foreach (var result in response.Data.results)
             {
-                result.artworkUrl100 = result.artworkUrl100.Replace("100x100bb", "500x500bb");
+                result.artworkUrl100 = result.artworkUrl100.Replace("100x100bb", "350x350bb");
             }
             return response.Data; // raw content as string
 
@@ -173,7 +173,7 @@ namespace MixedMediaInventoryTracker
             var response = client.Execute<ApiResultBooks>(request);
             foreach (var result in response.Data.results)
             {
-                result.artworkUrl100 = result.artworkUrl100.Replace("100x100bb", "500x500bb");
+                result.artworkUrl100 = result.artworkUrl100.Replace("100x100bb", "350x350bb");
             }
             return response.Data; // raw content as string
         }
