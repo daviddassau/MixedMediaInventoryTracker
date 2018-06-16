@@ -22,7 +22,6 @@
         $scope.getMusicFromItunes = function (itunesMedia) {
             $http.get(`api/media/searchMusic/${itunesMedia.collectionName}`).then(function (results) {
                 $scope.itunesMedia.results = results.data.results;
-                console.log("results for music", results.data.results);
             }).catch(function (error) {
                 console.log("error in getMusicFromItunes", error);
             });
@@ -31,7 +30,7 @@
         $scope.selectMedia = function (music) {
             $scope.newMediaItem.Artist = music.artistName;
             $scope.newMediaItem.Title = music.collectionName;
-            $scope.newMediaItem.artworkUrl100 = book.artworkUrl100;
+            $scope.newMediaItem.artworkUrl100 = music.artworkUrl100;
         }
 
 
