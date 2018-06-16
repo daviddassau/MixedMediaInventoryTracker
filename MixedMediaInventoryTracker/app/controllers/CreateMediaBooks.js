@@ -22,7 +22,6 @@
         $scope.getBooksFromItunes = function (itunesMedia) {
             $http.get(`api/media/searchBooks/${itunesMedia.trackName}`).then(function (results) {
                 $scope.itunesMedia.results = results.data.results;
-                console.log("results for books", results.data.results);
             }).catch(function (error) {
                 console.log("error in getBooksFromItunes", error);
             });
