@@ -83,7 +83,7 @@ namespace MixedMediaInventoryTracker
             {
                 db.Open();
 
-                var itemToLend = db.Query<MediaItemToLendDto>(@"SELECT m.Id, m.Title, c.MediaCondition
+                var itemToLend = db.Query<MediaItemToLendDto>(@"SELECT m.Id, m.Title, m.artworkUrl100, c.MediaCondition
                                                                 FROM Media m
                                                                 JOIN MediaCondition c on c.Id = m.MediaConditionId
                                                                 WHERE m.IsLentOut = 0");
@@ -98,7 +98,7 @@ namespace MixedMediaInventoryTracker
             {
                 db.Open();
 
-                var itemToSell = db.Query<MediaItemToSellDto>(@"SELECT m.Id, m.Title, c.MediaCondition
+                var itemToSell = db.Query<MediaItemToSellDto>(@"SELECT m.Id, m.Title, m.artworkUrl100, c.MediaCondition
                                                                 FROM Media m
                                                                 JOIN MediaCondition c on c.Id = m.MediaConditionId
                                                                 WHERE m.IsSold = 0");
