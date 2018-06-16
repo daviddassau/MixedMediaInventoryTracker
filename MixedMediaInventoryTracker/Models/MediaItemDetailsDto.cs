@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MixedMediaInventoryTracker.Models
 {
-    public class MediaItemDetailsModel
+    public class MediaItemDetailsDto
     {
         public int Id { get; set; }
         public string Title { get; set; }

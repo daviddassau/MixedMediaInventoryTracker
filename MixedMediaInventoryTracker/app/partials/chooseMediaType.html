@@ -6,7 +6,7 @@
     <div ng-repeat="mediaType in mediaTypes" class="col-sm-3 mb-4">
         <div>
             <div class="text-center">
-                <p><a ng-click="chooseMediaType(mediaType.Id)"><img ng-src="../..{{mediaType.Image}}" alt="Media Type Icons" width="150" height="150" /></a></p>
+                <p><a ng-click="chooseMediaType(mediaType.Id)"><img ng-src="../..{{mediaType.Image}}" class="img-fluid" alt="Media Type Icons" width="100" height="100" /></a></p>
                 <h3><a ng-click="chooseMediaType(mediaType.Id)">{{mediaType.MediaType}}</a></h3>
             </div>
         </div>
