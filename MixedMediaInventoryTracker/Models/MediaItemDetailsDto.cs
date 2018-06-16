@@ -12,7 +12,7 @@ namespace MixedMediaInventoryTracker.Models
         public DateTime? DatePurchased { get; set; }
         public DateTime? DateAdded { get; set; }
         public string IsLentOut { get; set; }
-        public bool? IsSold { get; set; }
+        public string IsSold { get; set; }
         public string Notes { get; set; }
         public string MediaCondition { get; set; }
         public string MediaType { get; set; }

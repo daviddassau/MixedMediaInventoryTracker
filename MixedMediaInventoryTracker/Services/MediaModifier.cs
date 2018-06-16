@@ -30,7 +30,9 @@ namespace MixedMediaInventoryTracker.Services
                                                        DateAdded = @DateAdded,
                                                        IsLentOut = @IsLentOut,
                                                        IsSold = @IsSold,
-                                                       Notes = @Notes
+                                                       Notes = @Notes,
+                                                       artworkUrl100 = @artworkUrl100,
+                                                       Artist = @Artist
                                                  WHERE id = @id", new
                                                  {
                                                     media.MediaTypeId,
@@ -41,6 +43,8 @@ namespace MixedMediaInventoryTracker.Services
                                                     media.IsLentOut,
                                                     media.IsSold,
                                                     media.Notes,
+                                                    media.artworkUrl100,
+                                                    media.Artist,
                                                     id
                                                 });
 

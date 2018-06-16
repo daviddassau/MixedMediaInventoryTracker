@@ -56,7 +56,7 @@ namespace MixedMediaInventoryTracker
             {
                 db.Open();
 
-                var allMedia = db.Query<MediaDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, t.MediaType, c.MediaCondition
+                var allMedia = db.Query<MediaDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, m.artworkUrl100, m.Artist, t.MediaType, c.MediaCondition
                                                     FROM Media m
                                                     JOIN MediaType t on t.Id = m.MediaTypeId
                                                     JOIN MediaCondition c on c.Id = m.MediaConditionId");
@@ -114,7 +114,8 @@ namespace MixedMediaInventoryTracker
                 db.Open();
 
                 var singleItemDetails = db.QueryFirstOrDefault<MediaItemDetailsDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, m.artworkUrl100, c.MediaCondition, t.MediaType, t.Image,
-                                                                                        CASE WHEN m.IsLentOut = 1 THEN 'Yes' else 'No' END AS IsLentOut
+                                                                                        CASE WHEN m.IsLentOut = 1 THEN 'Yes' else 'No' END AS IsLentOut,
+                                                                                        CASE WHEN m.IsSold = 1 THEN 'Yes' else 'No' END AS IsSold
                                                                                         FROM Media m
                                                                                         JOIN MediaCondition c on c.Id = m.MediaConditionId
                                                                                         JOIN MediaType t on t.Id = m.MediaTypeId
@@ -136,7 +137,7 @@ namespace MixedMediaInventoryTracker
             var response = client.Execute<ApiResultMovie>(request);
             foreach (var result in response.Data.results)
             {
-                result.artworkUrl100 = result.artworkUrl100.Replace("100x100bb", "500x500bb");
+                result.artworkUrl100 = result.artworkUrl100.Replace("100x100bb", "200x200bb");
             }
             return response.Data; // raw content as string
 

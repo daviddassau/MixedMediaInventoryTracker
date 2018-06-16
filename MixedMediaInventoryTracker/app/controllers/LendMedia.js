@@ -14,6 +14,10 @@
             $scope.items = results.data;
         });
 
+        //$scope.showMediaArt = function (movie) {
+        //    $scope.lendMediaItem.artworkUrl100 = movie.artworkUrl100;
+        //}
+
         var lendItem = function myfunction(lendMediaItem) {
             return $http.post("api/lentmedia", lendMediaItem);
         }
