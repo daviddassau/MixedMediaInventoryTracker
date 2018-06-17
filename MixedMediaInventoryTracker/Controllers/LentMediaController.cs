@@ -51,7 +51,9 @@ namespace MixedMediaInventoryTracker.Controllers
         public HttpResponseMessage ReturnMediaItem(int id)
         {
             var lentMediaRepository = new LentMediaRepository();
-            var returnMedia = lentMediaRepository.ReturnItem();
+            var returnMedia = lentMediaRepository.ReturnItem(id);
+
+            return Request.CreateResponse(HttpStatusCode.OK, returnMedia);
         }
     }
 }
