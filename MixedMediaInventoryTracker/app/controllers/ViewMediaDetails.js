@@ -21,6 +21,8 @@
                     authorField.style.display = "none";
                 } else if ($scope.itemDetails.MediaTypeId >= 9) {
                     artistField.style.display = "none";
+                } else if ($scope.itemDetails.MediaTypeId < 4) {
+                    authorField.style.display = "none";
                 }
 
             }).catch(function (error) {
