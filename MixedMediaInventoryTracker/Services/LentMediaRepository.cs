@@ -66,6 +66,19 @@ namespace MixedMediaInventoryTracker.Services
             }
         }
 
+        public bool ReturnItem(int id)
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var returnMediaItem = db.Execute(@"DELETE from LentMedia
+                                                   WHERE Id = @id", new { id });
+
+                return returnMediaItem == 1;
+            }
+        }
+
         public LentMediaItemDetailsModel ItemDetails(int id)
         {
             using (var db = CreateConnection())

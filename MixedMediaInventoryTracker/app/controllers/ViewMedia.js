@@ -7,9 +7,10 @@
             $scope.mediaItems = results.data;
 
             var mediaTypeData = $scope.mediaItems.map(function (item) {
-                return item.MediaType;
+                return item.MediaTypeId;
             });
-            console.log(mediaTypeData);
+            console.log("Media type data", mediaTypeData);
+            $scope.labels = ["CDs", "Books", "Blu-rays", "CDs"];
             $scope.data = mediaTypeData;
         });
 

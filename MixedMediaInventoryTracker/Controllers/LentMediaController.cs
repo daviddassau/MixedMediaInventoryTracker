@@ -46,5 +46,12 @@ namespace MixedMediaInventoryTracker.Controllers
             }
             return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Could not lend Media item at this time, try again later");
         }
+
+        [HttpDelete, Route("{id}")]
+        public HttpResponseMessage ReturnMediaItem(int id)
+        {
+            var lentMediaRepository = new LentMediaRepository();
+            var returnMedia = lentMediaRepository.ReturnItem();
+        }
     }
 }
