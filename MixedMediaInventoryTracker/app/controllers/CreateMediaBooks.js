@@ -28,7 +28,7 @@
         }
 
         $scope.selectMedia = function (book) {
-            $scope.newMediaItem.Artist = book.artistName;
+            $scope.newMediaItem.Author = book.artistName;
             $scope.newMediaItem.Title = book.trackName;
             $scope.newMediaItem.artworkUrl100 = book.artworkUrl100;
         }

@@ -33,7 +33,8 @@ namespace MixedMediaInventoryTracker
                                                ,[IsSold]
                                                ,[Notes]
                                                ,[artworkUrl100]
-                                               ,[Artist])
+                                               ,[Artist]
+                                               ,[Author])
                                          VALUES
                                                (@MediaTypeId
                                                ,@MediaConditionId
@@ -44,7 +45,8 @@ namespace MixedMediaInventoryTracker
                                                ,@IsSold
                                                ,@Notes
                                                ,@artworkUrl100
-                                               ,@Artist)", media);
+                                               ,@Artist
+                                               ,@Author)", media);
 
                 return createMediaItem == 1;
             }
@@ -56,7 +58,7 @@ namespace MixedMediaInventoryTracker
             {
                 db.Open();
 
-                var allMedia = db.Query<MediaDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, m.artworkUrl100, m.Artist, t.MediaType, c.MediaCondition
+                var allMedia = db.Query<MediaDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, m.artworkUrl100, m.Artist, m.Author, t.MediaType, c.MediaCondition
                                                     FROM Media m
                                                     JOIN MediaType t on t.Id = m.MediaTypeId
                                                     JOIN MediaCondition c on c.Id = m.MediaConditionId");
@@ -113,7 +115,7 @@ namespace MixedMediaInventoryTracker
             {
                 db.Open();
 
-                var singleItemDetails = db.QueryFirstOrDefault<MediaItemDetailsDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, m.artworkUrl100, m.Artist, m.MediaTypeId, c.MediaCondition, t.MediaType, t.Image,
+                var singleItemDetails = db.QueryFirstOrDefault<MediaItemDetailsDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, m.artworkUrl100, m.Artist, m.MediaTypeId, m.Author, c.MediaCondition, t.MediaType, t.Image,
                                                                                         CASE WHEN m.IsLentOut = 1 THEN 'Yes' else 'No' END AS IsLentOut,
                                                                                         CASE WHEN m.IsSold = 1 THEN 'Yes' else 'No' END AS IsSold
                                                                                         FROM Media m

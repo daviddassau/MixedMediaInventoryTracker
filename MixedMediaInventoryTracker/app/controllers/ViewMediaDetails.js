@@ -11,12 +11,16 @@
 
             $http.get(`api/media/mediaItemDetails/${$routeParams.id}`).then(function (result) {
 
-                var elem = document.getElementById('artist');
+                var artistField = document.getElementById('artist');
+                var authorField = document.getElementById('author');
 
                 $scope.itemDetails = result.data;
 
                 if ($scope.itemDetails.MediaTypeId > 3 && $scope.itemDetails.MediaTypeId < 9) {
-                    elem.style.display = "none";
+                    artistField.style.display = "none";
+                    authorField.style.display = "none";
+                } else if ($scope.itemDetails.MediaTypeId >= 9) {
+                    artistField.style.display = "none";
                 }
 
             }).catch(function (error) {
