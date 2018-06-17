@@ -37,7 +37,7 @@ namespace MixedMediaInventoryTracker.Services
             {
                 db.Open();
 
-                var singleSoldItemDetails = db.QueryFirstOrDefault<SoldMediaItemDetailsModel>(@"SELECT s.Id, s.Buyer, s.Amount, s.SoldDate, s.Notes, m.Title, c.MediaCondition
+                var singleSoldItemDetails = db.QueryFirstOrDefault<SoldMediaItemDetailsModel>(@"SELECT s.Id, s.Buyer, s.Amount, s.SoldDate, s.Notes, m.Title, m.artworkUrl100, c.MediaCondition
                                                                                                 FROM SoldMedia s
                                                                                                 JOIN Media m on m.Id = s.MediaId
                                                                                                 JOIN MediaCondition c on c.Id = m.MediaConditionId
