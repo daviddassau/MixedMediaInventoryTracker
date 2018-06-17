@@ -13,6 +13,7 @@
 
                 var artistField = document.getElementById('artist');
                 var authorField = document.getElementById('author');
+                var datePurchasedField = document.getElementById('datePurchased');
 
                 $scope.itemDetails = result.data;
 
@@ -23,6 +24,10 @@
                     artistField.style.display = "none";
                 } else if ($scope.itemDetails.MediaTypeId < 4) {
                     authorField.style.display = "none";
+                }
+
+                if ($scope.itemDetails.DatePurchased == null) {
+                    datePurchasedField.style.display = "none";
                 }
 
             }).catch(function (error) {
