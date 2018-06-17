@@ -18,6 +18,10 @@ a, .icon-for-media-item-details {
     color: #6c757d;
 }
 
+[ng-click] {
+    cursor: pointer;
+}
+
 /* Set padding to keep content from hitting the edges */
 /*.body-content {
     padding-left: 15px;

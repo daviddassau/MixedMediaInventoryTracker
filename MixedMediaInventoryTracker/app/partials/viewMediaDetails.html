@@ -10,14 +10,14 @@
                     <h3>{{itemDetails.Title}}</h3>
                 </div>
                 <div class="col-md-3 text-right">
-                    <a ng-href="#!/viewMedia" class="icon-for-media-item-details"><i class="fas fa-user-edit fa-sm"></i></a>
+                    <i ng-click="editMediaItem(itemDetails.Id)" class="fas fa-user-edit fa-sm"></i>
                 </div>
             </div>
         </div>
         <div class="card-block card-body">
             <div class="row media-item-details">
                 <div class="col-lg-6 tags p-b-2">
-                    <div class="row mb-2">
+                    <div id="artist" class="row mb-2">
                         <div class="col-md-12">
                             <strong>Artist: </strong>{{itemDetails.Artist}}
                         </div>

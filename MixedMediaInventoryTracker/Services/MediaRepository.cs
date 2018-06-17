@@ -113,7 +113,7 @@ namespace MixedMediaInventoryTracker
             {
                 db.Open();
 
-                var singleItemDetails = db.QueryFirstOrDefault<MediaItemDetailsDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, m.artworkUrl100, m.Artist, c.MediaCondition, t.MediaType, t.Image,
+                var singleItemDetails = db.QueryFirstOrDefault<MediaItemDetailsDto>(@"SELECT m.Id, m.Title, m.DatePurchased, m.DateAdded, m.IsLentOut, m.IsSold, m.Notes, m.artworkUrl100, m.Artist, m.MediaTypeId, c.MediaCondition, t.MediaType, t.Image,
                                                                                         CASE WHEN m.IsLentOut = 1 THEN 'Yes' else 'No' END AS IsLentOut,
                                                                                         CASE WHEN m.IsSold = 1 THEN 'Yes' else 'No' END AS IsSold
                                                                                         FROM Media m

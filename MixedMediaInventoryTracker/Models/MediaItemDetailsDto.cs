@@ -8,6 +8,7 @@ namespace MixedMediaInventoryTracker.Models
     public class MediaItemDetailsDto
     {
         public int Id { get; set; }
+        public int MediaTypeId { get; set; }
         public string Title { get; set; }
         public DateTime? DatePurchased { get; set; }
         public DateTime? DateAdded { get; set; }
