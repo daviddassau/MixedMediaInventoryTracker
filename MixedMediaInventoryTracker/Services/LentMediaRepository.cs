@@ -70,7 +70,7 @@ namespace MixedMediaInventoryTracker.Services
         {
             using (var db = CreateConnection())
             {
-                var singleLentItemDetails = db.QueryFirstOrDefault<LentMediaItemDetailsModel>(@"SELECT l.Id, l.LendeeName, l.DateLent, l.Notes, m.Title, c.MediaCondition
+                var singleLentItemDetails = db.QueryFirstOrDefault<LentMediaItemDetailsModel>(@"SELECT l.Id, l.LendeeName, l.DateLent, l.Notes, m.Title, m.artworkUrl100, m.Artist, c.MediaCondition
                                                                                                 FROM LentMedia l
                                                                                                 JOIN Media m on m.Id = l.MediaId
                                                                                                 JOIN MediaCondition c on c.Id = m.MediaConditionId

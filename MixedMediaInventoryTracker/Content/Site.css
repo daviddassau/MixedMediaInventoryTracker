@@ -10,19 +10,25 @@
     font-size: 1.4rem;
 }
 
+.media-title-in-details {
+    padding-top: .5rem;
+}
+
+a, .icon-for-media-item-details {
+    color: #6c757d;
+}
+
 /* Set padding to keep content from hitting the edges */
 /*.body-content {
     padding-left: 15px;
     padding-right: 15px;
 }*/
-
 /* Set width on the form input elements since they're 100% wide by default */
 /*input,
 select,
 textarea {
     max-width: 280px;
 }*/
-
 .delete-item {
     margin-top: 0.8rem;
     margin-bottom: 0;
