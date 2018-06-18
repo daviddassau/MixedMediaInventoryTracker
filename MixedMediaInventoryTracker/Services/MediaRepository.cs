@@ -134,7 +134,7 @@ namespace MixedMediaInventoryTracker
             var request = new RestRequest("search/", Method.GET);
             request.AddParameter("term", term, ParameterType.QueryString); // adds to POST or URL querystring based on Method
             request.AddParameter("entity", "movie", ParameterType.QueryString);
-            request.AddParameter("limit", 25, ParameterType.QueryString);
+            request.AddParameter("limit", 6, ParameterType.QueryString);
 
             var response = client.Execute<ApiResultMovie>(request);
             foreach (var result in response.Data.results)
