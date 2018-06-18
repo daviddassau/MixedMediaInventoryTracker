@@ -115,5 +115,14 @@ namespace MixedMediaInventoryTracker.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
+
+        [HttpGet, Route("getRecentlyAdded")]
+        public HttpResponseMessage RecentlyAddedItems()
+        {
+            var mediaRepository = new MediaRepository();
+            var result = mediaRepository.RecentlyAddedItems();
+
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
     }
 }

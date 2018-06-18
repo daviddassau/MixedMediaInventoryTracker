@@ -127,6 +127,11 @@ namespace MixedMediaInventoryTracker
             }
         }
 
+        internal object RecentlyAddedItems()
+        {
+            throw new NotImplementedException();
+        }
+
         public ApiResultMovie SearchMediaItemMovie(string term)
         {
             var client = new RestClient("https://itunes.apple.com");
