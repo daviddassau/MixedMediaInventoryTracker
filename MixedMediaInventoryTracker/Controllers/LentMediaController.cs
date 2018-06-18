@@ -50,10 +50,18 @@ namespace MixedMediaInventoryTracker.Controllers
         [HttpDelete, Route("{id}")]
         public HttpResponseMessage ReturnMediaItem(int id)
         {
+            //var mediaRepository = new MediaRepository();
+            //var getSingleItem = mediaRepository.GetSingleItem(lentMedia.MediaId);
+            //lentMedia.MediaConditionId = getSingleItem.MediaConditionId;
+
             var lentMediaRepository = new LentMediaRepository();
             var returnMedia = lentMediaRepository.ReturnItem(id);
 
-            return Request.CreateResponse(HttpStatusCode.OK, returnMedia);
+            if (returnMedia)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, returnMedia);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Could not return media at this time");
         }
     }
 }
