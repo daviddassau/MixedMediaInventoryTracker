@@ -22,14 +22,13 @@
         $scope.getBooksFromItunes = function (itunesMedia) {
             $http.get(`api/media/searchBooks/${itunesMedia.trackName}`).then(function (results) {
                 $scope.itunesMedia.results = results.data.results;
-                console.log("results for books", results.data.results);
             }).catch(function (error) {
                 console.log("error in getBooksFromItunes", error);
             });
         }
 
         $scope.selectMedia = function (book) {
-            $scope.newMediaItem.Artist = book.artistName;
+            $scope.newMediaItem.Author = book.artistName;
             $scope.newMediaItem.Title = book.trackName;
             $scope.newMediaItem.artworkUrl100 = book.artworkUrl100;
         }

@@ -16,5 +16,7 @@ namespace MixedMediaInventoryTracker.Models
         public bool IsLentOut { get; set; }
         public bool? IsSold { get; set; }
         public string Notes { get; set; }
+        public string artworkUrl100 { get; set; }
+        public string Artist { get; set; }
     }
 }

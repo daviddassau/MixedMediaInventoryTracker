@@ -15,6 +15,8 @@
 
         getItemDetails();
 
+        //$scope.returnMedia
+
     }
 ]);
 

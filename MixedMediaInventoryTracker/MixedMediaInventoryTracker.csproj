@@ -176,6 +176,7 @@
     <Compile Include="Models\MediaConditionModel.cs" />
     <Compile Include="Models\MediaCoverArtDto.cs" />
     <Compile Include="Models\MediaDto.cs" />
+    <Compile Include="Models\MediaItemDetailsDto.cs" />
     <Compile Include="Models\MediaItemDetailsModel.cs" />
     <Compile Include="Models\MediaItemToLendDto.cs" />
     <Compile Include="Models\MediaItemToSellDto.cs" />
@@ -256,6 +257,8 @@
     <Content Include="Content\fontawesome.css" />
     <Content Include="Content\fontawesome.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\angular-chart.js" />
+    <Content Include="Scripts\angular-chart.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-moment.js" />
     <Content Include="Scripts\angular-moment.min.js" />
@@ -273,6 +276,9 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\BootstrapSidebarNav.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />

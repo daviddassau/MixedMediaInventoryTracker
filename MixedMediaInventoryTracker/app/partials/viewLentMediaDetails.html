@@ -1,16 +1,48 @@
 ﻿
-<div class="row">
-    <div class="col-sm-12 mb-4">
-        <div class="card">
-            <div class="card-header item-detail-title text-center">
-                {{itemDetails.Title}}
+<!-- 2 columns card -->
+<div class="card">
+    <div class="card-header item-detail-title">
+        <div class="row">
+            <div class="col-md-3">
+                <a ng-href="#!/viewLentMedia" class="icon-for-media-item-details"><i class="fas fa-arrow-left fa-sm"></i></a>
             </div>
-            <div class="card-body">
-                <strong>Lendee Name: </strong>{{itemDetails.LendeeName}}<br />
-                <strong>Condition: </strong>{{itemDetails.MediaCondition}}<br />
-                <strong>Date Lent: </strong>{{itemDetails.DateLent | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
-                <strong>Notes: </strong>{{itemDetails.Notes}}
+            <div class="col-md-6 media-title-in-details text-center">
+                <h3>{{itemDetails.Title}}</h3>
+            </div>
+            <div class="col-md-3 text-right">
+                <a ng-click="returnMedia()" class="icon-for-media-item-details"><i class="fas fa-undo fa-sm"></i></a>
             </div>
         </div>
     </div>
+    <div class="card-block card-body">
+        <div class="row media-item-details">
+            <div class="col-lg-6 tags p-b-2">
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <strong>Lendee Name: </strong>{{itemDetails.LendeeName}}
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <strong>Condition: </strong>{{itemDetails.MediaCondition}}
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <strong>Date Lent: </strong>{{itemDetails.DateLent | amDateFormat:'dddd, MMMM Do YYYY'}}
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <strong>Notes: </strong>{{itemDetails.Notes}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1">
+                <img ng-src="{{itemDetails.artworkUrl100}}" class="img-fluid" alt="Cover Art" />
+            </div>
+        </div>
+    </div>
+    <!--/card-block-->
 </div>
+<!-- /2 columns card -->

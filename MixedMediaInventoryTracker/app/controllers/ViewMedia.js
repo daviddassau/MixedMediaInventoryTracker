@@ -1,10 +1,17 @@
-﻿app.controller("ViewMedia", ["$scope", "$http", "$location", "$routeParams", "moment",
-    function ($scope, $http, $location, $routeParams, moment) {
+﻿app.controller("ViewMedia", ["$scope", "$route", "$http", "$location", "$routeParams", "moment", "toastr",
+    function ($scope, $route, $http, $location, $routeParams, moment, toastr) {
 
         $scope.message = "My Media";
 
         $http.get("/api/media").then(function (results) {
             $scope.mediaItems = results.data;
+
+            var mediaTypeData = $scope.mediaItems.map(function (item) {
+                return item.MediaTypeId;
+            });
+            console.log("Media type data", mediaTypeData);
+            $scope.labels = ["CDs", "Books", "Blu-rays", "CDs"];
+            $scope.data = mediaTypeData;
         });
 
         $scope.viewMediaItemDetails = function (id) {
@@ -20,7 +27,12 @@
         }
 
         $scope.deleteMediaItem = function (id) {
-            $location.path(`/viewMedia/delete/${id}`);
+            $http.delete(`api/media/${id}`).then(function () {
+                toastr.error('Item deleted', 'You successfully deleted that item from your list.');
+                $route.reload();
+            }).catch(function (error) {
+                console.log("error in deleteMediaItem", error);
+            });
         };
         
     }
