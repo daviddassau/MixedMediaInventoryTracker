@@ -75,7 +75,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.html" class="logo"><b>Stuffy Librarian</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -100,24 +100,24 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
 
-                    <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-                    <h5 class="centered">Marcel Newman</h5>
+                    @*<p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                    <h5 class="centered">Marcel Newman</h5>*@
 
                     <li class="mt">
                         <a ng-href="#!/">
-                            <i class="fa fa-dashboard"></i>
+                            <i class="fas fa-home fa-lg"></i>
                             <span>Home</span>
                         </a>
                     </li>
 
-                    <li class="mt">
+                    <li>
                         <a ng-href="#!/viewMedia">
                             <i class="fa fa-desktop"></i>
                             <span>View Media</span>
                         </a>
                     </li>
 
-                    <li class="mt">
+                    <li>
                         <a ng-href="#!/chooseMediaType">
                             <i class="fa fa-desktop"></i>
                             <span>Add New Media</span>
@@ -130,8 +130,8 @@
                             <span>Lent Media</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="general.html">View Lent Media</a></li>
-                            <li><a href="buttons.html">Lend Media</a></li>
+                            <li><a ng-href="#!/viewLentMedia">View Lent Media</a></li>
+                            <li><a ng-href="#!/lendMedia">Lend Media</a></li>
                         </ul>
                     </li>
 
@@ -141,8 +141,8 @@
                             <span>Sold Media</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="calendar.html">View Sold Media</a></li>
-                            <li><a href="gallery.html">Sell Media</a></li>
+                            <li><a ng-href="#!/viewSoldMedia">View Sold Media</a></li>
+                            <li><a ng-href="#!/sellMedia">Sell Media</a></li>
                         </ul>
                     </li>
                     @*<li class="sub-menu">
@@ -205,8 +205,7 @@
         <!--footer start-->
         <footer class="site-footer">
             <div class="text-center">
-                2014 - Alvarez.is
-                &copy; @DateTime.Now.Year - My ASP.NET Application
+                &copy; @DateTime.Now.Year - Stuffy Librarian
                 <a href="index.html#" class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>
@@ -244,7 +243,7 @@
     <script src="~/assets/js/sparkline-chart.js"></script>
     <script src="~/assets/js/zabuto_calendar.js"></script>
 
-    <script type="text/javascript" src="~/Scripts/sidebarScriptOne.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/sidebarScriptOne.js"></script>*@
     <script type="application/javascript" src="~/Scripts/sidebarScriptTwo.js"></script>
 
     
