@@ -184,6 +184,7 @@
     <Compile Include="Models\MediaSingle.cs" />
     <Compile Include="Models\MediaTypeDto.cs" />
     <Compile Include="Models\MediaTypeModel.cs" />
+    <Compile Include="Models\RecentMediaDto.cs" />
     <Compile Include="Models\SearchResultBooks.cs" />
     <Compile Include="Models\SearchResultMovie.cs" />
     <Compile Include="Models\SearchResultMusic.cs" />
