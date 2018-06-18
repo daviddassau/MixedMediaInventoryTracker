@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 
@@ -24,37 +27,193 @@
 </head>
 <body ng-app="MixedMediaInventoryTracker">
 
-    <div class="container mb-3">
-        <header class="blog-header py-3">
-            <div class="row flex-nowrap justify-content-between align-items-center">
-                <div class="col-md-12 text-center mt-3 mb-3">
-                    <a class="blog-header-logo text-dark" ng-href="#!/">Stuffy Librarian</a>
+    @*<div class="container mb-3">
+            <header class="blog-header py-3">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                    <div class="col-md-12 text-center mt-3 mb-3">
+                        <a class="blog-header-logo text-dark" ng-href="#!/">Stuffy Librarian</a>
+                    </div>
                 </div>
-            </div>
-        </header>
+            </header>
 
-        <div class="nav-scroller py-1 mb-2">
-            <nav class="nav d-flex justify-content-between">
-                <a class="p-2 text-muted navbar-item" ng-href="#!/"><i class="fas fa-home fa-lg"></i> <span class="d-none d-md-inline">Home</span></a>
-                <a class="p-2 navbar-item" ng-href="#!/viewMedia"><i class="far fa-user-circle fa-lg"></i> <span class="d-none d-md-inline">My Media</span></a>
-                <a class="p-2 text-muted navbar-item" ng-href="#!/chooseMediaType"><i class="fas fa-plus fa-lg"></i> <span class="d-none d-md-inline">Add New Media</span></a>
-                <a class="p-2 text-muted navbar-item" ng-href="#!/viewLentMedia"><i class="fas fa-user-friends fa-md"></i> <span class="d-none d-md-inline">View Lent Media</span></a>
-                <a class="p-2 text-muted navbar-item" ng-href="#!/lendMedia"><i class="far fa-share-square fa-md"></i> <span class="d-none d-md-inline">Lend Media</span></a>
-                <a class="p-2 text-muted navbar-item" ng-href="#!/viewSoldMedia"><i class="far fa-money-bill-alt fa-md"></i> <span class="d-none d-md-inline">View Sold Media</span></a>
-                <a class="p-2 text-muted navbar-item" ng-href="#!/sellMedia"><i class="fas fa-dollar-sign fa-lg"></i> <span class="d-none d-md-inline">Sell Media</span></a>
-            </nav>
+            <div class="nav-scroller py-1 mb-2">
+                <nav class="nav d-flex justify-content-between">
+                    <a class="p-2 text-muted navbar-item" ng-href="#!/"><i class="fas fa-home fa-lg"></i> <span class="d-none d-md-inline">Home</span></a>
+                    <a class="p-2 navbar-item" ng-href="#!/viewMedia"><i class="far fa-user-circle fa-lg"></i> <span class="d-none d-md-inline">My Media</span></a>
+                    <a class="p-2 text-muted navbar-item" ng-href="#!/chooseMediaType"><i class="fas fa-plus fa-lg"></i> <span class="d-none d-md-inline">Add New Media</span></a>
+                    <a class="p-2 text-muted navbar-item" ng-href="#!/viewLentMedia"><i class="fas fa-user-friends fa-md"></i> <span class="d-none d-md-inline">View Lent Media</span></a>
+                    <a class="p-2 text-muted navbar-item" ng-href="#!/lendMedia"><i class="far fa-share-square fa-md"></i> <span class="d-none d-md-inline">Lend Media</span></a>
+                    <a class="p-2 text-muted navbar-item" ng-href="#!/viewSoldMedia"><i class="far fa-money-bill-alt fa-md"></i> <span class="d-none d-md-inline">View Sold Media</span></a>
+                    <a class="p-2 text-muted navbar-item" ng-href="#!/sellMedia"><i class="fas fa-dollar-sign fa-lg"></i> <span class="d-none d-md-inline">Sell Media</span></a>
+                </nav>
+            </div>
+
         </div>
 
-    </div>
+        <main role="main" class="container">
+            <div>
 
-    <main role="main" class="container">
-        <div>
+                @RenderBody()
 
-            @RenderBody()
+            </div>
 
-        </div><!-- /.row -->
+        </main>*@
 
-    </main><!-- /.container -->
+
+
+
+
+
+
+    <section id="container">
+        <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+        <!--header start-->
+        <header class="header black-bg">
+            <div class="sidebar-toggle-box">
+                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+            </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- settings start -->
+                    <!-- settings end -->
+                    <!-- inbox dropdown start-->
+                    <!-- inbox dropdown end -->
+                </ul>
+                <!--  notification end -->
+            </div>
+            <!-- Logout begin -->
+            <!-- Logout end -->
+        </header>
+        <!--header end-->
+        <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+
+                    <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                    <h5 class="centered">Marcel Newman</h5>
+
+                    <li class="mt">
+                        <a ng-href="#!/">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li class="mt">
+                        <a ng-href="#!/viewMedia">
+                            <i class="fa fa-desktop"></i>
+                            <span>View Media</span>
+                        </a>
+                    </li>
+
+                    <li class="mt">
+                        <a ng-href="#!/chooseMediaType">
+                            <i class="fa fa-desktop"></i>
+                            <span>Add New Media</span>
+                        </a>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-desktop"></i>
+                            <span>Lent Media</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="general.html">View Lent Media</a></li>
+                            <li><a href="buttons.html">Lend Media</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-cogs"></i>
+                            <span>Sold Media</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="calendar.html">View Sold Media</a></li>
+                            <li><a href="gallery.html">Sell Media</a></li>
+                        </ul>
+                    </li>
+                    @*<li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-book"></i>
+                            <span>Extra Pages</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="blank.html">Blank Page</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="lock_screen.html">Lock Screen</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-tasks"></i>
+                            <span>Forms</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="form_component.html">Form Components</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-th"></i>
+                            <span>Data Tables</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="basic_table.html">Basic Table</a></li>
+                            <li><a href="responsive_table.html">Responsive Table</a></li>
+                        </ul>
+                    </li>*@
+                    @*<li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class=" fa fa-bar-chart-o"></i>
+                            <span>Charts</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="morris.html">Morris</a></li>
+                            <li><a href="chartjs.html">Chartjs</a></li>
+                        </ul>
+                    </li>*@
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                @RenderBody()
+            </section>
+        </section>
+
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                2014 - Alvarez.is
+                &copy; @DateTime.Now.Year - My ASP.NET Application
+                <a href="index.html#" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
 
 
 
@@ -88,7 +247,7 @@
     <script type="text/javascript" src="~/Scripts/sidebarScriptOne.js"></script>
     <script type="application/javascript" src="~/Scripts/sidebarScriptTwo.js"></script>
 
-
+    
     @RenderSection("scripts", required: false)
 </body>
 </html>
