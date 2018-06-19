@@ -20,3 +20,11 @@ Stuffy Librarian is an application to help you log and keep track of your person
 
 ## Technologies Used
 I used a vast assortment of full-stack tools to build **Stuffy Librarian**. I used Visual Studio for the entire project. For the back-end, I used ASP.NET (.NET Framework), SQL Server Management Studio, and Dapper. For the front-end, I used AngularJS as a JS framework, Bootstrap 4, and several other helpful tools such as Toastr and ChartJS.
+
+## Want to try it out?
+Please feel free to clone down my repo, and give the app a whirl!
+### Dependencies
+- A PC, or a Mac with a PC virtual machine.
+- Visual Studio
+- SQL Server Management Studio
+- The DB table script. You can find this in the folder `SQL Scripts > asdf`.
