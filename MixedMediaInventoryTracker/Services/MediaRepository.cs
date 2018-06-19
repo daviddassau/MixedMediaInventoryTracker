@@ -127,6 +127,20 @@ namespace MixedMediaInventoryTracker
             }
         }
 
+        public IEnumerable<RecentMediaDto> RecentlyAddedItems()
+        {
+            using (var db = CreateConnection())
+            {
+                var recentItem = db.Query<RecentMediaDto>(@"SELECT TOP 5 m.Id, m.Title, m.DateAdded, m.DatePurchased, m.artworkUrl100, c.MediaCondition, t.MediaType
+                                                            FROM Media m
+                                                            JOIN MediaCondition c on c.Id = m.MediaConditionId
+                                                            JOIN MediaType t on t.Id = m.MediaTypeId
+                                                            order by DateAdded Desc");
+
+                return recentItem;
+            }
+        }
+
         public ApiResultMovie SearchMediaItemMovie(string term)
         {
             var client = new RestClient("https://itunes.apple.com");
@@ -134,7 +148,7 @@ namespace MixedMediaInventoryTracker
             var request = new RestRequest("search/", Method.GET);
             request.AddParameter("term", term, ParameterType.QueryString); // adds to POST or URL querystring based on Method
             request.AddParameter("entity", "movie", ParameterType.QueryString);
-            request.AddParameter("limit", 25, ParameterType.QueryString);
+            request.AddParameter("limit", 6, ParameterType.QueryString);
 
             var response = client.Execute<ApiResultMovie>(request);
             foreach (var result in response.Data.results)

@@ -25,7 +25,7 @@
         $scope.submitLendMediaItem = function (lendMediaItem) {
             lendMediaItem.MediaId = lendMediaItem.Media.Id;
             lendItem(lendMediaItem).then(function () {
-                toastr.success('Success!', 'You added that item to your lent items list!');
+                toastr.success('You added that item to your lent items list!', 'Success!');
                 $location.path("/viewLentMedia");
             }).catch(function (error) {
                 console.log("error in submitLendMediaItem", error);

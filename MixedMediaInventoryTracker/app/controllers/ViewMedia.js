@@ -7,7 +7,7 @@
             $scope.mediaItems = results.data;
 
             var mediaTypeData = $scope.mediaItems.map(function (item) {
-                return item.MediaTypeId;
+                return item.IsLentOut;
             });
             console.log("Media type data", mediaTypeData);
             $scope.labels = ["CDs", "Books", "Blu-rays", "CDs"];
