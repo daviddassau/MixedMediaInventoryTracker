@@ -1,1 +1,1 @@
-# Mixed Media Inventory Tracker - Back-end Capstone Project
+# Stuffy Librarian (aka Mixed Media Inventory Tracker)
