@@ -7,4 +7,12 @@ Stuffy Librarian is an application to help you log and keep track of your person
 - View all of the media items currently in your inventory.
 - Add a new item
   - Your choices are Vinyl, Cassette, CD, VHS, DVD, Blu-ray, 4K, Digital Copy, Book, and eBook.
-  - When adding a new item, you can search for the media's title, and you can store the cover art. Other form fields include `Condition`, `Date Purchased (not required)`, and any notes you would like to make on that item.
+  - When adding a new item, you can search for the media's title to find the cover art. Other metadata includes `Condition`, `Date Purchased` (optional), and any notes you would like to make on that item.
+- Edit an item
+- Delete an item
+- Lend an item. 
+  - This feature allows the user the keep track of items that they lent to friends. You are able to log when it was lent out, the condition it was in, who you lent it to, and any other notes you would like to make.
+  - View lent out items
+- Sell an item. 
+  - This feature allows the user to keep track of the items they've sold. This provides a similar "peace of mind" that the lend items feature affords, where if you cannot find something at your house, you can check to make sure you didn't sell it, or lend it out.
+  - View sold items. A user can see when the item was sold, who it was sold to, and how much money you made from it (optional).
