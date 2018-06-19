@@ -11,8 +11,8 @@
                     {{mediaItem.Title}}
                 </div>
                 <div class="card-body">
-                    <strong>Date Added: </strong>{{mediaItem.DateAdded}}<br />
-                    <strong>Date Purchased: </strong>{{mediaItem.DatePurchased}}<br />
+                    <strong>Date Added: </strong>{{mediaItem.DateAdded | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
+                    <strong>Date Purchased: </strong>{{mediaItem.DatePurchased | amDateFormat:'dddd, MMMM Do YYYY'}}<br />
                     <strong>Media Condition: </strong>{{mediaItem.MediaCondition}}
                 </div>
             </div>

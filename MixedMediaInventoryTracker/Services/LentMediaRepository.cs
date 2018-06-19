@@ -81,15 +81,7 @@ namespace MixedMediaInventoryTracker.Services
                                                      SET IsLentOut = 0
                                                      WHERE Id = @id", new { id = lentItemDetails.MediaId });
 
-                //var markItemAsNotLent = 0;
-
-                //if (returnMediaItem == 1)
-                //{
-                //    markItemAsNotLent = db.Execute(@"UPDATE Media
-                //                                     SET IsLentOut = 0
-                //                                     WHERE Id = @id", new { id });
-                //}
-
+                
                 return returnMediaItem == 1 && markItemAsNotLent == 1;
             }
         }
