@@ -7,3 +7,4 @@ Stuffy Librarian is an application to help you log and keep track of your person
 - View all of the media items currently in your inventory.
 - Add a new item
   - Your choices are Vinyl, Cassette, CD, VHS, DVD, Blu-ray, 4K, Digital Copy, Book, and eBook.
+  - When adding a new item, you can search for the media's title, and you can store the cover art. Other form fields include `Condition`, `Date Purchased (not required)`, and any notes you would like to make on that item.
