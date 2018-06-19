@@ -72,12 +72,14 @@ namespace MixedMediaInventoryTracker.Services
             {
                 db.Open();
 
+                var lentItemDetails = ItemDetails(id);
+
                 var returnMediaItem = db.Execute(@"DELETE from LentMedia
                                                    WHERE Id = @id", new { id });
 
                 var markItemAsNotLent = db.Execute(@"UPDATE Media
                                                      SET IsLentOut = 0
-                                                     WHERE Id = @id", new { id });
+                                                     WHERE Id = @id", new { id = lentItemDetails.MediaId });
 
                 //var markItemAsNotLent = 0;
 
@@ -96,7 +98,7 @@ namespace MixedMediaInventoryTracker.Services
         {
             using (var db = CreateConnection())
             {
-                var singleLentItemDetails = db.QueryFirstOrDefault<LentMediaItemDetailsModel>(@"SELECT l.Id, l.LendeeName, l.DateLent, l.Notes, m.Title, m.artworkUrl100, m.Artist, c.MediaCondition
+                var singleLentItemDetails = db.QueryFirstOrDefault<LentMediaItemDetailsModel>(@"SELECT l.Id, l.LendeeName, l.DateLent, l.Notes, m.Title, m.artworkUrl100, m.Artist, c.MediaCondition,l.mediaid
                                                                                                 FROM LentMedia l
                                                                                                 JOIN Media m on m.Id = l.MediaId
                                                                                                 JOIN MediaCondition c on c.Id = m.MediaConditionId
