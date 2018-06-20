@@ -8,8 +8,7 @@
 
 
         $http.get("api/media/chartMediaByType").then(function (results) {
-            //console.log(results.data);
-
+            
             $scope.labelsMediaType = [];
             $scope.dataMediaType = [];
 
@@ -28,8 +27,6 @@
             $scope.dataLentOut = [];
 
             results.data.forEach(function (lentItems) {
-                //console.log(lentItems.LendeeName);
-                //console.log(lentItems.Title);
                 $scope.labelsLentOut.push(lentItems.MediaType);
                 $scope.dataLentOut.push(lentItems.MediaCount);
             });
