@@ -133,9 +133,12 @@ namespace MixedMediaInventoryTracker
             {
                 db.Open();
 
-                var lentOutItems = db.Query<ChartLentOutDto>(@"SELECT l.LendeeName, m.Title
-                                                               FROM LentMedia l
-                                                               JOIN Media m on m.Id = l.MediaId");
+                var lentOutItems = db.Query<ChartLentOutDto>(@"SELECT t.MediaType,
+                                                               COUNT (m.Id) as MediaCount
+                                                               FROM Media m
+                                                               JOIN LentMedia l on l.MediaId = m.Id
+                                                               JOIN MediaType t on t.Id = m.MediaTypeId
+                                                               GROUP BY t.MediaType");
 
                 return lentOutItems;
             }
