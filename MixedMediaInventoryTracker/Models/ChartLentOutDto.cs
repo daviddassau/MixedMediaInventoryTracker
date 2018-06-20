@@ -7,7 +7,7 @@ namespace MixedMediaInventoryTracker.Models
 {
     public class ChartLentOutDto
     {
-        public int Id { get; set; }
-        public int IsLentOut { get; set; }
+        public string LendeeName { get; set; }
+        public string Title { get; set; }
     }
 }

@@ -133,9 +133,9 @@ namespace MixedMediaInventoryTracker
             {
                 db.Open();
 
-                var lentOutItems = db.Query<ChartLentOutDto>(@"select m.Id,
-                                                               CASE WHEN m.IsLentOut = 1 THEN 1 else 0 END AS IsLentOut
-                                                               from Media m");
+                var lentOutItems = db.Query<ChartLentOutDto>(@"SELECT l.LendeeName, m.Title
+                                                               FROM LentMedia l
+                                                               JOIN Media m on m.Id = l.MediaId");
 
                 return lentOutItems;
             }
