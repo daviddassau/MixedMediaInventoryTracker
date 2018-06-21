@@ -5,18 +5,11 @@
 
         $http.get("/api/media").then(function (results) {
             $scope.mediaItems = results.data;
-
-            var mediaTypeData = $scope.mediaItems.map(function (item) {
-                return item.IsLentOut;
-            });
-            console.log("Media type data", mediaTypeData);
-            $scope.labels = ["CDs", "Books", "Blu-rays", "CDs"];
-            $scope.data = mediaTypeData;
         });
 
         $scope.viewMediaItemDetails = function (id) {
             $location.path(`/viewMedia/${id}`);
-        }
+        };
 
         $scope.editMediaItem = function (id) {
             $location.path(`/viewMedia/edit/${id}`);
@@ -24,7 +17,7 @@
 
         $scope.lendMediaItem = function (id) {
             $location.path(`/viewLentMedia/${id}`);
-        }
+        };
 
         $scope.deleteMediaItem = function (id) {
             $http.delete(`api/media/${id}`).then(function () {

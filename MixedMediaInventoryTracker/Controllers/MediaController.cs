@@ -124,5 +124,23 @@ namespace MixedMediaInventoryTracker.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
+
+        [HttpGet, Route("chartMediaLentOut")]
+        public HttpResponseMessage ChartItemsLentOut()
+        {
+            var mediaRepository = new MediaRepository();
+            var result = mediaRepository.ChartLentOutItems();
+
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
+
+        [HttpGet, Route("chartMediaByType")]
+        public HttpResponseMessage MediaByType()
+        {
+            var mediaRepository = new MediaRepository();
+            var result = mediaRepository.GetMediaByType();
+
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
     }
 }

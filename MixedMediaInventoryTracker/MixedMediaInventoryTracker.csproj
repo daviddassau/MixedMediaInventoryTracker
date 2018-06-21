@@ -169,11 +169,13 @@
     <Compile Include="Models\ApiResultBooks.cs" />
     <Compile Include="Models\ApiResultMovie.cs" />
     <Compile Include="Models\ApiResultMusic.cs" />
+    <Compile Include="Models\ChartLentOutDto.cs" />
     <Compile Include="Models\LentMediaDto.cs" />
     <Compile Include="Models\LentMediaItemDetailsModel.cs" />
     <Compile Include="Models\LentMediaModel.cs" />
     <Compile Include="Models\MediaConditionDto.cs" />
     <Compile Include="Models\MediaConditionModel.cs" />
+    <Compile Include="Models\MediaCountDto.cs" />
     <Compile Include="Models\MediaCoverArtDto.cs" />
     <Compile Include="Models\MediaDto.cs" />
     <Compile Include="Models\MediaItemDetailsDto.cs" />
@@ -230,7 +232,6 @@
     <Content Include="app\partials\index.html" />
     <Content Include="app\partials\lendMedia.html" />
     <Content Include="app\partials\markAsLent.html" />
-    <Content Include="app\partials\markAsSold.html" />
     <Content Include="app\partials\sellMedia.html" />
     <Content Include="app\partials\viewLentMedia.html" />
     <Content Include="app\partials\viewLentMediaDetails.html" />

@@ -1,13 +1,37 @@
 ﻿app.controller("HomeController", ["$scope", "$http", "moment",
     function ($scope, $http, moment) {
-
-        $scope.message = "Hello World";
-
-        //$scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
-        //$scope.data = [300, 500, 100];
+        
 
         $http.get("/api/media/getRecentlyAdded").then(function (results) {
             $scope.mediaItems = results.data;
+        });
+
+
+        $http.get("api/media/chartMediaByType").then(function (results) {
+            
+            $scope.labelsMediaType = [];
+            $scope.dataMediaType = [];
+
+            results.data.forEach(function (mediaType) {
+                $scope.labelsMediaType.push(mediaType.MediaType);
+                $scope.dataMediaType.push(mediaType.MediaCount);
+            });
+        }).catch(function (error) {
+            console.log("error in get", error);
+        });
+
+
+        $http.get("api/media/chartMediaLentOut").then(function (results) {
+
+            $scope.labelsLentOut = [];
+            $scope.dataLentOut = [];
+
+            results.data.forEach(function (lentItems) {
+                $scope.labelsLentOut.push(lentItems.MediaType);
+                $scope.dataLentOut.push(lentItems.MediaCount);
+            });
+        }).catch(function (error) {
+            console.log("error in lent media chart", error);
         });
 
     }

@@ -127,17 +127,48 @@ namespace MixedMediaInventoryTracker
             }
         }
 
+        public IEnumerable<ChartLentOutDto> ChartLentOutItems()
+        {
+            using (var db = CreateConnection())
+            {
+                db.Open();
+
+                var lentOutItems = db.Query<ChartLentOutDto>(@"SELECT t.MediaType,
+                                                               COUNT (m.Id) as MediaCount
+                                                               FROM Media m
+                                                               JOIN LentMedia l on l.MediaId = m.Id
+                                                               JOIN MediaType t on t.Id = m.MediaTypeId
+                                                               GROUP BY t.MediaType");
+
+                return lentOutItems;
+            }
+        }
+
         public IEnumerable<RecentMediaDto> RecentlyAddedItems()
         {
             using (var db = CreateConnection())
             {
-                var recentItem = db.Query<RecentMediaDto>(@"SELECT TOP 5 m.Id, m.Title, m.DateAdded, m.DatePurchased, m.artworkUrl100, c.MediaCondition, t.MediaType
+                var recentItem = db.Query<RecentMediaDto>(@"SELECT TOP 6 m.Id, m.Title, m.DateAdded, m.DatePurchased, m.artworkUrl100, c.MediaCondition, t.MediaType
                                                             FROM Media m
                                                             JOIN MediaCondition c on c.Id = m.MediaConditionId
                                                             JOIN MediaType t on t.Id = m.MediaTypeId
                                                             order by DateAdded Desc");
 
                 return recentItem;
+            }
+        }
+
+        public IEnumerable<MediaCountDto> GetMediaByType()
+        {
+            using (var db = CreateConnection())
+            {
+                var mediaByType = db.Query<MediaCountDto>(@"Select t.MediaType,
+                                                            Count (m.Id) as MediaCount
+                                                            from Media m
+                                                            Join MediaType t on t.Id = m.MediaTypeId
+                                                            Group by t.MediaType");
+
+                return mediaByType;
             }
         }
 
