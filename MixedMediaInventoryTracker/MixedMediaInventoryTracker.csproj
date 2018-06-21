@@ -232,7 +232,6 @@
     <Content Include="app\partials\index.html" />
     <Content Include="app\partials\lendMedia.html" />
     <Content Include="app\partials\markAsLent.html" />
-    <Content Include="app\partials\markAsSold.html" />
     <Content Include="app\partials\sellMedia.html" />
     <Content Include="app\partials\viewLentMedia.html" />
     <Content Include="app\partials\viewLentMediaDetails.html" />
