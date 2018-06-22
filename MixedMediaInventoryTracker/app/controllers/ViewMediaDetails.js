@@ -14,6 +14,7 @@
                 var artistField = document.getElementById('artist');
                 var authorField = document.getElementById('author');
                 var datePurchasedField = document.getElementById('datePurchased');
+                var notesField = document.getElementById('notes');
 
                 $scope.itemDetails = result.data;
 
@@ -28,6 +29,10 @@
 
                 if ($scope.itemDetails.DatePurchased == null) {
                     datePurchasedField.style.display = "none";
+                }
+
+                if ($scope.itemDetails.Notes == null) {
+                    notesField.style.display = "none";
                 }
 
             }).catch(function (error) {
