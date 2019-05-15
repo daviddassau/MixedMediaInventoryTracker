@@ -23,8 +23,11 @@ I used a vast assortment of full-stack tools to build **Stuffy Librarian**. I us
 
 ## Want to try it out?
 Please feel free to clone down my repo, and give the app a whirl!
-### Dependencies
+### Things you'll need:
 - A PC, or a Mac with a PC virtual machine.
 - Visual Studio
 - SQL Server Management Studio
 - The DB table script. You can find this in the folder `SQL Scripts > asdf`.
+### Install Dependencies
+- Dep. 1
+- Dep. 2
