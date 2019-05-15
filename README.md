@@ -29,5 +29,4 @@ Please feel free to clone down my repo, and give the app a whirl!
 - SQL Server Management Studio
 - The DB table script. You can find this in the folder `SQL Scripts > asdf`.
 ### Install Dependencies
-- Dep. 1
-- Dep. 2
+There shouldn't be any necessary dependencies or packages to install. If you run the solution and get unexpected errors, please feel free to contact me at davidtdassau@gmail.com.
