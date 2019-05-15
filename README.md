@@ -27,6 +27,6 @@ Please feel free to clone down my repo, and give the app a whirl!
 - A PC, or a Mac with a PC virtual machine.
 - Visual Studio
 - SQL Server Management Studio
-- The DB table script. You can find this in the folder `SQL Scripts > asdf`.
+- The DB table script. You can find this in the folder `SQL Scripts > DatabaseScript.sql`.
 ### Install Dependencies
 There shouldn't be any necessary dependencies or packages to install. If you run the solution and get unexpected errors, please feel free to contact me at davidtdassau@gmail.com.
